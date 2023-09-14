@@ -4,6 +4,17 @@
     margin: 0;
 }
 
+p { 
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+    margin-top: 30 px;
+    text-align: center;
+    font-size: x-large; 
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+}
+
 a { 
     cursor: pointer;
     display: flex;
