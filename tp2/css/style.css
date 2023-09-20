@@ -80,7 +80,7 @@ h4{
     letter-spacing: 1.8px;
 }
 
-/* =============Pg-Login=============*/
+/* =============Páginas Login y Registro=============*/
 
 #login {
     background-image: url('../img/Home/fondoForm.png');
@@ -99,17 +99,15 @@ h4{
     margin:0 auto;
 }
 
-
 .containerSesion {
     /* background-color: var(--primario-s2); */
     background-color: rgba(43, 4, 59, 0.60);
     color: var(--blanco);
     width: 500px;
-    height: 772px;    
     border-radius: 10px;
     flex-shrink: 0;
     text-align: center;
-    margin: 20px auto; /*posiciono el contendor en el centro*/
+    margin: auto; /*posiciono el contendor en el centro*/
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -147,6 +145,9 @@ input {
 }
 label {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+label span { 
+    color: red;
 }
 
 .recuerdame {
@@ -201,7 +202,7 @@ label {
     justify-content: space-between;
 }
 
-.campoRegistrate {
+.campoRegistrate, .campoLogueate {
     width: 200px;
     margin-top: 40px;
     margin-bottom: 20px;
@@ -210,6 +211,25 @@ label {
     justify-content: space-between;
 }
 
+.campoLogueate {
+    width: 300px;
+}
+
+.btn-redes-registro {
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+}
+
+.btn-redes-registro .btn-bco {
+    width: 350px;
+    margin-bottom: 15px;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
 
 /* .botonDeslizable {
     border-radius: 50%;
