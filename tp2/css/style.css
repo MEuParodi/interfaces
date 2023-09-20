@@ -80,20 +80,20 @@ h4{
     letter-spacing: 1.8px;
 }
 
-/* =============Pg-Registro=============*/
+/* =============Pg-Login=============*/
 
-#registro {
+#login {
     background-image: url('../img/Home/fondoForm.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-#registro header {
+#login header {
     display: flex;
     justify-self: center;
     align-items: center;
 }
-#registro .logo {
+#login .logo {
     width: 180px;
     height:auto;
     margin:0 auto;
