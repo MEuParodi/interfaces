@@ -29,7 +29,6 @@ h2 {
 }
 
 p { 
-    cursor: pointer;
     display: flex;
     justify-content: center;
     margin-left: 10px;
