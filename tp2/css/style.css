@@ -374,7 +374,7 @@ button{
 .card {
     width: 272px;
     height: 310px;
-    background-color: var(--color-white);
+    background-color: var(--blanco);
     margin: auto;
     margin-top: 130px;
     align-items: center;
@@ -384,12 +384,11 @@ button{
 }
 /*card con etiqueta por default es gratis ver nombre de la clase etiqueta tal vez es muy largo*/
 .card.etiqueta::after{
-    display: flex;
     align-items: center;
     justify-content: center;
-    content: "GRATIS";
+    content: "";
     text-align: center;
-    color: var(--color-white);
+    color: var(--blanco);
     font-size: 12px;
     letter-spacing: 1.8px;
     width: 90px;
@@ -400,9 +399,11 @@ button{
     position: absolute;
     left: -6.1px;
     top: 20px;
-    /*transition: 0.5s ease;*/
-
+    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.50);
+    display: none;
 }
+
+
 
 .card.etiqueta::before {
     content: "";
@@ -413,6 +414,20 @@ button{
     position: absolute;
     left: -6.1px; /*ver xq para q quede bien use estas medidad pero son raras con coma*/
     top: 44.8px;
+    display: none;
+}
+/*card con etiqueta gratis*/
+.gratis.etiqueta::after, .gratis.etiqueta::before, .off.etiqueta::after, .off.etiqueta::before,
+.exclusive.etiqueta::after, .exclusive.etiqueta::before, .nuevo.etiqueta::after, .nuevo.etiqueta::before {
+    display: flex;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.8);
+}
+.gratis.etiqueta::after {
+    content: "GRATIS";
+    background-color: var(--exito-color);
+}
+.gratis.etiqueta::before {
+    background-color: var(--exito-color);
 }
 /*card con etiqueta 20 %off como hacemos si queremos 30 o 40 off? hacemos otra clase?*/
 .off.etiqueta::after {
@@ -433,10 +448,10 @@ button{
 /*card con etiqueta nuevo*/
 .nuevo.etiqueta::after {
     content: "NUEVO";
-    background-color: var(--acento-color);
+    background-color: var(--acento);
 }
 .nuevo.etiqueta::before {
-    background-color: var(--acento-color);
+    background-color: var(--acento);
 }
 .img-card {
     width: 272px;
@@ -468,7 +483,7 @@ button{
     text-overflow: ellipsis; /*agrega puntos suspensivos*/
 }
 .price{
-    color: var(--acento-color);
+    color: var(--acento);
     text-align: right;
 }
 .description-game{
@@ -494,12 +509,12 @@ button{
     width: 100px;
     height: 25px;
     border-radius: 10px;
-    border: 1px solid #FFF;
+    border: 1px solid var(--blanco);
     background: var(--primario);
-    color: var(--color-white);
+    color: var(--blanco);
 }
 .btn-play:hover{
-    background-color: var(--primario-S3);
+    background-color: var(--primario-s3);
     transition: 0.5s ease;
 }
 /*esta clase se podria usar como mas gral, xq luego usamos x ejmplo el carrito en header y es mas grande*/
@@ -512,11 +527,11 @@ button{
 .btn-buy-card {
     background-size: 20px 20px;
     background-position: center center;
-    background-color: var(--acento-color);
+    background-color: var(--acento);
     width: 40px;
     height: 25px;
     border-radius: 10px;
-    border: 1px solid var(--acento-color);
+    border: 1px solid var(--acento);
     margin-right: 10px;
 
 }
