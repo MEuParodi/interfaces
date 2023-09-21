@@ -80,6 +80,38 @@ h4{
     letter-spacing: 1.8px;
 }
 
+/* ============= Buttons =============*/
+
+.btn-main {
+    width: 350px;
+    height: 45px;
+    border-radius: 10px;
+    color: var(--blanco);
+}
+
+.btn-main-active {                     
+    background-color: var(--primario);
+}
+
+.btn-main-inactive {                      
+    background-color: var(--primario-l2 );
+}
+
+.btn-main:hover{                  
+    background-color: var(--primario-s1);
+}
+
+.btn-third {
+    color: var(--acento);
+    text-decoration: underline;
+}
+
+.btn-third:hover {
+    color: var(--acento);
+    text-decoration: underline;
+    letter-spacing: 1px;
+}
+
 /* =============Páginas Login y Registro=============*/
 
 #login {
@@ -122,7 +154,7 @@ h4{
     color:var(--blanco);
 }
 
-.campo {
+.formField {
     text-align: left;
     margin-bottom: 30px;
 }
@@ -161,15 +193,7 @@ label span {
     margin-right: 10px;
 }
 
-.btn-ppal {
-    background-color: var(--primario);
-    color: var(--blanco);
-    width: 350px;
-    height: 45px;
-    border-radius: 10px;
-}
-
-.btn-bco {
+.btn-white {
     background-color: var(--blanco);
     width: 60px;
     height: 45px;
@@ -177,13 +201,8 @@ label span {
 
 }
 
-.containerSesion .btn-ppal {
+.containerSesion .btn-main {
     margin-top: 40px;
-}
-
-.link {
-    color: var(--acento);
-    text-decoration: underline;
 }
 
 .linea {
@@ -193,7 +212,7 @@ label span {
     height: 1px;
 }
 
-.campoRow {
+.formFieldRow {
     width: 350px;
     margin-top: 40px;
     margin-bottom: 20px;
@@ -202,7 +221,7 @@ label span {
     justify-content: space-between;
 }
 
-.campoRegistrate, .campoLogueate {
+.formFieldRegistrate, .formFieldLogueate {
     width: 200px;
     margin-top: 40px;
     margin-bottom: 20px;
@@ -211,7 +230,7 @@ label span {
     justify-content: space-between;
 }
 
-.campoLogueate {
+.formFieldLogueate {
     width: 300px;
 }
 
@@ -222,7 +241,7 @@ label span {
 
 }
 
-.btn-redes-registro .btn-bco {
+.btn-redes-registro .btn-white {
     width: 350px;
     margin-bottom: 15px;
     display:flex;
@@ -247,9 +266,11 @@ body{
     color: var(--color-black);
     font-size: 16px;    
 }
+
 button{
     cursor: pointer;
 }
+
 .carrousel{
     width: 100%;
     height: 100%;
