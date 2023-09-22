@@ -413,3 +413,11 @@ button{
     margin-right: 10px;
 
 }
+
+/*=================== card off ====================*/
+.card-off{
+    width: 564px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+}
