@@ -33,7 +33,7 @@
     --blanco: #FAF3FE;
     --error-color: #d33636;
     --exito-color: #66b527;
-    --negro: #2B043B;  
+    --negro: #2B043B;
     --warning-color: #E8E020;
 }
 
@@ -287,7 +287,7 @@ label span {
 .robot p {
     margin-left: 10px;
     size: smaller;
-    color: black;  
+    color: black;
 }
 
 .robot .check {
@@ -334,11 +334,9 @@ button{
     width: 100%;
     height: 100vh;
     margin-left: 70px;
-    background-image: url("../img/Home/4 en linea.avif");
-    background-size: cover;
-    background-repeat: no-repeat;
     position: relative;
 }
+
 
 .rect-blured {
     width: 100%;
@@ -356,14 +354,7 @@ button{
     transform: translate(-50%,-50%);
 }
 
-.btns-carrousel-ppal {
-    z-index: 1;
-    position: absolute;
-    bottom:20px;
-    margin-left: 50%;
-    transform: translate(-50%,-50%);
 
-}
 /* =============Card ==============*/
 /*card comun sin etiqueta*/
 .card {

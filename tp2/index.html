@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/styleMobile.css">
+    <!-- <link rel="stylesheet" href="slider.css"> -->
     <title>Home</title>
 </head>
 <body id="home">
@@ -14,57 +15,39 @@
         <div>carr</div>
         <div>user</div>
     </header>
-    <section class="ppal-carrousel">
-        <ul class="slider">
-            <li id="item-1">
-                <img src="./img/Home/fondoHome1.webp"
-            </li>
-            <li id="item-2">
-                <img src="./img/Home/fondoHome2.jpg"
-            </li>
-            <li id="item-3">
-                <img src="./img/Home/fondoHome3.png"
-            </li>
-            <li id="item-4">
-                <img src="./img/Home/fondoHome4.png"
-            </li>
-        </ul>
-        <ul class="menu-ppal-carrousel">
-            <li>
-                <a href="#item-1">1</a>
-            </li>
-            <li>
-                <a href="#item-2">2</a>
-            </li>
-            <li>
-                <a href="#item-3">3</a>
-            </li>
-            <li>
-                <a href="#item-4">4</a>
-            </li>
-            <!-- <li>
-                <a href="#item-1" <button class="btn-carrousel"></button></a>
-            </li>
-            <li>
-                <a href="#item-2" <button class="btn-carrousel"></button></a>
-            </li>
-            <li>
-                <a href="#item-3" <button class="btn-carrousel"></button></a>
-            </li>
-            <li>
-                <a href="#item-4" <button class="btn-carrousel"></button></a>
-            </li> -->
-        </ul>
-
-        <!-- <div class="btns-carrousel-ppal" >
-            <button class="btn-carrousel-active"></button>
-            <button class="btn-carrousel"></button>
-            <button class="btn-carrousel"></button>
-            <button class="btn-carrousel"></button>
-        </div> -->
-
+    <section id="ppal-carrousel">
+            <ul class="slider">
+                <li id="slide1">
+                    <img src="./img/Home/fondoHome1.webp"/>
+                </li>
+                <li id="slide2">
+                    <img src="./img/Home/fondoHome2.jpg" />
+                </li>
+                <li id="slide3">
+                    <img src="./img/Home/fondoHome3.png"/>
+                </li>
+                <li id="slide4">
+                    <img src="./img/Home/fondoHome4.png"/>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li>
+                    <a href="#slide1" class="active"></a>
+                </li>
+                <li>
+                    <a href="#slide2"></a>
+                </li>
+                <li>
+                    <a href="#slide3"></a>
+                </li>
+                <li>
+                    <a href="#slide4"></a>
+                </li>
+            </ul>
+    
         <button class="btn-big"><h4>GRATIS Sólo Por Hoy</h4></button>
-        <div class="rect-blured"></div>
+        <!-- <div class="rect-blured"></div> -->
+
     </section>
     <section class="btns-categories">
         botonera categorias
@@ -219,4 +202,6 @@
         footer
     </footer>
 </body>
+<script src="./js/slider.js"></script>
+
 </html>
