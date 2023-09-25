@@ -681,7 +681,7 @@ button{
         background-color: var(--secundario);
     }
     
-    /* =============Header Home Mobile ==============*/
+    /* =============Header Home ==============*/
 #home header {
     background-color: var(--primario);
     width: 100%;
