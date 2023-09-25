@@ -503,7 +503,7 @@ button{
     transition: all 300ms;
 }
 
-/* =============Principal Carrousel  ==============*/
+/* =============Principal Carrousel MObile ==============*/
 #ppal-carrousel {
     width: 100%; /*cambie 700px x 100%*/
     height: 50vh;
@@ -532,6 +532,7 @@ button{
     width: 100%;
     height: 100%;
     object-fit:cover;
+    position: absolute;
 }
 
 #ppal-carrousel ul.slider li:first-child {
@@ -904,10 +905,11 @@ button{
 }
 
 /* =============Principal Carrousel  ==============*/
-.ppal-carrousel {
+#ppal-carrousel {
     width: 100%;
     height: 570px;
     position: relative;
+    margin-top: 100px;
 }
 
 .rect-blured {
@@ -918,22 +920,17 @@ button{
     bottom: 0%;
 }
 
-.ppal-carrousel .btn-big {
-    z-index: 1;
+#ppal-carrousel .btn-big {
     position: absolute;
-    bottom:50px;
+    bottom:30px;
     margin-left: 50%;
     transform: translate(-50%,-50%);
 }
 
-.btns-carrousel-ppal {
-    z-index: 1;
-    position: absolute;
-    bottom:15px;
-    margin-left: 50%;
-    transform: translate(-50%,-50%);
-
+.menu {
+    bottom:7px;
 }
+
 /*==============carrousel===================*/
 
 .carrousel{
