@@ -6,6 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: var(--font);
+    text-decoration: none;
 }
 /* =============Variables=============*/
 *:root{
@@ -314,6 +315,7 @@ body{
     background-color: var(--color-white);
     color: var(--color-black);
     font-size: 16px;
+    margin-top: 50px;   
 }
 
 button{
@@ -328,17 +330,182 @@ button{
     align-items: center;
 }
 /* =============Header Home Mobile ==============*/
-#home header {
+#header-home{
+    width: 100%;
+    height: 70px; /*cambio 100*/
     background-color: var(--primario);
-    width: 700px; /*ver que pasa con este ancho que 100% no anda*/
-    height: 50px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+}
+
+.header-left{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 25px;
+    padding: 0 10px;
+}
+
+.logo-header{
+    width: 75px; 
+    height: 75px;
+    
+}
+.menu-burger figure{
+    height: 70px;
+}
+
+.menu-burger img{
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
+}
+
+.container-header{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.input-search{
+    display: none;
+    width: 217px;
+    height: 50px;
+    border-radius: 10px;
+    border: 2px solid var(--primario);
+    background: var(--primario-l2);
+}
+.input-search::placeholder{
+    background-image: url("../img/lupaNegra.png");
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position: 20px center;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.8px;
+}
+
+.container-btn-header{
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+}
+.btn-buy{
+    background-image: url("../img/carrito.svg");
+    background-repeat: no-repeat;
+    background-size: contain; 
+    width: 30px;  
+    height: 30px;
+    border: none;
+    background-color: var(--primario);
+}
+
+.btn-user-login{
+    background-image: url("../img/usus.jpg");
+    background-size: cover;
+    border: none;
+    border-radius: 50px;
+    width: 40px; 
+    height: 40px;
+    position: relative;
+   
+}
+/*para hacer circulo verde de conexion*/
+.btn-user-login::after{
+    content: "";
+    width: 11px;
+    height: 11px;
+    border-radius: 50px;
+    background-color: var(--exito-color);
+    position: absolute;
+    right: 1px;
+    top: 2px;
+   
+}
+
+
+/*======sidebar========*/
+.menu-side{
+    width: 80px;
+    height: 100%;
+    background-color: var(--primario);
+    position: fixed;
+    top: 60px;
+    left: 0;
+    color: var(--blanco);
+    z-index: 300;
+    overflow: hidden;
+    overflow-y: scroll;
+    border-right: 20px solid var(--primario);
+    transition: all 400ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+/* ver ocultar scroll para chrome, safari y opera */
+.menu-side::-webkit-scrollbar{
+    display: none;
+}
+/* ocultar scroll para IE edge firefox */
+.menu-side{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.side-options {
+    padding: 10px 20px;
+}
+
+.side-options a{
+    color: var(--blanco);
+    cursor: pointer;
+    display: block;
+    transition: all 300ms;
+}
+
+.side-options .option {
+    padding: 15px 0;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-radius: 5px;
+}
+
+.side-options .option img {
+    width: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.side-options .option p{
+  
+    cursor: pointer;
+}
+
+.option:hover{
+    background-color: var(--primario-s3);
+}
+
+.menu-side-move{
+    width: 250px;
+    transition: all 300ms;
+}
+.menu-side-hidden{
+    width: 80px;
+    left: -80px;
+    transition: all 300ms;
 }
 
 /* =============Principal Carrousel  ==============*/
 #ppal-carrousel {
-    width: 700px;
+    width: 100%; /*cambie 700px x 100%*/
     height: 50vh;
     position: relative;
 }
@@ -426,6 +593,12 @@ button{
 }
 
 /* =============Card ==============*/
+.carrousel{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    gap: 20px;
+}
 /*card comun sin tag*/
 .card {
     width: 272px;
@@ -595,7 +768,7 @@ button{
     margin-right: 10px;
 
 }
-/*==========jjjjjjj===========*/
+/*=============================*/
 
 /* =============Footer=============*/
 
@@ -691,15 +864,43 @@ button{
         background-color: var(--secundario);
     }
     
-    /* =============Header Home Mobile ==============*/
-#home header {
-    background-color: var(--primario);
-    width: 100%;
-    height: 50px;
-    display: flex;
-    justify-content: space-between;
-}
+    /* =============Header Home ==============*/
+    #header-home{
+        height: 100px; 
+    }
+    .logo-header{
+        width: 120px; 
+        height: 110px;  
+        margin-left: 50px;
+    }
+   
+    .input-search{
+        display: block;
+    }
+   
+    .container-btn-header{
+        margin-right: 50px; 
+        gap: 40px;
+    }
+    .btn-buy{
+        width: 35px;   
+        height: 35px; 
+    }
 
+    .btn-user-login{
+        width: 50px; 
+        height: 50px;
+    
+    }
+/*===============sidebar==========*/
+.menu-side{
+    top: 90px;
+}
+.menu-side-move{
+    width: 250px;
+    left: 0;
+    transition: all 300ms;
+}
 /* =============Principal Carrousel  ==============*/
 .ppal-carrousel {
     width: 100%;

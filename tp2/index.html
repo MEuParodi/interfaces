@@ -5,15 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/styleMobile.css">
-    <card-title>Home</card-title>
+    
+    <title>Home</title>
 </head>
 <body id="home">
-    <header>
-        <div>hamb</div>
-        <div>busc</div>
-        <div>carr</div>
-        <div>user</div>
+    <header id="header-home">
+        <div class="header-left">
+            <div class="menu-burger" id="btn-open">
+                <img src="./img/icons/iconHamb.svg" alt="menu-burger">
+            </div>
+            <figure>
+                <img class="logo-header" src="./img/Home/logoVioletaOscuro.png" alt="logo">
+            </figure>
+        </div>
+        <div class="container-header">
+            <div class="container-search"> 
+                <input class="input-search" type="text" placeholder="Busca tu juego">
+            
+            </div>
+            <div class="container-btn-header">
+                <button class="btn-buy"></button>
+                <button class="btn-user-login"></button>
+            </div>
+        </div>
+        
     </header>
+    <nav class="menu-side" id="menu-side">
+        <div class="side-options">
+            <a href="#">
+                <div class="option">
+                    <img src="./img/icons/iconFuego.svg" alt="populares" title="Populares">
+                    <p class="body-bold">Más Populares</p>
+                </div>
+                <div class="option">
+                    <img src="./img/icons/iconNuevo.svg" alt="nuevos">
+                    <p class="body-bold">Nuevos</p>
+                </div>
+                <div class="option">
+                    <img src="./img/icons/iconFuego.svg" alt="paravos" >
+                    <p class="body-bold">Para Vos</p>
+                </div>
+                <div class="option">
+                    <img src="./img/icons/iconPromo.svg" alt="promo" >
+                    <p class="body-bold">Promo</p>
+                </div>
+                <div class="option">
+                    <img src="./img/icons/iconGratis.svg" alt="gratis" >
+                    <p class="body-bold">Gratis</p>
+                </div>
+                <div class="option">
+                    <img src="./img/icons/iconAventura.svg" alt="aventura" >
+                    <p class="body-bold">Aventura</p>
+                </div>
+                <div class="option">
+                    <img src="./img/icons/iconAccion.svg" alt="accion" >
+                    <p class="body-bold">Acción</p>
+                </div>
+                <div class="option">
+                    <img src="./img/icons/iconInfantil.svg" alt="infantiles" >
+                    <p class="body-bold">Infantiles</p>
+                </div>
+                <div class="option">
+                    <img src="./img/icons/iconEstrategia.svg" alt="estrategia" >
+                    <p class="body-bold">Estrategia</p>
+                </div>
+            </a>
+        </div>
+    </nav>
     <section id="ppal-carrousel">
         <button class="btn-big"><h4>GRATIS Sólo Por Hoy</h4></button>
         <div class="rect-blured"></div>
@@ -192,76 +250,6 @@
     <section class="offers">
         carrusel de ofertas
     </section>
-    <section class="carrousel">
-        <article class="card tag">
-            <figure>
-                <img class="card-img" src="./img/Stumble.png" alt="Stumble">
-            </figure>
-            <div class="card-body">
-                <div class="card-header">
-                    <p class="card-title body-bold">Stumble Guys</p>
-                    <h4 class="card-price">$9199</h4>
-                </div>
-                <p class="card-description tx-small">Juego multijugador masivo de eliminación en grupo</p>
-            </div>
-            <div class="card-btns">
-                <button class="btn card-btn-play tx-btn">Comprar</button>
-                <button class="btn-buy card-btn-buy tx-btn"></button>
-
-            </div>
-        </article>
-        <article class="card tag exclusive">
-            <figure>
-                <img class="card-img" src="./img/Home/mario.jpeg" alt="Stumble">
-            </figure>
-            <div class="card-body">
-                <div class="card-header">
-                    <p class="card-title body-bold">Super Mario Bross</p>
-                    <h4 class="card-price">$9199</h4>
-                </div>
-                <p class="card-description tx-small">Acompaña a Mario y Luigi en una nueva aventura, se enfrentarán con un</p>
-            </div>
-            <div class="card-btns">
-                <button class="btn card-btn-play tx-btn">Comprar</button>
-                <button class="btn-buy card-btn-buy tx-btn"></button>
-
-            </div>
-        </article>
-        <article class="card tag off">
-            <figure>
-                <img class="card-img" src="./img/Home/FallGuys.webp" alt="Stumble">
-            </figure>
-            <div class="card-body">
-                <div class="card-header">
-                    <p class="card-title body-bold">Fall Guys</p>
-                    <h4 class="card-price">$13599</h4>
-                </div>
-                <p class="card-description tx-small">Party royale gratis y multiplataforma donde los jugadores pueden elegir una</p>
-            </div>
-            <div class="card-btns">
-                <button class="btn card-btn-play tx-btn">Comprar</button>
-                <button class="btn-buy card-btn-buy tx-btn"></button>
-
-            </div>
-        </article>
-        <article class="card tag exclusive">
-            <figure>
-                <img class="card-img" src="./img/Home/minecraft.png" alt="Stumble">
-            </figure>
-            <div class="card-body">
-                <div class="card-header">
-                    <p class="card-title body-bold">Minecraft</p>
-                    <h4 class="card-price">$9899</h4>
-                </div>
-                <p class="card-description tx-small">Videojuego tipo sandbox, podes modelar el mundo a tu gusto! tambien</p>
-            </div>
-            <div class="card-btns">
-                <button class="btn card-btn-play tx-btn">Comprar</button>
-                <button class="btn-buy card-btn-buy tx-btn"></button>
-
-            </div>
-        </article>
-    </section>
     <section class="appstores">
         botones google play y applestore
     </section>
@@ -270,5 +258,5 @@
     </footer>
 </body>
 <script src="./js/slider.js"></script>
-
+<script src="./js/sidebar.js"></script>
 </html>

@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/styleMobile.css">
+    <link rel="stylesheet" href="css/prueba.css">
     <title>Document</title>
 </head>
-<body>
-    <header class="header">
-        <figure>
-            <img class="logo-header" src="./img/Home/logoVioletaOscuro.png" alt="logo">
-        </figure>
+<body id="body-home">
+    <header id="header-home">
+        <div class="header-left">
+            <div class="menu-burger" id="btn-open">
+                <img src="./img/icons/iconHamb.svg" alt="menu-burger">
+            </div>
+            <figure>
+                <img class="logo-header" src="./img/Home/logoVioletaOscuro.png" alt="logo">
+            </figure>
+        </div>
         <div class="container-header">
             <div class="container-search"> 
                 <input class="input-search" type="text" placeholder="Busca tu juego">
@@ -24,6 +28,52 @@
         </div>
         
     </header>
+    <nav class="menu-side" id="menu-side">
+        <div class="side-options">
+            <a href="#">
+                <div class="option">
+                    <img src="./img/icons/iconFuego.svg" alt="populares" title="Populares">
+                    <p class="body-bold">Más Populares</p>
+                </div>
+                <div class="option">
+                    <img src="./img/icons/iconNuevo.svg" alt="nuevos">
+                    <p class="body-bold">Nuevos</p>
+                </div>
+                <div class="option">
+                    <img src="./img/icons/iconFuego.svg" alt="paravos" >
+                    <p class="body-bold">Para Vos</p>
+                </div>
+                <div class="option">
+                    <img src="./img/icons/iconPromo.svg" alt="promo" >
+                    <p class="body-bold">Promo</p>
+                </div>
+                <div class="option">
+                    <img src="./img/icons/iconGratis.svg" alt="gratis" >
+                    <p class="body-bold">Gratis</p>
+                </div>
+                <div class="option">
+                    <img src="./img/icons/iconAventura.svg" alt="aventura" >
+                    <p class="body-bold">Aventura</p>
+                </div>
+                <div class="option">
+                    <img src="./img/icons/iconAccion.svg" alt="accion" >
+                    <p class="body-bold">Acción</p>
+                </div>
+                <div class="option">
+                    <img src="./img/icons/iconInfantil.svg" alt="infantiles" >
+                    <p class="body-bold">Infantiles</p>
+                </div>
+                <div class="option">
+                    <img src="./img/icons/iconEstrategia.svg" alt="estrategia" >
+                    <p class="body-bold">Estrategia</p>
+                </div>
+            </a>
+        </div>
+    </nav>
+    <main>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
     <div class="carousel-card">
         <article class="card tag">
             <figure>
@@ -42,9 +92,6 @@
             </div>
         </article>
     </div>
-
-    <br><br><br><br><br><br><br><br><br><br>
-
     <article class="card-off">
         <h3>OFERTA MENSUAL</h3>
         <figure>
@@ -78,10 +125,9 @@
 
             </div>
         </div>
-        
-        
-
-
     </article>
+    </main>
+           
+    <script src="./js/sidebar.js"></script>
 </body>
 </html>
