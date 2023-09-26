@@ -56,7 +56,7 @@ h3{
     font-size: 15px;
 }
 h4{
-    font-size: 15px;/*tenia 11px en figma era 22 lo baje a 15 ver??*/
+    font-size: 11px;/*tenia 11px en figma era 22 ver??*/
     font-weight: 600;
 }
 .body-bold {
@@ -604,6 +604,9 @@ button{
     align-items: center;
     justify-content: space-between;
 }
+.cart-item h4{
+    font-size: 16px;
+}
 
 .cart-buy img{
     width: 20px;
@@ -627,6 +630,7 @@ button{
     height: 40%;
 }
 .cart-discount .btn-main-inactive, .cart-btns .btn-main-inactive, .cart-btns .btn-main-active{
+    background-color: var(--blanco);
     width: 100%;
     border-radius: 10px;
     border: 1px solid var(--primario-s1);
@@ -640,6 +644,7 @@ button{
   
 }
 .cart-btns .btn-main-active{
+    background-color: var(--primario);
     color: var(--blanco);
 }
 .cart-btns {
