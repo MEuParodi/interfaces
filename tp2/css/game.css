@@ -6,93 +6,104 @@
     line-height: 140%;
 }
 
-#juegos img {
+img {
     max-width: 100%; 
-    /* height: auto; */
-    /* height: 100%; */
+    background-size: cover;
+    height: 100%;
+
 }
+
+.col-1 {
+    width: 50%; 
+    /* padding-right: 20px; */
+    padding: 10px;
+}
+
+.col-2 {
+    width: 25%; 
+    padding: 10px;
+    /* padding-left: 10px; */
+    /* border: solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+ }
+
+.col-3 {
+    width: 25%;
+    background: var(--Primario-S2, #681D88);
+    /* padding-left: 10px;
+    padding-right: 10px; */
+    padding: 10px;
+}
+
+.col-1-2 {
+    /* border: solid red; */
+    width: 75%; 
+    /* padding-right: 20px; */
+    padding: 10px;
+}
+
 .breadcrumb {
     background: var(--Primario-S2, #681D88);
+    margin-top: 100px;
     height: 60px;
     padding-top: 10px;
-    padding-left: 70px;
+    padding-left: 90px;
     width: 100%;
 }
 
 .game {
     width: 100%; /*ancho y alt de todo el grid*/
     height: 700px;
-    padding-left: 70px; 
+    padding-left: 90px; 
     background: var(--Primario-S2, #681D88);
     display:flex;
     flex-direction: row;
 }
 
-.col-1 {
-    width: 50%; 
-    padding-right: 20px;
- 
-}
-
-.col-2 {
-    width: 25%; 
-    padding-left: 10px;
-    /* border: solid red; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
-    border: solid;
- }
-
-.col-3 {
-    width: 25%;
-    background: var(--Primario-S2, #681D88);
-    padding-left: 10px;
-    border: solid;
-}
-
-.col-1-2 {
-    /* border: solid red; */
-    width: 75%; 
-    padding-right: 20px;
-}
-
 .game .col-1-2 {
     background-color: white;
-    border: solid;
+    margin-top: 10px;
 }
-
 
 .chat {
     width: 100%;
-    height: 60%;
+    height: 440px;
     background-color: black;
     color: white;
     margin-bottom: 10px;
 }
 
-.publi-small-coca {
-    border: solid;
-    background-image: url("../img/4enLinea/publicidadCoca.png");
-    background-size: cover;
-    width: 100%;
-    height: 200px;
+/*****PUBLICIDADES******/
+.publi-small {
+    height: 250px;
+    padding-bottom: 10px;
 }
+
+.publi-medium {
+    height: 340px;
+    padding-bottom: 10px;
+}
+
+.publi-large {
+    height: 520px;
+    padding-bottom: 10px;
+}
+/************************/
 
 .how-to-play{
     padding-top: 10px;
     padding-bottom: 10px;
     width: 100%; 
     height: 550px;
-    padding-left: 70px; 
+    padding-left: 90px; 
     background: var(--Primario-S2, #681D88);
     color: white;
     display: flex;
     flex-direction: row; 
 }
-
-
 
 .rating{
     display: flex;
@@ -101,9 +112,8 @@
     /* border: solid red; */
 }
 
-
 .related-games {
-    padding-left: 70px;
+    padding-left: 90px;
     background: var(--blanco, #FAF3FE);
     height: 250px;
 }
@@ -116,14 +126,109 @@
     height: 190px;
 }
 
-.comments{
+.comments-section{
     padding-top: 10px;
     padding-bottom: 10px;
     width: 100%; 
-    height: 550px;
-    padding-left: 70px; 
+    height: 1840px;
+    padding-left: 90px; 
     background: var(--blanco, #FAF3FE);
     display: flex;
     flex-direction: row; 
+}
+
+.comment-title{
+    margin-left: 50%;
+    margin-bottom: 50px;
+    transform: translate(-50%);
+    width: 301px;
+    height: 88px;
+    background-color: var(--Gris-2, #CAC1CD);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+}
+
+.comment-title img {
+    height: 30px;
+    margin-left: 10px;
+}
+.comment img {
+    height: 30px;
+}
+
+.comment{
+    padding-top: 15px;
+}
+
+.comment p.body{
+    padding-top: 10px;
 
 }
+
+.comment-container{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 30px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    margin-right: 10px;
+    background-color: #a7ef2b;
+}
+
+.avatar .orange {
+    background-color: orange;
+}
+
+.avatar .green {
+    background-color: #a7ef2b;
+}
+
+
+.avatar img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.comment p.body-bold span {
+    color: var(--Gris-1, #6E5C75);
+}
+
+.comment p.body {
+    margin-bottom: 10px;
+}
+
+.comment a {
+    color: var(--Primario-S2);
+}
+
+.admin {
+    margin-top: 5px;
+    margin-left: 60px;
+}
+
+.overflow-wrap {
+    white-space: pre-wrap;       /* Permite saltos de línea */
+    overflow-wrap: break-word;   /* Dividir palabras que no caben */
+    max-width: 100%;            /* Establece el ancho máximo del contenedor */
+  }
+
+  .appstores {
+    margin-left: 80px;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .appstores img {
+    margin: 20px;
+  }
+

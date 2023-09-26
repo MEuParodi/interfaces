@@ -1,111 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="css/styleMobile.css">
     <link rel="stylesheet" href="./css/game.css">
     <title>Juego</title>
 </head>
+
 <body id="juegos">
-    <header>
-        menu header
+    <header id="header-home">
+        <div class="header-left">
+            <div class="menu-burger" id="btn-open">
+                <img src="./img/icons/iconHamb.svg" alt="menu-burger">
+            </div>
+            <figure>
+                <img class="logo-header" src="./img/Home/logoVioletaOscuro.png" alt="logo">
+            </figure>
+        </div>
+        <div class="container-header">
+            <div class="container-search">
+                <input class="input-search" type="text" placeholder="Busca tu juego">
+
+            </div>
+            <div class="container-btn-header">
+                <button class="btn-buy"></button>
+                <button class="btn-user-login"></button>
+            </div>
+        </div>
+
     </header>
+    <nav class="menu-side" id="menu-side">
+        <div class="side-options">
+            <a href="#">
+                <div class="option">
+                    <img src="./img/icons/iconFuego.svg" alt="populares" title="Populares">
+                    <p class="body-bold">Más Populares</p>
+                </div>
+                <div class="option">
+                    <img src="./img/icons/iconNuevo.svg" alt="nuevos">
+                    <p class="body-bold">Nuevos</p>
+                </div>
+                <div class="option">
+                    <img src="./img/icons/iconFuego.svg" alt="paravos">
+                    <p class="body-bold">Para Vos</p>
+                </div>
+                <div class="option">
+                    <img src="./img/icons/iconPromo.svg" alt="promo">
+                    <p class="body-bold">Promo</p>
+                </div>
+                <div class="option">
+                    <img src="./img/icons/iconGratis.svg" alt="gratis">
+                    <p class="body-bold">Gratis</p>
+                </div>
+                <div class="option">
+                    <img src="./img/icons/iconAventura.svg" alt="aventura">
+                    <p class="body-bold">Aventura</p>
+                </div>
+                <div class="option">
+                    <img src="./img/icons/iconAccion.svg" alt="accion">
+                    <p class="body-bold">Acción</p>
+                </div>
+                <div class="option">
+                    <img src="./img/icons/iconInfantil.svg" alt="infantiles">
+                    <p class="body-bold">Infantiles</p>
+                </div>
+                <div class="option">
+                    <img src="./img/icons/iconEstrategia.svg" alt="estrategia">
+                    <p class="body-bold">Estrategia</p>
+                </div>
+            </a>
+        </div>
+    </nav>
     <div class="breadcrumb">
-        <button class=" btn-main btn-main-active">armar path</button>
+        <button class=" btn-main btn-main-active">juegos >> estrategia >> 4 en línea</button>
     </div>
 
     <section class="game">
         <div class="col-1-2">
-                4 en linea
-        </div>       
+            4 en linea
+        </div>
         <div class="col-3">
             <div class="chat">
                 chat
             </div>
-            <div class="publi-small-coca">
-                <!-- <img src="./img/4enLinea/publicidadCoca.png" alt=""> -->
+            <div class="publi-small">
+                <img src="./img/4enLinea/publicidadCoca.png" alt="">
             </div>
         </div>
     </section>
 
     <section class="how-to-play">
         <div class="col-1">
-                <div class="rules">
-                    <p class="body-bold">Características</p><br>
-                    <p class="body">Clasificación: 8,6</p>
-                    <p class="body">Desarrollador: <span>XGame</span></p>
-                    <p class="body">Publicado en: marzo de 2023</p>
-                    <p class="body">Tecnología: HTML5</p>
-                    <p class="body">Plataformas:    Browser (desktop, mobile, tablet), iOS, Android</p>
-                    <p class="body"><span>Clasificación: Juegos >> Estrategia >> 4 En Linea</span></p> <br><br>
-                </div>
-                <div class="rules">
-                    <p class="body-bold">Como jugar</p><br>
-                    <p>El 4 en Línea pertenece a la familia de juegos 
-                        populares ya que sus sencillas reglas se pueden 
-                        aprender rápidamente ofreciendo un gran entretenimiento 
-                        durante un largo tiempo. El objetivo de este juego 
-                        consiste en colocar cuatro fichas en una fila contínua 
-                        vertical, horizontal o diagonalmente.</p> <br><br>
-                </div>
-                <div class="rules">
-                    <p class="body-bold">Calificaciones de este juego</p><br>
-                </div>
-                <div class="rating">
-                    acá va el div con las estrellas
-                </div>
+            <div class="rules">
+                <p class="body-bold">Características</p><br>
+                <p class="body">Clasificación: 8,6</p>
+                <p class="body">Desarrollador: <span>XGame</span></p>
+                <p class="body">Publicado en: marzo de 2023</p>
+                <p class="body">Tecnología: HTML5</p>
+                <p class="body">Plataformas: Browser (desktop, mobile, tablet), iOS, Android</p>
+                <p class="body"><span>Clasificación: Juegos >> Estrategia >> 4 En Linea</span></p> <br><br>
+            </div>
+            <div class="rules">
+                <p class="body-bold">Como jugar</p><br>
+                <p>El 4 en Línea pertenece a la familia de juegos
+                    populares ya que sus sencillas reglas se pueden
+                    aprender rápidamente ofreciendo un gran entretenimiento
+                    durante un largo tiempo. El objetivo de este juego
+                    consiste en colocar cuatro fichas en una fila contínua
+                    vertical, horizontal o diagonalmente.</p> <br><br>
+            </div>
+            <div class="rules">
+                <p class="body-bold">Calificaciones de este juego</p><br>
+            </div>
+            <div class="rating">
+                acá va el div con las estrellas
+            </div>
         </div>
 
         <article class="col-2">
-                <div class="video">
-                    <img src="./img/4enLinea/video1.png" alt="">
-                </div>
-                <div class="video">
-                    <img src="./img/4enLinea/video2.png" alt="">
-                </div>
-                <div class="video">
-                    <img src="./img/4enLinea/video3.png" alt="">
-                </div>
+            <div class="video">
+                <img src="./img/4enLinea/video1.png" alt="">
+            </div>
+            <div class="video">
+                <img src="./img/4enLinea/video2.png" alt="">
+            </div>
+            <div class="video">
+                <img src="./img/4enLinea/video3.png" alt="">
+            </div>
         </article>
         <aside class="col-3">
-            <aside class="publi-medium">
+            <aside class="publi-large">
                 <img src="./img/4enLinea/publicidadDespegar.png" alt="">
             </aside>
         </aside>
     </section>
 
     <section class="related-games">
-        <h4>Juegos relacionados</h4> 
+        <h4>Juegos relacionados</h4>
         <div class="juegos-relacionados">
             carrousel
         </div>
     </section>
-    <section class="comments">
-    <div class="left-bar">
-        seccion de comentarios
-    </div>
-    <div class="col-3">
-        <aside class="publi-medium">
-            <img src="./img/4enLinea/publicidadCorreo1.png" alt="">
-        </aside>
-        <aside class="publi-medium">
-            <img src="./img/4enLinea/publicidadCorreo2.png" alt="">
-        </aside>
-        <aside class="publi-large">
-            <img src="./img/4enLinea/publicidadJuegos.png" alt="">
-        </aside>
-        <aside class="publi-large">
-            <img src="./img/4enLinea/publicidadPoxipol.png" alt="">
-        </aside>
-    </div>
-</section>
+    <section class="comments-section">
+        <div class="col-1-2">
+            <div class="comment-title">
+                <h4>15 comentarios</h4>
+                <img src="./img/icons/comentarios.svg" alt="">
+            </div>
+            <div class="comment-container">
+                <div class="avatar orange"></div>
+                <div class="comment">
+                    <p class="body-bold">Eugenia Parodi <span>@eugeparodi - 2d</span></p>
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <p class="body">Me encanto!!! Super divertido, lo juego todos los dias. Lo recomiendo y lo
+                        compartiré con amigos...</p>
+                    <a class="tx-small btn-third" href="">Responder</a>
+                </div>
+            </div>
+            <div class="comment-container">
+                <div class="avatar">
+                    <img src="./img/avatars/mariavazquez.jpeg" alt="">
+                </div>
+                <div class="comment">
+                    <p class="body-bold">María Vazquez <span>@emvazquez - 2d</span></p>
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <p class="body">Me parecio super fácil de usar !, muy intuitiva la plataforma ! Ojalá hubiera más
+                        juegos gratis</p>
+                    <a class="tx-small btn-third" href="">Responder</a>
+                </div>
+            </div>
 
-        <section class="appstores">
-            botones google play y applestore
-        </section>
-        <footer>
-            footer
-        </footer>
+            <div class="comment-container">
+                <div class="avatar">
+                    <img src="./img/avatars/martinadiaz.jpeg" alt="">
+                </div>
+                <div class="comment">
+                    <p class="body-bold">Martina Díaz <span>@mar-diaz - 3d</span></p>
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <p class="body">Me aburrió un poco</p>
+                    <a class="tx-small btn-third" href="">Responder</a>
+                </div>
+            </div>
+
+            <div class="comment-container">
+                <div class="avatar">
+                    <img src="./img/avatars/victorialopez.jpeg" alt="">
+                </div>
+                <div class="comment">
+                    <div>
+                        <p class="body-bold">Victoria López <span>@vlopez28 - 4d</span></p>
+                    </div>
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <p class="body">Lo recomiendo y lo compartiré con amigos, creo que es un gran juego! linda
+                        plataforma....</p>
+                    <a class="tx-small btn-third" href="">Responder</a>
+                </div>
+            </div>
+            <div class="comment-container admin">
+                <div class="avatar">
+                </div>
+                <div class="comment">
+                    <p class="body-bold">Administrador <span>@admin - 3d</span></p>
+                    <p class="body">Muchas gracias por tu respuesta</p>
+                    <a class="tx-small btn-third" href="">Responder</a>
+                </div>
+            </div>
+
+            <div class="comment-container">
+                <div class="avatar">
+                </div>
+                <div class="comment">
+                    <p class="body-bold">Juan Martinez <span>@jmartinez% - 5d</span></p>
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <p class="body">Me gustó!!! </p>
+                    <a class="tx-small btn-third" href="">Responder</a>
+                </div>
+            </div>
+
+            <div class="comment-container">
+                <div class="avatar green">
+                </div>
+                <div class="comment">
+                    <div>
+                        <p class="body-bold">Pedro Ledesma <span>@pedro3 - 5d</span></p>
+                    </div>
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <p class="body">Lo recomiendo, siempre juego con amigos, yl les gano.... jejeje</p>
+                    <a class="tx-small btn-third" href="">Responder</a>
+                </div>
+            </div>
+            <div class="comment-container admin">
+                <div class="avatar">
+                </div>
+                <div class="comment">
+                    <p class="body-bold">Administrador <span>@admin - 7d</span></p>
+                    <p class="body">Muchas gracias por tu respuesta</p>
+                    <a class="tx-small btn-third" href="">Responder</a>
+                </div>
+            </div>
+
+            <div class="comment-container">
+                <div class="avatar">
+                    <img src="./img/avatars/carloslopez.jpeg" alt="">
+                </div>
+                <div class="comment">
+                    <p class="body-bold">Carlos López <span>@clopez - 7d</span></p>
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <p class="body">No me gustó</p> 
+                    <a class="tx-small btn-third" href="">Responder</a>
+                </div>
+            </div>
+            <br><br><br><br>
+            <a class="tx-small btn-third" href="">Ver más</a>
+
+            <section class="appstores">
+                <img src="./img/descargaAppStore.png" alt="apple store">
+                <img src="./img/descargaGooglePlay.png" alt="google play">
+            </section>
+        
+        </div>
+
+        <div class="col-3">
+            <aside class="publi-medium">
+                <img src="./img/4enLinea/publicidadCorreo1.png" alt="publicidad">
+            </aside>
+            <aside class="publi-medium">
+                <img src="./img/4enLinea/publicidadCorreo2.png" alt="publicidad">
+            </aside>
+            <aside class="publi-large">
+                <img src="./img/4enLinea/publicidadJuegos.png" alt="publicidad">
+            </aside>
+            <aside class="publi-large">
+                <img src="./img/4enLinea/publicidadPoxipol.png" alt="publicidad">
+            </aside>
+        </div>
+    </section>
+
+    <footer>
+        <div class="payment">
+            <img src="./img/Home/svg/debin.svg" alt="">
+            <img src="./img/Home/svg/trasnferencia.svg" alt="">
+            <img src="./img/Home/svg/mp.webp" alt="">
+            <img src="./img/Home/svg/visa.svg" alt="">
+            <img src="./img/Home/svg/mastercard.svg" alt="">
+            <img src="./img/Home/svg/bank trasnfer.svg" alt="">
+            <img src="./img/Home/svg/astropay.svg" alt="">
+        </div>
+        <div class="foot-info">
+            <div class="footer-col">
+                <div class="title">
+                    <h3>General</h3>
+                </div>
+                <div class="link">
+                    <p>Quienes Somos</p>
+                    <p>FAQs</p>
+                    <p>Contáctanos</p>
+                    <p>Trabaja con Nosotros</p>
+                </div>
+            </div>
+            <div class="footer-col">
+            </div>
+            <div class="footer-col">
+            </div>
+        </div>
+        <div class="copyright">
+            <p class="body-bold">2023© mundoGaming.com Todos los derechos reservados</p>
+            <img class="logo-header" src="./img/Home/logoVioletaOscuro.png" alt="logo">
+        </div>
+
+    </footer>
 </body>
+
 </html>
