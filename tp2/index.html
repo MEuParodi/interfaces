@@ -20,51 +20,73 @@
         </div>
         <div class="container-header">
             <div class="container-search"> 
+                <img src="./img/lupaNegra.png" alt="search">
                 <input class="input-search" type="text" placeholder="Busca tu juego">
-            
             </div>
             <div class="container-btn-header">
-                <button class="btn-buy"></button>
-                <button class="btn-user-login"></button>
+                <button id="btn-buy" class="btn-buy"></button>
+                <button id="btn-user" class="btn-user-login"></button>
             </div>
         </div>
         
     </header>
     <nav class="menu-side" id="menu-side">
-        <div class="side-options">
+        <div class="side-options" >
+            <a id="menu-side-input-search" href="#">
+                <div class="option option-search">
+                    <img src="./img/lupaNegra.png" alt="search">
+                    <input type="text" placeholder="Busca tu juego">
+                </div>
+            </a>
             <a href="#">
-                <div class="option">
+                 <div class="option">
                     <img src="./img/icons/iconFuego.svg" alt="populares" title="Populares">
                     <p class="body-bold">Más Populares</p>
                 </div>
+            </a>
+            <a href="#">
                 <div class="option">
                     <img src="./img/icons/iconNuevo.svg" alt="nuevos">
                     <p class="body-bold">Nuevos</p>
                 </div>
+            </a>
+            <a href="#">
                 <div class="option">
-                    <img src="./img/icons/iconFuego.svg" alt="paravos" >
+                    <img src="./img/icons/iconParaVos.png" alt="paravos" >
                     <p class="body-bold">Para Vos</p>
                 </div>
+            </a>
+            <a href="#">
                 <div class="option">
                     <img src="./img/icons/iconPromo.svg" alt="promo" >
                     <p class="body-bold">Promo</p>
                 </div>
+            </a>
+            <a href="#">
                 <div class="option">
                     <img src="./img/icons/iconGratis.svg" alt="gratis" >
                     <p class="body-bold">Gratis</p>
                 </div>
+            </a>
+            <a href="#">
                 <div class="option">
                     <img src="./img/icons/iconAventura.svg" alt="aventura" >
                     <p class="body-bold">Aventura</p>
                 </div>
+            </a>
+            <a href="#">
                 <div class="option">
                     <img src="./img/icons/iconAccion.svg" alt="accion" >
                     <p class="body-bold">Acción</p>
                 </div>
+            </a>
+            <a href="#">
                 <div class="option">
                     <img src="./img/icons/iconInfantil.svg" alt="infantiles" >
                     <p class="body-bold">Infantiles</p>
                 </div>
+            </a>
+            <a href="#">
                 <div class="option">
                     <img src="./img/icons/iconEstrategia.svg" alt="estrategia" >
                     <p class="body-bold">Estrategia</p>
@@ -72,6 +94,87 @@
             </a>
         </div>
     </nav>
+    <nav id="menu-user" class="menu-user">
+        <div class="side-options">
+            <p class="body-bold name-user">Hola Ema!</p>
+            <a href="#">
+                 <div class="option">
+                    <img src="./img/icons/iconUser.svg" alt="avatar">
+                    <p class="body-bold">Mi cuenta</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <img src="./img/carrito.svg" alt="carrito">
+                    <p class="body-bold">Mis Compras</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <img src="./img/icons/iconCorazon.svg" alt="mis juegos" >
+                    <p class="body-bold">Mis Juegos</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <img src="./img/icons/iconCerrarSesion.svg" alt="cerrar sesion" >
+                    <p class="body-bold">Cerrar Sesión</p>
+                </div>
+            </a>
+        </div>
+    </nav>
+    <section  class="cart">
+        <div id="cart" class="container-cart">
+            <div class="cart-title">
+                <p class="body-bold">Tu compra</p>
+            </div>
+            <div class="cart-body">
+                <div class="cart-container-buys-discount">
+                    <div class="cart-buys">
+                    <div class="cart-item">
+                        <p class="body2">Stumble Guys </p>
+                        <div>
+                            <p class="body2">$3599</p>
+                            <img src="./img/icons/iconPapelera.svg" alt="papelera">
+                        </div>     
+                    </div>
+                    <div class="cart-item">
+                        <p class="body2">Fall Guys </p>
+                        <div>
+                            <p class="body2">$3599</p>
+                            <img src="./img/icons/iconPapelera.svg" alt="papelera">
+                        </div>     
+                    </div>
+                </div>
+                <div class="cart-discount">
+                    <p class="tx-small">Tenés tu codigo de descuento?</p>
+                    <button class="btn-main-inactive">Ingresá tu código</button>
+                </div>
+                </div>
+                <div class="cart-container-prices-btns">
+                    <div >
+                        <div class="cart-item">
+                            <p class="body2">Subtotal</p>
+                            <p class="body2">$7198</p>
+                        </div>
+                        <div class="cart-item">
+                            <p class="body2">Descuento</p>
+                            <p class="body2">$0</p>
+                        </div>
+                        <div class="cart-item">
+                            <h4>Total</h4>
+                            <h4>$7198</h4>
+                        </div>
+                    </div>
+                    <div class="cart-btns">
+                        <button class="btn-main-active">Finalizar Compra</button>
+                        <button class="btn-main-inactive">Continuar Comprando</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
     <section id="ppal-carrousel">
         <button class="btn-big"><h4>GRATIS Sólo Por Hoy</h4></button>
         <div class="rect-blured"></div>
