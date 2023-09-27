@@ -6,7 +6,8 @@
     line-height: 140%;
 }
 
-img {
+.game img, .how-to-play img, .related-games img, 
+.comments-section img {
     max-width: 100%; 
     background-size: cover;
     height: 100%;
