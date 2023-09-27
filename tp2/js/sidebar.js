@@ -15,20 +15,20 @@ btnUser.addEventListener('click', function() {
 });
 
 btnOpen.addEventListener('click', function() {
-    menuSide.classList.toggle('menu-side-hidden');
+    menuSide.classList.toggle('open');
     menuSide.classList.toggle('menu-side-move');
 
 });
 
 if(window.innerWidth < 400) {
-    menuSide.classList.toggle('menu-side-hidden');
+    menuSide.classList.toggle('close');
 }
 
 window.addEventListener('resize', function() {
     if(window.innerWidth < 400) {
         
-        menuSide.classList.toggle('menu-side-hidden');
+        menuSide.classList.toggle('close');
     } else {
-        menuSide.classList.remove('menu-side-hidden');
+        menuSide.classList.remove('close');
     }
 });
