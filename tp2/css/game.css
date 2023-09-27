@@ -6,8 +6,7 @@
     line-height: 140%;
 }
 
-.game img, .how-to-play img, .related-games img, 
-.comments-section img {
+.game img, .how-to-play img, .related-games img, .comments-section img {
     max-width: 100%; 
     background-size: cover;
     height: 100%;
@@ -23,6 +22,7 @@
 .col-2 {
     width: 25%; 
     padding: 10px;
+    padding-right: 0;
     /* padding-left: 10px; */
     /* border: solid red; */
     display: flex;
@@ -34,9 +34,14 @@
 .col-3 {
     width: 25%;
     background: var(--Primario-S2, #681D88);
-    /* padding-left: 10px;
-    padding-right: 10px; */
     padding: 10px;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow-y: hidden;
+
 }
 
 .col-1-2 {
@@ -77,28 +82,47 @@
     margin-bottom: 10px;
 }
 
+.video {
+    max-width: 100%;
+    /* position: relative;
+    width: 100%;
+    height: 30%; */
+    /* padding-bottom: 56.25%;  */
+    /* Proporción 16:9 para videos de YouTube (315 / 560) */
+  }
+  
+  /* .video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  } */
+
+
 /*****PUBLICIDADES******/
 .publi-small {
-    height: 250px;
-    padding-bottom: 10px;
+    /* height: 250px; */
+    /* padding-bottom: 10px; */
+    /* aspect-ratio: 1/1; */
 }
 
 .publi-medium {
-    height: 340px;
+    /* height: 340px; */
     padding-bottom: 10px;
 }
 
 .publi-large {
-    height: 520px;
+    /* height: 520px; */
     padding-bottom: 10px;
 }
 /************************/
 
 .how-to-play{
-    padding-top: 10px;
-    padding-bottom: 10px;
+    /* padding-top: 10px;
+    padding-bottom: 10px; */
     width: 100%; 
-    height: 550px;
+    /* height: 550px; */
     padding-left: 90px; 
     background: var(--Primario-S2, #681D88);
     color: white;
@@ -183,12 +207,12 @@
     background-color: #a7ef2b;
 }
 
-.avatar .orange {
+.avatar.orange {
     background-color: orange;
 }
 
-.avatar .green {
-    background-color: #a7ef2b;
+.avatar.purple {
+    background-color: var(--Primario, #8B27B5);
 }
 
 
@@ -233,3 +257,5 @@
     margin: 20px;
   }
 
+   
+}
