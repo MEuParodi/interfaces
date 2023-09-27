@@ -571,12 +571,12 @@ button{
     display: none;
     width: 270px;
     height: 85vh;
+    padding-bottom: 20px;
     background-color: var(--blanco);
     position: fixed;
     top: 70px;
     right: 0;
     z-index: 300;
-    
 }
 
 .cart-title{
@@ -590,7 +590,7 @@ button{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 20px;
+    padding: 20px 25px;
 }
 .cart-body p.tx-small, .cart-body p.body2 {
     font-weight: 400;
@@ -600,12 +600,27 @@ button{
 }
 
 .cart-item{
+    margin: 5px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 .cart-item h4{
     font-size: 16px;
+}
+.cart-item-img{
+    background-image: url("../img/Home/stumble.png");
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    background-size: cover;
+}
+.item-img-2{
+    background-image: url("../img/Home/FallGuys.webp");
+}
+
+.cart-discount p{
+    margin-bottom: 5px;
 }
 
 .cart-buy img{
@@ -634,7 +649,7 @@ button{
     width: 100%;
     border-radius: 10px;
     border: 1px solid var(--primario-s1);
-    height: 35px;
+    height: 30px;
     color: var(--primario);
     font-size: 1;
 }
@@ -1068,11 +1083,31 @@ button{
 }
 /*============carrito de compras===============*/
 .container-cart{
+    width: 330px;
     top: 100px;
 }
 .cart-item h4{
     font-size: 18px;
 }
+.cart-discount .btn-main-inactive, .cart-btns .btn-main-inactive, .cart-btns .btn-main-active{
+    height: 40px;
+    font-size: 16px;
+}
+
+
+.cart-item p{
+    font-size: 16px;
+}
+
+.cart-item h4{
+    font-size: 18px;
+}
+
+.cart-item-img{
+    width: 35px;
+    height: 35px;
+}
+
 /* =============Principal Carrousel  ==============*/
 #ppal-carrousel {
     width: 100%;
