@@ -20,59 +20,111 @@
             </figure>
         </div>
         <div class="container-header">
-            <div class="container-search">
+            <div class="container-search"> 
+                <img src="./img/lupaNegra.png" alt="search">
                 <input class="input-search" type="text" placeholder="Busca tu juego">
-
             </div>
             <div class="container-btn-header">
-                <button class="btn-buy"></button>
-                <button class="btn-user-login"></button>
+                <button id="btn-buy" class="btn-buy"></button>
+                <button id="btn-user" class="btn-user-login"></button>
             </div>
         </div>
-
+        
     </header>
     <nav class="menu-side" id="menu-side">
-        <div class="side-options">
+        <div class="side-options" >
+            <a id="menu-side-input-search" href="#">
+                <div class="option option-search">
+                    <img src="./img/lupaNegra.png" alt="search">
+                    <input type="text" placeholder="Busca tu juego">
+                </div>
+            </a>
             <a href="#">
-                <div class="option">
+                 <div class="option">
                     <img src="./img/icons/iconFuego.svg" alt="populares" title="Populares">
                     <p class="body-bold">Más Populares</p>
                 </div>
+            </a>
+            <a href="#">
                 <div class="option">
                     <img src="./img/icons/iconNuevo.svg" alt="nuevos">
                     <p class="body-bold">Nuevos</p>
                 </div>
+            </a>
+            <a href="#">
                 <div class="option">
-                    <img src="./img/icons/iconFuego.svg" alt="paravos">
+                    <img src="./img/icons/iconParaVos.png" alt="paravos" >
                     <p class="body-bold">Para Vos</p>
                 </div>
+            </a>
+            <a href="#">
                 <div class="option">
-                    <img src="./img/icons/iconPromo.svg" alt="promo">
+                    <img src="./img/icons/iconPromo.svg" alt="promo" >
                     <p class="body-bold">Promo</p>
                 </div>
+            </a>
+            <a href="#">
                 <div class="option">
-                    <img src="./img/icons/iconGratis.svg" alt="gratis">
+                    <img src="./img/icons/iconGratis.svg" alt="gratis" >
                     <p class="body-bold">Gratis</p>
                 </div>
+            </a>
+            <a href="#">
                 <div class="option">
-                    <img src="./img/icons/iconAventura.svg" alt="aventura">
+                    <img src="./img/icons/iconAventura.svg" alt="aventura" >
                     <p class="body-bold">Aventura</p>
                 </div>
+            </a>
+            <a href="#">
                 <div class="option">
-                    <img src="./img/icons/iconAccion.svg" alt="accion">
+                    <img src="./img/icons/iconAccion.svg" alt="accion" >
                     <p class="body-bold">Acción</p>
                 </div>
+            </a>
+            <a href="#">
                 <div class="option">
-                    <img src="./img/icons/iconInfantil.svg" alt="infantiles">
+                    <img src="./img/icons/iconInfantil.svg" alt="infantiles" >
                     <p class="body-bold">Infantiles</p>
                 </div>
+            </a>
+            <a href="#">
                 <div class="option">
-                    <img src="./img/icons/iconEstrategia.svg" alt="estrategia">
+                    <img src="./img/icons/iconEstrategia.svg" alt="estrategia" >
                     <p class="body-bold">Estrategia</p>
                 </div>
             </a>
         </div>
     </nav>
+    <nav id="menu-user" class="menu-user">
+        <div class="side-options">
+            <p class="body-bold name-user">Hola Ema!</p>
+            <a href="#">
+                 <div class="option">
+                    <img src="./img/icons/iconUser.svg" alt="avatar">
+                    <p class="body-bold">Mi cuenta</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <img src="./img/carrito.svg" alt="carrito">
+                    <p class="body-bold">Mis Compras</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <img src="./img/icons/iconCorazon.svg" alt="mis juegos" >
+                    <p class="body-bold">Mis Juegos</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <img src="./img/icons/iconCerrarSesion.svg" alt="cerrar sesion" >
+                    <p class="body-bold">Cerrar Sesión</p>
+                </div>
+            </a>
+        </div>
+    </nav>
+
     <div class="breadcrumb">
         <button class=" btn-main btn-main-active">juegos >> estrategia >> 4 en línea</button>
     </div>
@@ -140,6 +192,9 @@
         <div class="juegos-relacionados">
             carrousel
         </div>
+    </section>
+    <section>
+        caja de comentarios box
     </section>
     <section class="comments-section">
         <div class="col-1-2">
