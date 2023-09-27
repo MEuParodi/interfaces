@@ -467,10 +467,6 @@ button{
     display: none;
 }
 
-.close {
-    display: none;
-}
-
 .menu-user .name-user {
     color: var(--blanco);
     text-align: center;
@@ -479,48 +475,20 @@ button{
 
 .menu-side{
     width: 60px;
-    height: 100%;
+    height: 90vh;
     background-color: var(--primario);
     position: fixed;
     top: 60px;
     left: 0;
     color: var(--blanco);
     z-index: 300;
-    overflow: hidden;
     overflow-y: scroll;
-    /* border-right: 20px solid transparent; */
     transition: all 20ms ease;
-}
-
-/* ver ocultar scroll para chrome, safari y opera */
-.menu-side::-webkit-scrollbar{
-    display: none;
-}
-/* ocultar scroll para IE edge firefox */
-.menu-side{
-    -ms-overflow-style: none;
-    scrollbar-width: none;
 }
 
 .side-options {
     padding: 20px 10px;
 }
-
-.side-options .option-search{
-    background-color: var(--primario-l2);
-}
-
-.option-search input{
-    z-index: 1;
-    width: 100%;
-    outline: none;
-    border: none;
-    background-color: var(--primario-l2);
-}
-.option-search input:hover{
-    background-color: var(--primario-s3);
-}
-
 
 .side-options a{
     color: var(--blanco);
@@ -556,15 +524,35 @@ button{
     background-color: var(--primario-s3);
 }
 
+.side-options .option-search{
+    background-color: var(--primario-l2);
+}
+
+.option-search input{
+    z-index: 1;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: var(--primario-l2);
+}
+
+.side-options .option-search input {
+    height: 40px;
+}
 .menu-side-move{
     width: 200px;
     transition: all 300ms;
 }
-.menu-side-hidden{
+
+.close {
+    display: none;
+}
+
+/* .menu-side-hidden{
     width: 80px;
     left: -80px;
     transition: all 300ms;
-}
+} */
 /*================carrito de compras===========*/
 
 .container-cart{
@@ -577,6 +565,7 @@ button{
     top: 70px;
     right: 0;
     z-index: 300;
+    overflow-y: scroll;
 }
 
 .cart-title{
@@ -586,7 +575,7 @@ button{
     text-align: center;
 }
 .cart-body{
-    height: 90%;
+    height: 95%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -666,6 +655,17 @@ button{
     margin: 10px 0;
 
 }
+/*========configuracion scroll vertical=========*/
+
+/* ver ocultar scroll para chrome, safari y opera */
+.menu-side::-webkit-scrollbar, .container-cart::-webkit-scrollbar{
+    display: none;
+}
+/* ocultar scroll para IE edge firefox */
+.menu-side, .container-cart{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
 
 /* =============Principal Carrousel MObile ==============*/
 #ppal-carrousel {
@@ -679,7 +679,6 @@ button{
     /* max-width: 800px; */
     width: 100%;
     height: 100%;
-
 }
 
 #ppal-carrousel ul.slider li {
@@ -756,6 +755,31 @@ button{
     margin-left: 50%;
     transform: translate(-50%,-50%);
 }
+/*=========botonera de categorias=========*/
+.container-button-box{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin:10px;
+    /* margin-left: 70px;
+    margin-right: 10px; */
+    gap: 5px;
+    padding: 5px;
+    overflow-x: scroll;
+}
+
+.btn-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 135px;
+    height: 35px;
+    border-radius: 10px;
+    border: 2px solid var(--primario);
+    background: var(--primario-l2);
+    color: var(--primario);
+    font-size: 12px;
+}
 
 /* =============Card ==============*/
 .carrousel{
@@ -766,16 +790,16 @@ button{
 }
 /*card comun sin tag*/
 .card {
-    width: 272px;
-    height: 310px;
+    width: 190px;
+    height: 240px;
     background-color: var(--blanco);
-    margin: auto;
-    margin-top: 130px;
+    margin: 20px;
     align-items: center;
     border-radius: 10px;
-    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.25);
     position: relative;
 }
+
 /*card con tag por default es gratis ver nombre de la clase tag tal vez es muy largo*/
 .card.tag::after{
     align-items: center;
@@ -783,10 +807,10 @@ button{
     content: "";
     text-align: center;
     color: var(--blanco);
-    font-size: 12px;
-    letter-spacing: 1.8px;
-    width: 90px;
-    height: 25px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    width: 75px;
+    height: 20px;
     border-radius: 2px;
     border-bottom-left-radius: 0px;
     background-color: var(--exito-color);
@@ -797,8 +821,6 @@ button{
     display: none;
 }
 
-
-
 .card.tag::before {
     content: "";
     width: 12.6px;
@@ -807,7 +829,7 @@ button{
     background-color: var(--exito-color);
     position: absolute;
     left: -6.1px; /*ver xq para q quede bien use estas medidad pero son raras con coma*/
-    top: 44.8px;
+    top: 39.8px;
     display: none;
 }
 /*card con tag gratis*/
@@ -848,77 +870,89 @@ button{
     background-color: var(--acento);
 }
 .card-img {
-    width: 272px;
-    height: 165px;
+    width: 190px;
+    height: 120px;
     border-radius: 10px 10px 0px 0px;
     object-fit: cover;
 }
+.card figure{
+    height: 120px;
+}
+
 .card-body{
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    margin: 5px;
-    margin-left: 18px;
+    margin: 5px 10px;
+    
 }
+.card-body h4{
+    font-size: 18px;
+    font-weight: 600;
+}
+.card-body p.tx-small{
+    font-weight: 400;
+    color: var(--gris-1);
+}
+
 .card-header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-direction: row;
-    margin: 5px;
-
 }
+
 /*prop para truncar el texto*/
-.title-card{
-    width: 162px;
+.card-title {
+    width: 130px;
+    font-size: 15px;
     color: var(--color-black);
-    margin-top: 5px;
     margin-left: 2px;
     white-space: nowrap; /*elimina saltos de linea*/
     overflow: hidden; /*elimina el texto q se sale del contenedor*/
     text-overflow: ellipsis; /*agrega puntos suspensivos*/
 }
+
 .card-price{
     color: var(--acento);
     text-align: right;
 }
 .card-description{
-    width: 228px;
+    width: 170px;
     height: 40px;
+    margin: 5px 0;
     color: var(--gris-1);
-    margin: 0px 5px 10px 5px;
-    display: -webkit-box;/*para truncar el texto con mas de una linea*/
+    display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2; /*cantidad de lineas*/
-    overflow: hidden; /*elimina el texto q se sale del contenedor*/
-
+    -webkit-line-clamp: 2; 
+    overflow: hidden; 
 }
+
 .card-btns{
-    width: 228px;
+    width: 170px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-direction: row;
     margin: 5px;
-    margin-left: 20px;
+    margin-left: 10px;
 }
+
 .card-btn-play {
-    width: 100px;
+    width: 80px;
     height: 25px;
     border-radius: 10px;
     border: 1px solid var(--blanco);
     background: var(--primario);
     color: var(--blanco);
+    font-weight: 400;
 }
+
 .card-btn-play:hover{
     background-color: var(--primario-s3);
     transition: 0.5s ease;
 }
-/*esta clase borrar?
-.btn-buy{
-    background-image: url("../img/carrito.svg");
-    background-repeat: no-repeat;
-    border: none;
-    background-color: var(--primario);
-}*/
+
 .card-btn-buy {
     background-image: url("../img/carrito.svg");
     background-repeat: no-repeat;
@@ -930,9 +964,8 @@ button{
     height: 25px;
     border-radius: 10px;
     border: 1px solid var(--acento);
-    margin-right: 10px;
-
 }
+
 .open {
     display: block;
 }
@@ -1085,6 +1118,7 @@ button{
 .container-cart{
     width: 330px;
     top: 100px;
+    
 }
 .cart-item h4{
     font-size: 18px;
@@ -1106,6 +1140,12 @@ button{
 .cart-item-img{
     width: 35px;
     height: 35px;
+}
+.cart-title{
+    height: 13%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 /* =============Principal Carrousel  ==============*/
@@ -1134,6 +1174,11 @@ button{
 .menu {
     bottom:7px;
 }
+/*===========botonera de categorias========*/
+.container-button-box{
+    margin: 20px 10px 10px 70px;
+
+}
 
 /*==============carrousel===================*/
 
@@ -1144,6 +1189,68 @@ button{
     gap: 20px;
 }
 
+/*==========cards===================*/
+
+.card {
+    width: 272px;
+    height: 310px;
+    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
+}
+
+.card.tag::after{
+    font-size: 12px;
+    letter-spacing: 1.8px;
+    width: 90px;
+    height: 25px;
+}
+
+.card.tag::before {
+    top: 44.8px;
+}
+
+.card figure {
+    height: 165px;
+}
+
+.card-img {
+    width: 272px;
+    height: 165px;
+}
+
+.card-header{
+    margin: 5px;
+}
+
+.card-body{
+    margin-left: 18px;
+    margin-left: 8px;
+}
+
+.card-title{
+    width: 162px;
+     margin-top: 5px;
+}
+
+.card-description{
+    width: 228px;
+    height: 40px;
+    padding-right: 5px; 
+    margin: 0px 5px 10px 5px;
+}
+
+.card-btns{
+    width: 228px;
+}
+
+.card-btn-buy {
+    width: 40px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+.card-btn-play {
+    width: 100px;
+}
 
 /*============== footer ===================*/
 .payment {
