@@ -53,11 +53,12 @@ h2 {
     font-size: 20px;
 }
 h3{
-    font-size: 15px;
+    font-size: 19px;
+    font-weight: 400;
 }
 h4{
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 700;
 }
 .body-bold {
     font-size: 14px;
@@ -324,13 +325,6 @@ button{
     cursor: pointer;
 }
 
-.carrousel{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 /* =============Header Home Mobile ==============*/
 #header-home{
     width: 100%;
@@ -493,7 +487,7 @@ button{
 }
 
 .side-options {
-    padding: 20px 10px;
+    padding: 20px 10px 10px 10px;
 }
 
 .side-options a{
@@ -761,17 +755,21 @@ button{
     transform: translate(-50%,-50%);
 }
 /*=========botonera de categorias=========*/
+.button-box{
+    overflow: hidden;
+}
+
 .container-button-box{
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     margin:10px;
+    overflow: hidden;
     /* margin-left: 70px;
     margin-right: 10px; */
     gap: 5px;
     padding: 5px;
-   
-    overflow: hidden;
+    
 }
 
 .btn-box {
@@ -789,21 +787,94 @@ button{
 
 /* =============Card ==============*/
 .carrousel{
-    display: flex;
-    flex-wrap: nowrap;
-    overflow: hidden;
-    gap: 20px;
+    position: relative;
+    margin: 30px 0 30px 0;
 }
+.carrousel .carrousel-cards{
+    width: 97%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    padding: 5px;
+    padding-left: 10px;
+    gap: 5px;
+    /* overflow-x: scroll;
+    scroll-snap-type: mandatory; */
+}
+
+.carrousel .control{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    object-fit: cover;
+    padding: 10px;
+    z-index: 100;
+}
+
+.carrousel .prev{
+    left: 15px;
+    top: 43%;
+    transform: rotate(180deg);
+}
+
+.carrousel .next{
+    right: 30px;
+    top: 49%;
+    transform: translate(50%, -50%);
+}
+
+.carrousel-title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    margin-left: 40px;
+    color: var(--negro);
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.view-all{
+    color: var(--primario);
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+.carrousel-title .view-all:hover{
+    color: var(--primario-s1);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/*==========carrusel de ofertas=========*/
+.offers{
+    height: 400px;
+    width: 90%;
+    background-color: var(--primario-l1);
+}
+
+/*=======card=======================*/
 /*card comun sin tag*/
 .card {
     width: 190px;
     height: 240px;
     background-color: var(--blanco);
-    margin: 20px;
+    margin: 5px;
     align-items: center;
     border-radius: 10px;
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.25);
     position: relative;
+    transition: all 200ms ease;
+}
+
+.card:hover{
+    /* transform: translate(0px, -10px); */
+
+    /* transform: rotateZ(5deg); */
+    transform: scale(1.03);
+    box-shadow: 3px 3px 0 0 var(--secundario-s1);
 }
 
 /*card con tag por default es gratis ver nombre de la clase tag tal vez es muy largo*/
@@ -843,6 +914,7 @@ button{
 .exclusive.tag::after, .exclusive.tag::before, .nuevo.tag::after, .nuevo.tag::before {
     display: flex;
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.8);
+    
 }
 .gratis.tag::after {
     content: "GRATIS";
@@ -898,6 +970,9 @@ button{
     color: var(--gris-1);
 }
 
+.card-body p.body-bold {
+    font-weight: 700;
+}
 .card-header{
     display: flex;
     justify-content: space-between;
@@ -910,6 +985,7 @@ button{
     width: 130px;
     font-size: 15px;
     color: var(--color-black);
+    margin-right: 2px;
     margin-left: 2px;
     white-space: nowrap; /*elimina saltos de linea*/
     overflow: hidden; /*elimina el texto q se sale del contenedor*/
@@ -922,7 +998,7 @@ button{
 }
 .card-description{
     width: 170px;
-    height: 40px;
+    height: 32px;
     margin: 5px 0;
     color: var(--gris-1);
     display: -webkit-box;
@@ -937,8 +1013,8 @@ button{
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    margin: 5px;
-    margin-left: 10px;
+    margin: 6px 5px 5px 10px;
+    
 }
 
 .card-btn-play {
@@ -1069,12 +1145,15 @@ button{
     }
     
     #header-home{
-        height: 100px; 
+        height: 80px; 
     }
 
+    .figure{
+        height: 80px;
+    }
     .logo-header{
-        width: 120px; 
-        height: 110px;  
+        width: 90px; 
+        height: 90px;  
     }
    
     .input-search{
@@ -1096,7 +1175,7 @@ button{
     }
 /*===============sidebar==========*/
 .menu-side{
-    top: 90px;
+    top: 75px;
 }
 
 .menu-side-move{
@@ -1108,7 +1187,7 @@ button{
 .menu-user{
     padding-top: 10px;
     width: 250px;
-    top: 95px;
+    top: 75px;
 }
 
 #menu-side-input-search{
@@ -1120,7 +1199,7 @@ button{
 /*============carrito de compras===============*/
 .container-cart{
     width: 330px;
-    top: 100px;
+    top: 80px;
     
 }
 .cart-item h4{
@@ -1134,10 +1213,6 @@ button{
 
 .cart-item p{
     font-size: 16px;
-}
-
-.cart-item h4{
-    font-size: 18px;
 }
 
 .cart-item-img{
@@ -1156,7 +1231,7 @@ button{
     width: 100%;
     height: 570px;
     position: relative;
-    margin-top: 100px;
+    margin-top: 80px;
 }
 
 .rect-blured {
@@ -1179,18 +1254,42 @@ button{
 }
 /*===========botonera de categorias========*/
 .container-button-box{
-    margin: 20px 10px 10px 70px;
-
+    justify-content: space-evenly;
+    margin: 20px 10px 20px 80px;
+    width: 90%;
+    padding: 0;
+    overflow: hidden;
+}
+.btn-box{
+    font-size: 11px;
 }
 
 /*==============carrousel===================*/
-
+/* 
 .carrousel{
     display: flex;
     flex-wrap: nowrap;
     overflow: scroll;
     gap: 20px;
+} */
+.carrousel{
+    margin-left: 70px;
+    
 }
+
+.carrousel .carrousel-cards{
+    width: 98%;
+    padding-bottom: 30px;
+    gap: 10px;
+}
+.carrousel .next{
+    right: 45px;
+    top: 51%;
+}
+.carrousel .prev {
+    top: 46%;
+}
+
 
 /*==========cards===================*/
 
@@ -1198,6 +1297,14 @@ button{
     width: 272px;
     height: 310px;
     box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
+}
+
+.card:hover{
+    /* transform: translate(0px, -10px); */
+
+    /* transform: rotateZ(5deg); */
+    transform: scale(1.05);
+    box-shadow: 5px 5px 0 0 var(--secundario-s1);
 }
 
 .card.tag::after{
@@ -1222,6 +1329,7 @@ button{
 
 .card-header{
     margin: 5px;
+    align-items: normal;
 }
 
 .card-body{
