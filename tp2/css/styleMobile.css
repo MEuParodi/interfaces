@@ -916,6 +916,8 @@ button{
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.8);
     
 }
+
+
 .gratis.tag::after {
     content: "GRATIS";
     background-color: var(--exito-color);
@@ -951,7 +953,6 @@ button{
     width: 190px;
     height: 120px;
     border-radius: 10px 10px 0px 0px;
-    object-fit: cover;
 }
 .card figure{
     height: 120px;
@@ -980,6 +981,12 @@ button{
     flex-direction: row;
 }
 
+.card-header p.body1{
+    text-decoration: line-through;
+    color: var(--error-color);
+
+}
+
 /*prop para truncar el texto*/
 .card-title {
     width: 130px;
@@ -995,6 +1002,7 @@ button{
 .card-price{
     color: var(--acento);
     text-align: right;
+    position: relative;
 }
 .card-description{
     width: 170px;
@@ -1049,7 +1057,16 @@ button{
     display: block;
 }
 /*=============================*/
+.appstores {
+    margin-left: 80px;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+  }
 
+  .appstores img {
+    margin: 20px;
+  }
 /* =============Footer=============*/
 
 @media screen and (min-width: 400px) {
