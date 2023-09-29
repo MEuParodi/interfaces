@@ -1056,11 +1056,89 @@ button{
 .open {
     display: block;
 }
-/*=============================*/
 
-/* =============Footer=============*/
+/*============== footer Mobile===================*/
+.desktop{
+    display: none;
+}
+
+.mobile .payment {
+    width: 100%;
+    height: 50px;
+    background-color: var(--Primario-S1, #6F1F91);
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.mobile .payment img {
+    width: 50px;
+    height: 25px;
+}
+
+.mobile .foot-info {
+    width: 100%;
+    height: 100px;
+    background-color: var(--Primario, #8B27B5);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.mobile .copyright {
+    background-color: var(--Primario, #8b27b5);
+    color: var(--blanco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mobile .menu-footer-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    width: 30%;
+
+}
+.mobile .foot-info select {
+    background-color: var(--Primario, #8b27b5);
+    color: var(--blanco);
+    border: var(--blanco) 1px;
+    width: 100%;
+    font-size: 12px;
+}
+
+.mobile .foot-info select option {
+    font-size: 10px;
+
+}
+
+.mobile .copyright p {
+    font-size: 10px;
+}
+
+.mobile .footer-img{
+    width: 80px;
+    height: 80px;
+    margin-right: 30px;
+}
+
+
+
+
+/*======================================media query=======================================*/
+
 
 @media screen and (min-width: 400px) {
+
+    .mobile {
+        display: none;
+    }
+    
+    .desktop{
+        display: block;
+    }
+
     h1, h2, h3, h4, .tx-small, .body-bold, .body1, .body2, .tx-btn {
         font-weight: 400;
     }
@@ -1135,6 +1213,12 @@ button{
         text-align: center;
         text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     }
+
+    /* .btn-big h4{
+        font-size: 24px;
+        font-weight: 600;
+    } */
+    
     .btn-big:hover {
         background-color: var(--primario);
     }
@@ -1181,7 +1265,9 @@ button{
         width: 50px; 
         height: 50px;
     }
+
 /*===============sidebar==========*/
+
 .menu-side{
     top: 75px;
 }
@@ -1204,7 +1290,9 @@ button{
 .container-search {
     display: block;
 }
+
 /*============carrito de compras===============*/
+
 .container-cart{
     width: 330px;
     top: 80px;
@@ -1255,6 +1343,11 @@ button{
     bottom:30px;
     margin-left: 50%;
     transform: translate(-50%,-50%);
+}
+
+#ppal-carrousel .btn-big h4{
+    font-size: 24px;
+    font-weight: 600;
 }
 
 .menu {
@@ -1375,8 +1468,16 @@ button{
 .card-btn-play {
     width: 100px;
 }
+/* =====================appstores================ */
 
-/*============== footer ===================*/
+.appstores {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =============Footer Desktop=============*/
+
 .payment {
     width: 100%;
     height: 80px;
