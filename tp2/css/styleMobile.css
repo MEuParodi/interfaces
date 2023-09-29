@@ -757,7 +757,8 @@ button{
 }
 
 #ppal-carrousel .btn-big h4{
-    font-weight: 300px;
+    font-size: 14px;
+    font-weight: 400;
 }
 
 
@@ -1258,6 +1259,11 @@ button{
 
 .menu {
     bottom:7px;
+}
+
+.menu li a {
+    width: 20px;
+    height: 20px;
 }
 /*===========botonera de categorias========*/
 .container-button-box{
