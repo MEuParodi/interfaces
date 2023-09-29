@@ -109,8 +109,9 @@ h4{
     letter-spacing: 1px;
 }
 .btn-big {
-    width: 150px;
     height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
     box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.40) inset;
     background-color: var(--acento);
     border-radius: 10px;
@@ -733,8 +734,8 @@ button{
     color: white;
     text-decoration: none;
     background-color: var(--blanco);
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     border-radius: 100%;
 }
 
@@ -756,10 +757,16 @@ button{
 #ppal-carrousel .btn-big {
     z-index: 2;
     position: absolute;
-    bottom:30px;
+    bottom:15px;
     margin-left: 50%;
     transform: translate(-50%,-50%);
 }
+
+#ppal-carrousel .btn-big h4{
+    font-weight: 300px;
+}
+
+
 /*=========botonera de categorias=========*/
 .container-button-box{
     width: 100%;
@@ -1303,23 +1310,30 @@ button{
    text-align: left;
 }
 
+.link {
+    text-decoration-line: underline;
+}
 
-.footer-col .link p{
+.link:hover{
+    color:var(--negro);
+}
+
+.footer-col p{
     color: var(--Primario-L2);
     font-family: Poppins;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
-    text-decoration-line: underline;
+    /* text-decoration-line: underline; */
     text-align: left;
     display: flex;
     cursor: pointer;
 }
 
-.footer-col .link p:hover{
+/* .footer-col .link p:hover{
     color:var(--negro);
-}
+} */
 .copyright {
     padding-left: 80px;
     background-color: var(--Primario, #8b27b5);
