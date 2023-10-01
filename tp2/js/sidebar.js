@@ -29,7 +29,7 @@ function scrollCarousel(cant){
 if(window.innerWidth < 400){
     console.log("holaaaa");
   // menuSide.classList.toggle('close');
-    scrollCarousel(200);
+    scrollCarousel(150);
 } else {
   //  menuSide.classList.remove('close');
     console.log("holaaaa else");
