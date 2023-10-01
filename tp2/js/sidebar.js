@@ -5,6 +5,7 @@ let menuUser = document.getElementById('menu-user');
 let btnBuy = document.getElementById('btn-buy');
 let cart = document.getElementById('cart');
 let carrousel = document.getElementById('carrousel-cards');
+let related = document.getElementById('related-games');
 // let prev = document.getElementById('prev');
 // let next = document.getElementById('next');
 let prev = document.querySelectorAll('img.prev');
@@ -27,30 +28,18 @@ function scrollCarousel(cant){
 }
 
 if(window.innerWidth < 400){
-    console.log("holaaaa");
-  // menuSide.classList.toggle('close');
     scrollCarousel(200);
 } else {
-  //  menuSide.classList.remove('close');
-    console.log("holaaaa else");
     scrollCarousel(350);
 }
 
-
-
-
-// prev.addEventListener('click', function(){
-//     carrousel.scrollLeft -= 200
-// });
-
-// next.addEventListener('click', function(){
-//     carrousel.scrollLeft += 200
-// });
 
 //desplegar el carrito
 btnBuy.addEventListener('click', function() {
     cart.classList.toggle('open');
 });
+
+related.addEventListener('click',scrollLeft(150));
 
 //desplegar el menu de usuario
 btnUser.addEventListener('click', function() {
