@@ -35,11 +35,10 @@
     line-height: 140%;
 }
 
-.game img, .how-to-play img, .related-games img, .comments-section img {
-    max-width: 100%; 
-    background-size: cover;
-    height: 100%;
-
+.how-to-play img, .related-games img, .comments-section img {
+    /* max-width: 100%;  */
+    /* background-size: cover; */
+    max-height: 100%;
 }
 
 .col-1 {
@@ -67,7 +66,6 @@
     padding-bottom: 0;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     justify-content: space-between;
     align-items: center;
     overflow-y: hidden;
@@ -86,7 +84,7 @@
 
 .breadcrumb {
     background: var(--Primario-S2, #681D88);
-    margin-top: 100px;
+    margin-top: 80px;
     height: 60px;
     padding-top: 23px;
     padding-left: 70px;
@@ -101,24 +99,146 @@
     
 .game {
     width: 100%; /*ancho y alt de todo el grid*/
-    height: 700px;
+    /* height: 775px; */
     padding-left: 70px; 
     background: var(--Primario-S2, #681D88);
     display:flex;
     flex-direction: row;
+    align-items: stretch;
 }
 
 .game .col-1-2 {
-    background-color: white;
     margin-top: 10px;
+    padding: 0;
+}
+
+
+.board img {
+    background-size: cover;
+    width: 100%;
+}
+
+.game-image {
+    position: relative;
+}
+
+.play-circ {
+    content: "";
+    width: 20%;
+    padding-top: 20%; /*mantiene proporcion de circulo*/
+    background-color: #6F1F91CC;
+    border-radius: 50%; /* Para hacerlo circular */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Para que esté delante de la imagen */
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.play-triang {
+    content: "";
+    border-left: 50px solid transparent; /* Tamaño del triángulo (ajústalo según tus necesidades) */
+    border-right: 50px solid transparent; /* Tamaño del triángulo (ajústalo según tus necesidades) */
+    border-bottom: calc(50px * 1.732) solid var(--acento); /* Tamaño y color del triángulo (ajústalo según tus necesidades) */
+    position: absolute;
+    top: 50%; /* Posición relativa al contenedor */
+    left: 50%; /* Centrado horizontalmente en el contenedor */
+    transform: translate(-40%, -50%) rotate(90deg); /* Centrado vertical y horizontal */
+    z-index: 2; /* Para que esté encima del círculo */
+  }
+
+  .btn-play:hover {
+    transform: scale(1.4); /* Escalamos el botón en un 10% más grande */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Agregamos una sombra al botón */}
+
+.game .controls {
+    height: 50px;
+    width: 100%;
+    background-color: var(--negro);
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.controls .body-bold {
+    color: var(--secundario);
+    font-size: 20px;
+}
+
+.game-name {
+    width: 35%;
+    padding-left: 25px;
+}
+
+.control-icons {
+    width: 65%;
+    padding-right: 9px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.controls img {
+    height: 40px;
 }
 
 .chat {
     width: 100%;
-    height: 440px;
-    background-color: black;
-    color: white;
+    height: 50%;
+    background: var(--primario);
+    padding: 10px;
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chat-header, .chat-footer {
+    background-color: var(--negro);
+    height: 40px;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-top: -10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header img {
+    margin-right: 65%;
+}
+
+.chat-header p, .chat-footer p {
+    color: var(--blanco);
+}
+
+.chat-header .close-chat {
+    color: var(--secundario);
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.chat .comment .body-bold {
+    color: var(--secundario, #a7ef2b);
+} 
+
+.chat .comment p.body-bold span {
+    color: var(--blanco);
+}
+
+.chat .comment p.body {
+    color: var(--negro);
+    font-weight: 600;
+}
+
+.chat-footer {
+    margin-top: 40px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
 }
 
 .video {
@@ -140,20 +260,50 @@
 
 
 /*****PUBLICIDADES******/
-.publi-small {
-    /* height: 250px; */
-    /* padding-bottom: 10px; */
-    /* aspect-ratio: 1/1; */
+.publi-juego {
+    height: 50%;
+    width: 100%;
+    background: repeating-linear-gradient(45deg,rgba(255,255,255,0.1),rgba(255,255,255,0.1),rgba(255,255,255,0.1),rgba(255,255,255,0.1) 4px,rgba(0,0,0,0.15) 6px);
+    background-color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
+.publi-juego img {
+    height: 80%;
+}
+
+.publi-how-to-play {
+    height: 100%;
+    width: 100%;
+    background: repeating-linear-gradient(45deg,rgba(255,255,255,0.1),rgba(255,255,255,0.1),rgba(255,255,255,0.1),rgba(255,255,255,0.1) 4px,rgba(0,0,0,0.15) 6px);
+    background-color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+
 .publi-medium {
-    /* height: 340px; */
-    padding-bottom: 10px;
+    height: 350px;
+    width: 100%;
+    background: repeating-linear-gradient(45deg,rgba(255,255,255,0.1),rgba(255,255,255,0.1),rgba(255,255,255,0.1),rgba(255,255,255,0.1) 4px,rgba(0,0,0,0.15) 6px);
+    background-color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .publi-large {
-    /* height: 520px; */
-    padding-bottom: 10px;
+    height: 650px;
+    width: 100%;
+    background: repeating-linear-gradient(45deg,rgba(255,255,255,0.1),rgba(255,255,255,0.1),rgba(255,255,255,0.1),rgba(255,255,255,0.1) 4px,rgba(0,0,0,0.15) 6px);
+    background-color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 /************************/
 
@@ -163,6 +313,8 @@
     width: 100%; 
     /* height: 550px; */
     padding-left: 70px; 
+    padding-top: 30px;
+    padding-bottom: 30px;
     background: var(--Primario-S2, #681D88);
     color: white;
     display: flex;
@@ -172,26 +324,45 @@
 .rating{
     display: flex;
     width: 100%; 
-    height: 100px;
+    height: 80px;
+    align-items: center;
     /* border: solid red; */
 }
 
-.related-games {
-    padding-left: 70px;
-    background: var(--blanco, #FAF3FE);
-    height: 250px;
+.rating h1 {
+    margin-right: 50px;
+    color: var(--acento);
+}
+.rating img {
+    width: 50px;
 }
 
+.related-games {
+    padding: 40px;
+    background: var(--blanco, #FAF3FE);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.related-games h4 {
+    margin-left: -30px;
+    background: var(--blanco, #FAF3FE);
+
+}
 .juegos-relacionados {
     margin-top: 10px;
-    margin-bottom: 10px;
-    border: solid;
-    width: 100%;
-    height: 190px;
+    width: 99%;
+    overflow: hidden;
+    display: flex;
 }
 
+.juegos-relacionados img {
+    width: 160px;
+    height: 160px;
+    padding: 10px;
+    border-radius:20px;
+}
 .comments-section{
-    padding-top: 10px;
     width: 100%; 
     padding-left: 70px; 
     background: var(--blanco, #FAF3FE);
@@ -200,7 +371,7 @@
 }
 
 .comment-tittle {
-        margin-bottom: 50px;
+        margin-bottom: 20px;
         /* background-color: red; */
         display: flex;
         align-items: center;
@@ -218,7 +389,7 @@
     padding: 20px;
     border: solid 1px var(--gris-2);
     border-radius: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
@@ -271,10 +442,10 @@
 
 .comment-amount{
     margin-left: 50%;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
     transform: translate(-50%);
     width: 301px;
-    height: 88px;
+    height: 70px;
     background-color: var(--Gris-2, #CAC1CD);
     display: flex;
     align-items: center;
@@ -302,7 +473,7 @@
 .comment-container{
     display: flex;
     justify-content: flex-start;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .avatar {
@@ -314,6 +485,17 @@
     background-color: #a7ef2b;
 }
 
+.avatar::after {
+    content: "E";
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+
 .avatar.orange {
     background-color: orange;
     position: relative;
@@ -321,16 +503,32 @@
 
 .avatar.orange::after {
     content: "E";
-    position: absolute;
-    top: 14px;
-    left: 20px;
-    text-align: center;
-    font-size: 20px;
-    font-weight: 700;
 }
 
 .avatar.purple {
     background-color: var(--Primario, #8B27B5);
+    position: relative;
+}
+
+.avatar.purple::after {
+    content: "A";
+}
+
+.avatar.turq {
+    background-color: turquoise;
+    position: relative;
+}
+
+.avatar.turq::after {
+    content: "P";
+}
+
+.avatar.green {
+    position: relative;
+}
+
+.avatar.green::after {
+    content: "J";
 }
 
 

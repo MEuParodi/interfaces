@@ -132,13 +132,67 @@
     </div>
     <section class="game">
         <div class="col-1-2">
-            4 en linea
+            <div class="board">
+                <div class="game-image">
+                    <img src="./img/4enLinea/tablero.jpg" alt="">
+                <div class="btn-play">
+                    <!-- <img src="./img/icons/play.svg" alt=""> -->
+                    <div class="play-circ"></div>
+                    <div class="play-triang"></div>
+                </div>
+            </div>
+                <div class="controls">
+                    <div class="game-name">
+                        <h4 class="body-bold">4 en linea</h4>
+                    </div>
+                    <div class="control-icons">
+                        <img src="./img/icons/compartir.svg" alt="">
+                        <img src="./img/icons/like.svg" alt="">
+                        <h4 class="body-bold">85%</h4>
+                        <img src="./img/icons/dislike.svg" alt="">
+                        <h4 class="body-bold">15%</h4>
+                        <img src="./img/icons/heart.svg" alt="">
+                        <img src="./img/icons/joystick.svg" alt="">
+                        <img src="./img/icons/fullscreen.svg" alt="">
+                    </div>
+                </div>
+    </div>
         </div>
         <div class="col-3">
             <div class="chat">
-                chat
+                <div class="chat-header">
+                    <p>Chat</p>
+                    <img src="./img/icons/chat.svg" alt="">
+                    <p class="close-chat">X</p>
+                </div>
+                <div class="comment-container">
+                    <div class="avatar">
+                        <img src="./img/avatars/victorialopez.jpeg" alt="">
+                    </div>
+                    <div class="comment">
+                        <p class="body-bold">@vlopez28<span> - 23:00</span></p>
+                        <p class="body">@jugador_12 ya estoy en línea, sumate!</p>
+                    </div>
+                </div>
+                <div class="comment-container">
+                    <div class="avatar">
+                        <img src="./img/avatars/martinadiaz.jpeg" alt="">
+                    </div>
+                    <div class="comment">
+                        <p class="body-bold">@juli14 <span>- 23:10</span></p>
+                        <p class="body">@vlopez_28 holaaaaaaa !!!</p>
+                    </div>
+                </div>
+                <div class="chat-footer">
+                    <p><b>@juli14</b> holaaaaa!!!</p>
+                    <div>
+                        <img src="./img/icons/gif.svg" alt="">
+                        <img src="./img/icons/smile.svg" alt="">
+                    </div>
+                </div>
+
             </div>
-            <div class="publi-small">
+            <div class="publi-juego">
                 <img src="./img/4enLinea/publicidadCoca.png" alt="">
             </div>
         </div>
@@ -168,7 +222,12 @@
                 <p class="body-bold">Calificaciones de este juego</p><br>
             </div>
             <div class="rating">
-                acá va el div con las estrellas
+                <h1>4.6</h1>
+                <img src="./img/icons/Qstarfull.svg" alt="">
+                <img src="./img/icons/Qstarfull.svg" alt="">
+                <img src="./img/icons/Qstarfull.svg" alt="">
+                <img src="./img/icons/Qstarfull.svg" alt="">
+                <img src="./img/icons/QstarHalf.svg" alt="">
             </div>
         </div>
 
@@ -182,17 +241,36 @@
                 <iframe src="https://www.youtube.com/embed/t_WJQ5vN38A?si=G62GPsxh9GzZPEmY&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            </div>
         </article>
         <aside class="col-3">
-            <aside class="publi-large">
+            <aside class="publi-how-to-play">
                 <img src="./img/4enLinea/publicidadDespegar.png" alt="">
             </aside>
         </aside>
     </section>
 
-    <section class="related-games">
+    <section class="related-games carrousel">
         <h4>Juegos relacionados</h4>
-        <div class="juegos-relacionados">
-            carrousel
+        <img id="prev" class="control prev" src="./img/icons/flechaCarrusel.svg" alt="flecha carrusel">
+
+        <div id="related-games" class="juegos-relacionados">
+            <img src="./img/4enLinea/ludo.webp" alt="">
+            <img src="./img/4enLinea/ladyBugLuck.webp" alt="">
+            <img src="./img/4enLinea/yearRabbit.jpg" alt="">
+            <img src="./img/4enLinea/ruleta.png" alt="">
+            <img src="./img/4enLinea/spiceman.webp" alt="">
+            <img src="./img/4enLinea/pacman.jpg" alt="">
+            <img src="./img/4enLinea/ajedrez.webp" alt="">
+            <img src="./img/4enLinea/yearRabbit.jpg" alt="">
+            <img src="./img/4enLinea/ladyBugLuck.webp" alt="">
+            <img src="./img/4enLinea/yearRabbit.jpg" alt="">
+            <img src="./img/4enLinea/ruleta.png" alt="">
+            <img src="./img/4enLinea/yearRabbit.jpg" alt="">
+            <img src="./img/4enLinea/ruleta.png" alt="">
+            <img src="./img/4enLinea/spiceman.webp" alt="">
+            <img src="./img/4enLinea/pacman.jpg" alt="">
         </div>
+        <img id="next" class="control next" src="./img/icons/flechaCarrusel.svg" alt="flecha carrusel">
+
+
     </section>
     <section class="comments-section">
         <div class="col-1-2">
@@ -296,7 +374,7 @@
             </div>
 
             <div class="comment-container">
-                <div class="avatar">
+                <div class="avatar green">
                 </div>
                 <div class="comment">
                     <p class="body-bold">Juan Martinez <span>@jmartinez% - 5d</span></p>
@@ -310,7 +388,7 @@
             </div>
 
             <div class="comment-container">
-                <div class="avatar green">
+                <div class="avatar turq">
                 </div>
                 <div class="comment">
                     <div>
@@ -423,7 +501,6 @@
             <p class="body">2023© mundoGaming.com Todos los derechos reservados</p>
             <img class="footer-img" src="./img/Home/logoVioletaOscuro.png" alt="logo">
         </div>
-
     </footer>
 </body>
 <script src="./js/sidebar.js"></script>
