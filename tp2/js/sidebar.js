@@ -39,7 +39,6 @@ btnBuy.addEventListener('click', function() {
     cart.classList.toggle('open');
 });
 
-related.addEventListener('click',scrollLeft(150));
 
 //desplegar el menu de usuario
 btnUser.addEventListener('click', function() {
@@ -69,3 +68,5 @@ window.addEventListener('resize', function() {
         menuSide.classList.remove('close');
     }
 });
+
+related.addEventListener('click',scrollLeft(150));
