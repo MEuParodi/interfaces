@@ -40,6 +40,7 @@ btnBuy.addEventListener('click', function() {
 });
 
 
+
 //desplegar el menu de usuario
 btnUser.addEventListener('click', function() {
     //menuSide.classList.toggle('menu-side-hidden');

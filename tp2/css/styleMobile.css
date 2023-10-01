@@ -56,7 +56,7 @@ h3{
     font-weight: 400;
 }
 h4{
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 700;
 }
 .body-bold {
@@ -336,7 +336,7 @@ button{
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 200;
+    z-index: 600;
 }
 
 .header-left{
@@ -462,7 +462,7 @@ button{
     position: fixed;
     top: 69px;
     right: 0;
-    z-index: 300;
+    z-index: 500;
     padding: 0;
     display: none;
 }
@@ -481,7 +481,7 @@ button{
     top: 60px;
     left: 0;
     color: var(--blanco);
-    z-index: 300;
+    z-index: 500;
     overflow-y: scroll;
     transition: all 20ms ease;
 }
@@ -564,7 +564,7 @@ button{
     position: fixed;
     top: 70px;
     right: 0;
-    z-index: 300;
+    z-index: 500;
     overflow-y: scroll;
 }
 
@@ -905,6 +905,13 @@ button{
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.25);
     position: relative;
     transition: all 200ms ease;
+    .price-off{
+        display: none;
+    }
+    .card-price{
+        top: 0;
+        right: 0;
+    }
 }
 
 .card:hover{
@@ -954,6 +961,38 @@ button{
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.8);
     
 }
+
+.tag.gratis, .tag.off{
+    .price-off{
+        display: block;
+        font-size: 10px;
+        color: var(--error-color);
+        text-decoration: line-through;   
+    }
+    .card-price{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        top: -3px;
+    }
+    .card-body h4{
+        color: var(--exito-color);
+    }
+    .card-body h4.price-normal {
+        margin-top: -10px;
+    }
+} 
+
+.tag.gratis {
+    .card-price{
+        right: 5px;
+    }
+    .card-title{
+        width: 120px;
+    }
+}
+
 .gratis.tag::after {
     content: "GRATIS";
     background-color: var(--exito-color);
@@ -989,7 +1028,6 @@ button{
     width: 190px;
     height: 120px;
     border-radius: 10px 10px 0px 0px;
-    object-fit: cover;
 }
 .card figure{
     height: 120px;
@@ -1000,7 +1038,7 @@ button{
     justify-content: space-between;
     flex-direction: column;
     margin: 5px 10px;
-    
+    position: relative;
 }
 
 .card-body p.tx-small{
@@ -1016,11 +1054,18 @@ button{
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+    position: relative;
+}
+
+.card-header p.body1{
+    text-decoration: line-through;
+    color: var(--error-color);
+
 }
 
 /*prop para truncar el texto*/
 .card-title {
-    width: 130px;
+    width: 105px;
     font-size: 15px;
     color: var(--color-black);
     margin-right: 2px;
@@ -1030,9 +1075,10 @@ button{
     text-overflow: ellipsis; /*agrega puntos suspensivos*/
 }
 
-.card-price{
+.price-normal{
     color: var(--acento);
     text-align: right;
+    position: relative;
 }
 .card-description{
     width: 170px;
@@ -1052,6 +1098,7 @@ button{
     align-items: center;
     flex-direction: row;
     margin: 6px 5px 5px 10px;
+    
     
 }
 
@@ -1081,6 +1128,63 @@ button{
     height: 25px;
     border-radius: 10px;
     border: 1px solid var(--acento);
+    position: relative;
+}
+
+.card-btn-buy:focus{
+    background-image: url("../img/icons/iconCarroNegro.svg");
+    background-size: 35px 20px;
+    background-position: left;
+    background-color: var(--acento-l1);
+    width: 60px;
+    border: 1px solid var(--acento-l1);
+    
+}
+.card-btn-buy:focus::after{
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-image: url('../img/icons/iconCheck.svg');
+    background-repeat: no-repeat;
+    background-size: 30px 20px;
+    background-position: center center;
+    top: 0;
+    right: 2px;
+    z-index: 100;
+}
+
+/*card ya es tuyo!*/
+.ya-es-tuyo{
+    .card-price, .card-btn-buy{
+        display: none;
+    }
+    .card-body::before{
+        content: "";
+        position: absolute;
+        height: 70px;
+        width: 70px;
+        clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+        top: 46px;
+        right: -11px;
+        border-bottom-right-radius: 10px;
+        background-color: var(--acento);
+        z-index: 300;
+    }
+    .card-body::after{
+        content: "YA ES TUYO!";
+        position: absolute;
+        height: 30px;
+        width: 70px;
+        top: 75px;
+        right: -25px;
+        color: var(--blanco);
+        font-size: 11px;
+        font-weight: 500;
+        text-shadow: 3px 3px 3px var(--negro);
+        transform: rotate(-46deg);
+        z-index: 400;
+    }
 }
 
 .open {
@@ -1168,7 +1272,16 @@ button{
 
 
 
+.appstores {
+    /* margin-left: 80px; */
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+  }
 
+  .appstores img {
+    margin: 20px;
+  }
 /*======================================media query=======================================*/
 
 
@@ -1461,9 +1574,10 @@ button{
 /*==========cards===================*/
 
 .card {
-    width: 272px;
+    width: 260px;
     height: 310px;
     box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
+    /* transition: all 50ms ease-out; */
 }
 
 .card:hover{
@@ -1484,14 +1598,33 @@ button{
 .card.tag::before {
     top: 44.8px;
 }
+/*cuando la card es gratis y es off, las clases anidadas toman estos estilos*/
+.tag.gratis, .tag.off{
+    .price-off {
+        font-size: 12px;
+    }
+    .card-price{
+        top: -5px;
+    }
+}
+
+.tag.gratis {
+    .card-title{
+        width: 170px;
+    }
+    .card-price{
+        right: 18px;
+    }
+}
+
 
 .card figure {
-    height: 165px;
+    height: 160px;
 }
 
 .card-img {
-    width: 272px;
-    height: 165px;
+    width: 260px;
+    height: 160px;
 }
 
 .card-header{
@@ -1505,7 +1638,7 @@ button{
 }
 
 .card-title{
-    width: 162px;
+    width: 150px;
      margin-top: 5px;
 }
 
@@ -1528,6 +1661,27 @@ button{
 
 .card-btn-play {
     width: 100px;
+
+}
+
+.card-btn-play:hover{
+    transform: rotateZ(25deg);
+}
+.ya-es-tuyo{
+    .card-body::before{
+        height: 85px;
+        width: 85px;
+        top: 61px;
+        right: -11px;
+    }
+    .card-body::after{
+        width: 95px;
+        top: 96px;
+        right: -34px;
+        font-size: 13px;
+        font-weight: 600;
+        text-shadow: 4px 4px 4px var(--negro);
+    }
 }
 /* =====================appstores================ */
 
