@@ -993,8 +993,6 @@ button{
     }
 }
 
-
-
 .gratis.tag::after {
     content: "GRATIS";
     background-color: var(--exito-color);
@@ -1579,6 +1577,7 @@ button{
     width: 260px;
     height: 310px;
     box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
+    /* transition: all 50ms ease-out; */
 }
 
 .card:hover{
@@ -1662,8 +1661,12 @@ button{
 
 .card-btn-play {
     width: 100px;
+
 }
 
+.card-btn-play:hover{
+    transform: rotateZ(25deg);
+}
 .ya-es-tuyo{
     .card-body::before{
         height: 85px;
