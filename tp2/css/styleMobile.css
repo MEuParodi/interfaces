@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Oswald&family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;0,800;0,900;1,100&family=Roboto:wght@100&display=swap');
-
-/* =============Reseteo=============*/
+@import url('https://fonts.googleapis.com/css2?family=Tsukimi+Rounded:wght@300&display=swap');/* =============Reseteo=============*/
 *{
     margin: 0;
     padding: 0;
@@ -700,6 +699,18 @@ button{
     position: absolute;
 }
 
+#ppal-carrousel ul.slider li p {
+    left: 0px;
+    top: 30px;
+    margin-left: 30px;
+    font-family: 'Tsukimi Rounded', sans-serif;
+    font-size: 15px;
+    color: var(--gris-4);
+    z-index: 3;
+    position: absolute;
+}
+
+
 #ppal-carrousel ul.slider li:first-child {
     opacity: 1;
 }
@@ -747,6 +758,12 @@ button{
     bottom: 0%;
     z-index: 1;
 }
+.blured-top {
+    height: 25vh;
+    background: linear-gradient(0deg, rgba(250, 243, 254, 0.00) 0%, #000 100%);
+    top: 0%;
+}
+
 
 #ppal-carrousel .btn-big {
     z-index: 2;
@@ -828,11 +845,24 @@ button{
     transform: rotate(180deg);
 }
 
+/* este es para juegos.html */
+.related-games.carrousel .prev{ 
+    top: 50%;
+    left:0px
+}
+
 .carrousel .next{
     right: 30px;
     top: 49%;
     transform: translate(50%, -50%);
 }
+
+/* este es para juegos.html */
+.related-games.carrousel .next{
+    right: 30px;
+    top: 57%;
+}
+
 
 .carrousel-title{
     display: flex;
@@ -1055,6 +1085,19 @@ button{
 
 .open {
     display: block;
+}
+
+.appstores {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.mobile .appstores img{
+    width: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 /*============== footer Mobile===================*/
@@ -1330,13 +1373,25 @@ button{
     margin-top: 80px;
 }
 
-.rect-blured {
+.blured-top {
     width: 100%;
     height: 271px;
-    background: linear-gradient(180deg, rgba(250, 243, 254, 0.00) 0%, #000 100%);
+    background: linear-gradient(0deg, rgba(250, 243, 254, 0.00) 0%, #000 100%);
     position: absolute;
     bottom: 0%;
 }
+
+#ppal-carrousel ul.slider li p {
+    left: 90px;
+    top: 30px;
+    margin-left: 30px;
+    font-family: 'Tsukimi Rounded', sans-serif;
+    font-size: 35px;
+    color: var(--gris-4);
+    z-index: 3;
+    position: absolute;
+}
+
 
 #ppal-carrousel .btn-big {
     position: absolute;
@@ -1388,6 +1443,12 @@ button{
     padding-bottom: 30px;
     gap: 10px;
 }
+
+/* este es para juegos.html */
+.related-games.carrousel .carrousel-cards{
+    width: 95%;
+}
+
 .carrousel .next{
     right: 45px;
     top: 51%;
@@ -1471,10 +1532,14 @@ button{
 /* =====================appstores================ */
 
 .appstores {
-    display:flex;
-    justify-content: center;
-    align-items: center;
+    margin-bottom: 50px;
+    padding-left: 80px;
 }
+.appstores img{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 
 /* =============Footer Desktop=============*/
 
