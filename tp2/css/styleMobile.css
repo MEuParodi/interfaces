@@ -226,6 +226,10 @@ label span {
 
 }
 
+.containerSesion input {
+    border: none;
+}
+
 .containerSesion .btn-main {
     margin-top: 40px;
 }
