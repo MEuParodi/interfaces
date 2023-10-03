@@ -1542,7 +1542,7 @@ button{
 #ppal-carrousel .btn-big {
     position: absolute;
     bottom:30px;
-    margin-left: 50%;
+    margin-left: calc(50% + 60px);
     transform: translate(-50%,-50%);
 }
 
@@ -1553,6 +1553,7 @@ button{
 
 .menu {
     bottom:7px;
+    margin-left: 60px;
 }
 
 .menu li a {
@@ -1562,7 +1563,7 @@ button{
 /*===========botonera de categorias========*/
 .container-button-box{
     justify-content: space-evenly;
-    margin: 20px 10px 20px 60px;
+    margin: 20px 0px 20px 60px;
     width: 90%;
     padding: 0;
     overflow: hidden;
