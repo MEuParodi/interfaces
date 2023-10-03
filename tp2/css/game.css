@@ -187,6 +187,11 @@
     align-items: center;
 }
 
+.chat .comment-container{
+    margin-top: 0px;
+}
+
+
 .chat-header img {
     margin-right: 65%;
 }
@@ -215,7 +220,6 @@
 }
 
 .chat-footer {
-    margin-top: 40px;
     margin-left: 0px;
     margin-right: 0px;
     margin-bottom: 0px;
