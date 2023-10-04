@@ -21,7 +21,7 @@ function loadingCircle (e) {
         loading.classList.add('visible');
         actualizarPorcentaje();
         setTimeout(function() {
-            window.location.href = './index.html';
+            window.location.href = './home.html';
         }, 5000);
 }
 
