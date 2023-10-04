@@ -449,6 +449,9 @@ label span {
         right: 0px;
     }
 
+.no-show {
+    display:none;
+}
 
 /* =============Body-Home=============*/
 body{
@@ -941,7 +944,6 @@ button{
 
 #ppal-carrousel .btn-big.anim1{
     overflow: hidden;
-    background-color: var(--primario-s1);
 }
 
 #ppal-carrousel .btn-big.anim1::after {
