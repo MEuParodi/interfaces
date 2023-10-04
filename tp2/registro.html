@@ -104,14 +104,29 @@
             <img src="./img/icons/recaptcha.svg" alt="captcha">
         </div>
 
-        <button class="btn-main btn-main-active tx-btn">Regístrate</button>
+        <!-- boton animado -->
+        <button id="btn-registro" class="btn-main btn-main-active tx-btn registrate"><span>Regístrate</span></button>
         <div class="formFieldLogueate">
             <p class="body2">Ya estás registrado?</p>
             <p class="tx-small btn-third">Iniciá Sesión</p>
         </div>
 
+        <!-- div con burbujas -->
+        <div id= "bubbles" class="bubbles no-show">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div id="message" class="no-show">
+            <h2>felicitaciones!! Vamos a iniciar sesión!!</h2>
+        </div>
 
 </section>
 </body>
-
+    <script src="./js/bubbles.js"></script>
 </html>

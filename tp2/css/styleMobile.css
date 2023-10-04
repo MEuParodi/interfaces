@@ -112,7 +112,7 @@ h4{
     height: 30px;
     padding-left: 10px;
     padding-right: 10px;
-    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.40) inset;
+    /* box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.40) inset; */
     background-color: var(--acento);
     border-radius: 10px;
     color: var(--blanco, #FAF3FE);
@@ -168,6 +168,7 @@ h4{
     display: flex;
     flex-direction: column;
     align-items: center;
+    position:relative; /*para las burbujas*/
 }
 
 .titulo {
@@ -314,6 +315,139 @@ label span {
     text-align: center;
     margin-right: 40px;
 }
+
+.registrate {
+    animation: bordes 1s linear infinite ;
+}
+
+@keyframes bordes {
+    0% {
+        border:none;
+    }
+    /* 25% {
+        border:solid 1px var(--blanco)
+    } */
+    75%{
+        border:solid 3px var(--acento)
+    } 
+    /* 100% {
+        border:solid 1px var(--blanco)
+    } */
+}
+
+
+
+.registrate span {
+    animation: flotar 2s linear infinite ;
+    position: relative;
+}
+
+@keyframes flotar {
+    0% {
+        top: 0; /* Posición inicial del texto */
+    }
+    25% {
+        top: -5px; /* Desplaza el texto hacia arriba */
+    }
+    75%{
+        top: 5px;
+    } 
+    100% {
+        top: 0; /* Vuelve a la posición inicial */
+    }
+}
+
+.bubbles div {
+    background: linear-gradient(-120deg, rgba(250, 243, 254, 0.00) 0%, #000 100%);
+    border-radius: 100%;
+    position: absolute;
+    bottom: 0;
+    animation: animarburbujas 4s linear infinite;
+  }
+  
+  .bubbles div:nth-child(1) {
+    width: 50px;
+    height: 45px;
+    left: 40px;
+    animation-duration: 4s;
+  }
+  
+  .bubbles div:nth-child(2) {
+    width: 60px;
+    height: 55px;
+    left: 25%;
+    animation-duration: 8s;
+  }
+  
+  .bubbles div:nth-child(3) {
+    width: 30px;
+    height: 27px;
+    left: 40%;
+    animation-duration: 5s;
+  }
+  
+  .bubbles div:nth-child(4) {
+    width: 65px;
+    height: 60px;
+    left: 50%;
+    animation-duration: 10s;
+  }
+  
+  .bubbles div:nth-child(5) {
+    width: 55px;
+    height: 50px;
+    left: 65%;
+    animation-duration: 6.5s;
+  }
+  
+  .bubbles div:nth-child(6) {
+    width: 50px;
+    height: 48px;
+    left: 85%;
+    animation-duration: 9s;
+  }
+  
+  .bubbles div:nth-child(7) {
+    width: 35px;
+    height: 32px;
+    left: 90%;
+    animation-duration: 6s;
+  }
+  
+  @keyframes animarburbujas {
+    0% {
+      width: 0;
+      height: 0;
+    }
+    3% {
+      width: 30px;
+      height: 27px;
+      background: linear-gradient(-40deg, rgba(250, 243, 254, 0.00) 0%, #000 100%);
+    }
+    50% {
+      margin-left: 20px;
+      opacity: 0.5;
+      background: linear-gradient(-60deg, rgba(250, 243, 254, 0.00) 0%, #000 100%);
+
+    }
+    100% {
+      transform: rotate(90deg);
+      bottom: 100vh;
+      background: linear-gradient(-80deg, rgba(250, 243, 254, 0.00) 0%, #000 100%);
+    }
+  }
+
+
+
+  #message{
+        width: 100%;
+        height: 150px;
+        background-color: var(--negro);
+        opacity: 0.8;
+        position: absolute;
+        top: 900px;
+        right: 0px;
+    }
 
 
 /* =============Body-Home=============*/
@@ -775,12 +909,60 @@ button{
     bottom:15px;
     margin-left: 50%;
     transform: translate(-50%,-50%);
+    transition: .3s ease all;
+    z-index: 2;
+    color: var(--primario-s3);
+
 }
 
+
 #ppal-carrousel .btn-big h4{
-    font-size: 14px;
+    font-size: 11px;
     font-weight: 400;
+    position: relative;
+    color: var(--blanco);
+    z-index: 2;
 }
+
+#ppal-carrousel .btn-big.anim1 h4 {
+    color: var(--primario-s3);
+    animation: anim1texto 1.5s infinite linear;
+}
+
+@keyframes anim1texto {
+    0% {
+      color: var(--blanco);
+    }
+    90% {
+      color: var(--blanco);
+
+    }
+  }
+
+#ppal-carrousel .btn-big.anim1{
+    overflow: hidden;
+    background-color: var(--primario-s1);
+}
+
+#ppal-carrousel .btn-big.anim1::after {
+    content:"";
+    width: 100%;
+    height: 30px;
+    background-color: var(--primario);   
+    position: absolute;
+    bottom: 30px;
+    left: 0px;
+    animation: anim1 1.5s infinite linear;
+}
+
+@keyframes anim1 {
+    0% {
+      transform: translate(0,0);
+    }
+    100% {
+      transform: translate(0, 80px);
+    }
+  }
 
 
 /*=========botonera de categorias=========*/
@@ -1220,11 +1402,11 @@ button{
 .desktop{
     display: none;
 }
-.no-show{
+.menu-footer-mobile .no-show{
     display: none;
 }
 
-.show {
+.menu-footer-mobile .show {
     display: block;
     padding: 5px 0px 5px 10px;
 }
@@ -1395,7 +1577,8 @@ button{
     .btn-big {
         width: 387px;
         height: 60px;
-        box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.40) inset;
+        /* box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.40) inset; */
+        box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.40);
         background-color: var(--acento);
         border-radius: 10px;
         color: var(--blanco, #FAF3FE);
@@ -1519,6 +1702,7 @@ button{
     margin-top: 80px;
 }
 
+
 .blured-top {
     width: 100%;
     height: 271px;
@@ -1547,8 +1731,13 @@ button{
 }
 
 #ppal-carrousel .btn-big h4{
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#ppal-carrousel .btn-big.anim1::after {
+    height: 60px;
+    bottom: 60px;
 }
 
 .menu {

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styleMobile.css">
+    <link rel="stylesheet" href="./css/loading.css">
     <title>Login</title>
 
 </head>
@@ -48,6 +49,14 @@
         </div>
             <button id="log-in" class="btn-main btn-main-active tx-btn">Iniciar Sesión</button>
         </div>
+
+        <!-- fake loading -->
+        <div id="loading" class="no-visible">
+            <div class="load"></div>
+            <p id="porcentaje">cargando...10%</p>
+        </div>
+        
+
         <div class="formFieldRow">
             <div class="linea"> </div>
             <p class="body2">O ingresá con</p>
@@ -69,5 +78,3 @@
 </section>
 </body>
 <script src="./js/loading.js"></script>
-
-</html>
