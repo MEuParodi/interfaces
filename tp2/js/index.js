@@ -1,5 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
-
     let menuSide = document.getElementById('menu-side');
     let btnOpen = document.getElementById('btn-open');
     let btnUser = document.getElementById('btn-user');
@@ -8,10 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let cart = document.getElementById('cart');
     let prev = document.querySelectorAll('img.prev');
     let next = document.querySelectorAll('img.next');
-    let offerArrowPrev = document.getElementById('arrow-prev');
-    let offerArrowNext = document.getElementById('arrow-next');
-    let carrouselOffers = document.getElementById('container-cards-offers');
-
+    
+    //console.log("next"+ offerArrowNext+"prev"+offerArrowPrev);
 
     function scrollCarousel(cant){
         //para scrollear el carrusel
@@ -38,24 +34,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function carrouselCardsOffers(cant){
-        offerArrowNext.addEventListener('click', function() {
-            carrouselOffers.scrollLeft += cant;
-        });
+    // function carrouselCardsOffers(cant){
+    //     offerArrowNext.addEventListener('click', function() {
+    //         carrouselOffers.scrollLeft += cant;
+    //     });
 
-        offerArrowPrev.addEventListener('click', function() {
-            carrouselOffers.scrollLeft -= cant;
-        });
-    }
+    //     offerArrowPrev.addEventListener('click', function() {
+    //         carrouselOffers.scrollLeft -= cant;
+    //     });
+    // }
     
 
     if(window.innerWidth < 400){
         scrollCarousel(200);
-        carrouselCardsOffers(310)
-
     } else {
         scrollCarousel(350);
-        carrouselCardsOffers(450)
     }
 
 
@@ -88,4 +81,3 @@ document.addEventListener('DOMContentLoaded', function() {
         menuSide.classList.remove('close');
     }
 
-});

@@ -1,21 +1,24 @@
+
 let related = document.getElementById('related-games');
-let prev = document.querySelectorAll('img.prev');
-let next = document.querySelectorAll('img.next');
+let previos = document.querySelectorAll('img.prev');
+let nexts = document.querySelectorAll('img.next');
 let shareIcon = document.getElementById('shareIcon');
 let controls = document.getElementById('play-controls');
 let shareSection = document.querySelector('.share');
 let arrowClose = document.querySelectorAll('.arrow-close');
 let instructionControls = document.querySelector('.instruction-controls');
 
+
+
 function scrollCarousel(cant){
     //para scrollear el carrusel
-    prev.forEach(e => {
+    previos.forEach(e => {
         e.addEventListener('click', function() {
             e.nextElementSibling.scrollLeft -= cant
         });
     });
 
-    next.forEach(e => {
+    nexts.forEach(e => {
         e.addEventListener('click', function() {
             e.previousElementSibling.scrollLeft += cant
         });
