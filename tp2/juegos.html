@@ -138,25 +138,28 @@
                 <div class="btn-play">
                     <img src="./img/icons/play.svg" alt="">
                 </div>
-            </div>
+                </div>
                 <div class="controls">
                     <div class="game-name">
                         <h4 class="body-bold">4 en linea</h4>
                     </div>
                     <div class="control-icons">
-                        <img src="./img/icons/compartir.svg" alt="">
+                        <a id="shareIcon" href="">
+                            <img  src="./img/icons/compartir.svg" alt="">
+                        </a>
+                        
                         <img src="./img/icons/like.svg" alt="">
                         <h4 class="body-bold">85%</h4>
                         <img src="./img/icons/dislike.svg" alt="">
                         <h4 class="body-bold">15%</h4>
                         <img src="./img/icons/heart.svg" alt="">
-                        <img src="./img/icons/joystick.svg" alt="">
+                        <img id="play-controls" src="./img/icons/joystick.svg" alt="">
                         <img src="./img/icons/fullscreen.svg" alt="">
                     </div>
                 </div>
-    </div>
-        </div>
-        <div class="col-3">
+            </div>
+            </div>
+            <div class="col-3">
             <div class="chat">
                 <div class="chat-header">
                     <p>Chat</p>
@@ -195,7 +198,42 @@
             </div>
         </div>
     </section>
-
+    <section class="share">
+        <div class="share-title">
+            <h4>Compartir</h4>
+        </div>
+        <div class="arrow-close">
+            <img src="./img/4enLinea/iconoCruz.png" alt="close">
+        </div>
+        <div class="share-socials">
+            <img src="./img/4enLinea/twitter.svg" alt="twitter">
+            <img src="./img/4enLinea/facebook.svg" alt="facebook">
+            <img src="./img/4enLinea/whatsapp.svg" alt="whatsapp">
+            <img src="./img/4enLinea/instagram.svg" alt="instagram">
+        </div>
+        <div class="share-link">
+            <p class="body-bold">https://www.mundogaming.com/juegos/estrategia/4-en-linea</p>
+        </div>
+        <div class="share-btn"><button>Copiar</button></div>
+        <div class="share-btn btn-share-cancel"><button>Cancelar</button></div>
+    </section>
+    <section class="instruction-controls">
+        <div class="arrow-close">
+            <img src="./img/4enLinea/iconoCruz.png" alt="close">
+        </div>
+        <div class="container-instruction-controls">
+            <div class="controls-title">
+                <p class="body-bold">Controles jugador</p>
+            </div>
+            <div class="controls-description">
+                <ul >
+                    <li>Mover izquierda: tecla A o <span><img src="./img/4enLinea/flechaIzq.svg" alt="flecha izquierda"></span></li>
+                    <li>Mover derecha: tecla D o <span><img src="./img/4enLinea/flechaDer.svg" alt="flecha derecha"></span></li>
+                    <li>Soltar ficha: tecla W o <span><img src="./img/4enLinea/flechaAbajo.svg" alt="flecha abajo"></span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
     <section class="how-to-play">
         <div class="col-1">
             <div class="rules">
@@ -232,17 +270,17 @@
         <article class="col-2">
             <div class="video">
                 <img  src="./img/4enLinea/video1.png" alt="">
-                <img class="btn-play" src="./img/icons/play.svg" alt="">
+                <img class="btn-play" src="./img/4enLinea/play.png" alt="">
                 <!-- <iframe src="https://www.youtube.com/embed/M33XPLghiXM?si=d3NEanZMAta_Qo1f&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            </div> -->
             </div>
             <div class="video">
                 <img src="./img/4enLinea/video2.png" alt="">
-                <img class="btn-play" src="./img/icons/play.svg" alt="">
+                <img class="btn-play" src="./img/4enLinea/play.png" alt="">
                 <!-- <iframe src="https://www.youtube.com/embed/IeaEzUuzFqQ?si=Kl8qu8aPpORC-9rn&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            </div> -->
             </div>
             <div class="video">
                 <img src="./img/4enLinea/video3.png" alt="">
-                <img class="btn-play" src="./img/icons/play.svg" alt="">
+                <img class="btn-play" src="./img/4enLinea/play.png" alt="">
                 <!-- <iframe src="https://www.youtube.com/embed/t_WJQ5vN38A?si=G62GPsxh9GzZPEmY&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            </div> -->
             </div>
         </article>
@@ -509,6 +547,6 @@
         </div>
     </footer>
 </body>
-<script src="./js/sidebar.js"></script>
+<script src="./js/index.js"></script>
 <script src="./js/relGames.js"></script>
 </html>

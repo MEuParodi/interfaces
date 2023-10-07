@@ -164,6 +164,11 @@
     height: 40px;
 }
 
+.control-icons a img{
+    height: 40px;
+    width: 60px;
+}
+
 .chat {
     width: 100%;
     height: 50%;
@@ -285,7 +290,138 @@
     justify-content: center;
 }
 /************************/
+/*======seccion compartir==========*/
+.share{
+    width: 580px;
+    height: auto;
+    position: absolute;
+    top: 87%;
+    left: 6%;
+    z-index: 1;
+    padding: 5px;
+    background-color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    display: none;
+}
 
+.share-title{
+    color: var(--primario);
+    position: relative;
+}
+
+.arrow-close{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.arrow-close img {
+    width: 30px;
+    height: 30px;
+}
+
+.share-socials{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.share-socials img{
+    width: 20px;
+    height: 20px;
+}
+
+.share-link{
+    width: 95%;
+    height: 50px;
+    background-color: var(--gris-3);
+    display: flex;
+    align-items: center;
+}
+
+.share-btn{
+    width: 95%;
+}
+
+.share-btn button{
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    background: var(--primario);
+    color: var(--blanco);
+}
+
+.btn-share-cancel button {
+    color: var(--primario);
+    border: 2px solid var(--primario);
+    background: var(--primario-l2);
+} 
+
+/*==========seccion controles jugador==========*/
+.instruction-controls{
+    width: 300px;
+    height: 250px;
+    position: absolute;
+    top: 86%;
+    right: 24%;
+    z-index: 1;
+    padding: 5px;
+    background-color: var(--blanco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.container-instruction-controls{
+    position: relative;
+    width: 85%;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--primario);
+    border-radius: 10px;
+    color: var(--blanco);
+    gap: 10px;
+}
+
+.controls-description{
+    width: 95%;
+    padding: 0 5px;
+    font-size: 12px;
+}
+
+.controls-description ul{
+    
+}
+
+.controls-description ul li{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: var(--blanco);
+}
+
+.controls-description ul li span{
+    padding-left: 10px;
+    
+}
+
+.controls-description ul li span img{
+    padding-top: 10px;
+}
+
+
+/************************/
 .how-to-play{
     /* padding-top: 10px;
     padding-bottom: 10px; */
@@ -410,7 +546,7 @@
 .stars-and-button .btn-comment {
     width: 150px;
     height: 30px;
-    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.40) inset;
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.40);
     background-color: var(--acento);
     border-radius: 10px;
     color: var(--blanco, #FAF3FE);
@@ -552,4 +688,6 @@
     margin: 20px;
   }
 
-   
+.open{
+    display: flex;
+}

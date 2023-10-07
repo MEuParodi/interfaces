@@ -38,7 +38,6 @@
 }
 
 /* =============Clases Generales=============*/
-/*las propiedades comunes las puse asi y lo especifico abajo en cada clase -chequear- esta bien?*/
 h1, h2, h3, h4, .tx-small, .body-bold, .body1, .body2, .tx-btn {
     font-family: var(--font);
     font-style: normal;
@@ -112,7 +111,6 @@ h4{
     height: 30px;
     padding-left: 10px;
     padding-right: 10px;
-    /* box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.40) inset; */
     background-color: var(--acento);
     border-radius: 10px;
     color: var(--blanco, #FAF3FE);
@@ -157,7 +155,6 @@ h4{
 }
 
 .containerSesion {
-    /* background-color: var(--primario-s2); */
     background-color: rgba(43, 4, 59, 0.60);
     color: var(--blanco);
     width: 500px;
@@ -437,8 +434,6 @@ label span {
     }
   }
 
-
-
   #message{
         width: 100%;
         height: 150px;
@@ -580,7 +575,7 @@ button{
     position: relative;
 
 }
-/*para hacer circulo verde de conexion*/
+/*circulo verde de conexion*/
 .btn-user-login::after{
     content: "";
     width: 10px;
@@ -590,7 +585,6 @@ button{
     position: absolute;
     right: 0;
     top: 2px;
-
 }
 
 
@@ -639,7 +633,7 @@ button{
 }
 
 .side-options .option {
-    height: 50px;
+    height: 40px;
     margin: 10px 0;
     padding: 20px 5px;
     padding-left: 10px;
@@ -677,9 +671,6 @@ button{
     background-color: var(--primario-l2);
 }
 
-.side-options .option-search input {
-    height: 40px;
-}
 .menu-side-move{
     width: 200px;
     transition: all 300ms;
@@ -689,11 +680,6 @@ button{
     display: none;
 }
 
-/* .menu-side-hidden{
-    width: 80px;
-    left: -80px;
-    transition: all 300ms;
-} */
 /*================carrito de compras===========*/
 
 .container-cart{
@@ -779,9 +765,9 @@ button{
     width: 100%;
     border-radius: 10px;
     border: 1px solid var(--primario-s1);
-    height: 30px;
+    height: 25px;
     color: var(--primario);
-    font-size: 1;
+    font-size: 12px;
 }
 .cart-btns button{
     margin: 5px 0;
@@ -972,7 +958,7 @@ button{
     overflow: hidden;
     display: flex;
     justify-content: space-around;
-    margin: 0 10px 0 10px;
+    margin: 0 10px 30px 10px;
 }
 
 .container-button-box{
@@ -1007,20 +993,79 @@ button{
 }
 
 /* =============Card ==============*/
+.efect-scroll{
+    /* transform: skewY(2deg); */
+    animation: scrollCarrousel 1.5s linear;
+   /* background-image: linear-gradient(to bottom, transparent 10%, 
+   var(--primario) 30%, 
+   var(--acento) 58%,
+    transparent 90%
+    );  */
+    .card {
+        /* box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.55); */
+        /* background: linear-gradient(45deg, #ff7e5f, #feb47b); */
+        /* box-shadow: 10px 10px 10px 0px rgba(123, 246, 35, 0.55); */
+        box-shadow: 10px 10px 10px 0px rgba(185, 27, 242, 0.55);
+    }
+   
+    /* background-color: var(--primario); */
+    /* transform: rotate(5deg); */
+    /*transform: scale(0.95);
+       ; perspective(1000px)*/
+  }
+  @keyframes scrollCarrousel {
+    20%{
+        
+        transform: scale3d(1.009, 1.009, 1.009);
+         /* transform: scale(1.009);  */
+        /* background-image: linear-gradient(to bottom, transparent 10%, 
+                            var(--primario) 30%, 
+                            var(--primario-s1) 58%,
+                            transparent 90% );
+        */
+    }
+    50%{
+        
+        
+         transform: scale3d(0.99, 0.99, 0.99); 
+        /* background-image: linear-gradient(to bottom, transparent 10%, 
+                            var(--primario) 30%, 
+                            var(--primario-s2) 58%,
+                            transparent 90% ); */
+    }
+    75%{
+        
+         transform: scale3d(0.995, 0.995, 0.995); 
+        /* background-image: linear-gradient(to bottom, transparent 10%, 
+                            var(--primario) 30%, 
+                            var(--primario-s3) 58%,
+                            transparent 90% ); */
+    }
+
+    100%{
+        
+        transform: scale3d(1, 1, 1); 
+       /* background-image: linear-gradient(to bottom, transparent 10%, 
+                           var(--primario) 30%, 
+                           var(--primario-s3) 58%,
+                           transparent 90% ); */
+   }
+  }
+
 .carrousel{
     position: relative;
-    margin: 30px 0 30px 0;
+    margin: 0 0 30px 0;
 }
 .carrousel .carrousel-cards{
     width: 97%;
     height: 100%;
     display: flex;
     overflow: hidden;
-    padding: 5px;
-    padding-left: 10px;
+    padding: 1%;
+    padding-bottom: 15px;
+    /* padding-left: 1%;
+    padding-right: 1%; */
     gap: 5px;
-    /* overflow-x: scroll;
-    scroll-snap-type: mandatory; */
 }
 
 .carrousel .control{
@@ -1078,15 +1123,8 @@ button{
 
 .carrousel-title .view-all:hover{
     color: var(--primario-s1);
-    font-size: 16px;
-    font-weight: 600;
-}
-
-/*==========carrusel de ofertas=========*/
-.offers{
-    height: 400px;
-    width: 90%;
-    background-color: var(--primario-l1);
+    font-size: 12px;
+    font-weight: 500;
 }
 
 /*=======card=======================*/
@@ -1110,15 +1148,7 @@ button{
     }
 }
 
-.card:hover{
-    /* transform: translate(0px, -10px); */
-
-    /* transform: rotateZ(5deg); */
-    transform: scale(1.03);
-    box-shadow: 3px 3px 0 0 var(--secundario-s1);
-}
-
-/*card con tag por default es gratis ver nombre de la clase tag tal vez es muy largo*/
+/*card con tag*/
 .card.tag::after{
     align-items: center;
     justify-content: center;
@@ -1150,7 +1180,7 @@ button{
     top: 39.8px;
     display: none;
 }
-/*card con tag gratis*/
+
 .gratis.tag::after, .gratis.tag::before, .off.tag::after, .off.tag::before,
 .exclusive.tag::after, .exclusive.tag::before, .nuevo.tag::after, .nuevo.tag::before {
     display: flex;
@@ -1181,9 +1211,6 @@ button{
 }
 
 .tag.gratis {
-    .card-price{
-        right: 5px;
-    }
     .card-title{
         width: 120px;
     }
@@ -1196,7 +1223,7 @@ button{
 .gratis.tag::before {
     background-color: var(--exito-color);
 }
-/*card con tag 20 %off como hacemos si queremos 30 o 40 off? hacemos otra clase?*/
+/*card con tag 20 %off*/
 .off.tag::after {
     content: "20 %OFF";
     background-color: var(--error-color);
@@ -1256,10 +1283,8 @@ button{
 .card-header p.body1{
     text-decoration: line-through;
     color: var(--error-color);
-
 }
 
-/*prop para truncar el texto*/
 .card-title {
     width: 105px;
     font-size: 15px;
@@ -1293,33 +1318,71 @@ button{
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    margin: 6px 5px 5px 10px;
-
-
+    padding-right: 5px;
+    margin: 6px 5px 5px 15px;
+    position: relative;
 }
 
 .card-btn-play {
     width: 80px;
     height: 25px;
+    border: none;
     border-radius: 10px;
-    border: 1px solid var(--blanco);
     background: var(--primario);
     color: var(--blanco);
-    font-weight: 400;
+    font-weight: 500;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+
+.card-btn-play::before{
+    content: '';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(45deg, var(--secundario), var(--primario), 
+                deeppink, var(--primario), var(--secundario), var(--primario), deeppink, var(--primario));
+    background-size: 200%;
+    border-radius: 10px;
+    filter: blur(6px);
+    animation: glowing 5s linear infinite;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+        transform: scale(1.04);
+    }
+    50% {
+        background-position: 200% 0;
+        transform: scale(1.1);
+    }
+    100%{
+        background-position: 0 0 ;
+        transform: scale(1.04);
+    }
+}   
+
+
+.card-btn-play:hover::before{
+    opacity: 1;    
 }
 
 .card-btn-play:hover{
-    background-color: var(--primario-s3);
-    transition: 0.5s ease;
+    background-color: var(--primario-s2);
+    font-size: 13px;
+    transition: 0.5s linear;     
 }
 
+
 .card-btn-buy {
-    background-image: url("../img/carrito.svg");
-    background-repeat: no-repeat;
-    border: none;
+    background: var(--acento) url("../img/carrito.svg") no-repeat center center;
     background-size: 20px 20px;
-    background-position: center center;
-    background-color: var(--acento);
     width: 40px;
     height: 25px;
     border-radius: 10px;
@@ -1341,10 +1404,8 @@ button{
     position: absolute;
     height: 20px;
     width: 20px;
-    background-image: url('../img/icons/iconCheck.svg');
-    background-repeat: no-repeat;
-    background-size: 30px 20px;
-    background-position: center center;
+    background: url('../img/icons/iconCheck.svg') no-repeat center center;
+    background-size: 30px 20px; 
     top: 0;
     right: 2px;
     z-index: 100;
@@ -1383,9 +1444,16 @@ button{
     }
 }
 
+.card:hover{
+    transform: scale(1.03);
+    box-shadow: 3px 3px 0 0 var(--secundario-s1);
+}
+
 .open {
     display: block;
 }
+
+/*========appstore=============*/
 
 .appstores {
     display:flex;
@@ -1398,6 +1466,221 @@ button{
     width: 60px;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+/*==========cards oferta====================*/
+.carrousel-cards-offers{
+    overflow: hidden;
+    width: 97%;
+    position: relative;
+    padding-left: 8px;
+    margin-top: 7%;
+}
+
+.container-cards-offers{
+    width: 97%;
+    height: 335px;
+    overflow: hidden;
+    margin-top: 10%;
+    margin-left: 5px;
+    white-space: nowrap;
+}
+
+.card-offer{
+    display: inline-block;
+    width: 300px;
+    height: 280px;
+    border-radius: 10px;
+    background-image: url("../img/Home/fondoForm.png");
+    background-size: cover;
+    position: relative;
+    transition: all .5s ease;
+    margin: 0 5px;
+}
+
+.card-offer h3.card-offer-title{
+    margin-top: 10px;
+    color: var(--blanco);
+    font-size: 20px ;
+    text-align: center;
+    text-shadow: 1px 1px 10px var(--negro);
+    position: relative;
+    z-index: 2;
+}
+
+.container-card-offer{
+    width: 30%;
+    height: 213px;
+    position: absolute;
+    top: 20%;
+    right: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+
+.container-card-offer h4{
+    color: var(--blanco);
+    text-align: center ;
+    width: 110px;
+    text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.75);
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 8%;
+}
+
+.card-offer-prices{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 14%;
+}
+
+.card-offer-prices p.body{
+    color: var(--primario-l1);
+    text-decoration: line-through;
+}
+.card-offer-prices h3{
+    color: var(--acento);
+    text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.75);
+}
+
+.container-card-offer button{
+    width: 90px;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    background: var(--secundario);
+    color: var(--blanco);
+    background-image: url('../img/carrito.svg');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 30px 15px;
+    text-align: right;
+    margin-right: 8%;
+    padding-right: 6px;
+    font-weight: 600;
+    font-size: 12px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.card-offer img:nth-child(2){
+    max-height: 250px;
+    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.card-offer img:last-child{
+    position: absolute;
+    width: 240px;
+    height: 100%;
+    bottom: 3%;
+    left:-5%;
+    /* right: 0; */
+    margin: auto;
+    transform: translateY(14%);
+    transition: .5s ease;
+    opacity: 0;
+}
+
+.card-offer:hover{
+    /*perspectiva da profundidad, rota 10grados hacia atras*/
+    transform: perspective(300px) 
+                rotateX(10deg); 
+}
+.card-offer::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    /*de arriba abajo enmpiza transparente, al 80% del elem cambia a gris oscuro y termina en negro total*/
+    background-image: linear-gradient(to bottom, transparent 10%, 
+                                rgba(0, 0, 0, 0.5) 30%, 
+                                rgba(0, 0, 0) 98%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.card-offer:hover::before{
+    opacity: 1;
+}
+.card-offer:hover img:last-child{
+    opacity: 1;
+}
+.card-offer:hover img:nth-child(2){
+    opacity: 0.5;
+}
+
+.container-count-down{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container-count-down p.title-count-down{
+    color: var(--blanco);
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    bottom: 16%;
+    left: 5%;
+}
+.container-count-down .count-down{
+    position: absolute;
+    bottom: 4%;
+    left: 2%;
+    width: 65%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 3px;
+}
+
+.container-count-down .count-down p.body-bold{
+    color: var(--acento);
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 13px;
+}
+.container-count-down .count-down p.time{
+    font-size: 8px;
+}
+.count-down div{
+    width: 40px;
+    height: 35px;
+    border-radius: 5px;
+    background: var(--primario-l2);  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.offer-arrow-prev, .offer-arrow-next{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 0, 0.50);
+    cursor: pointer;
+    object-fit: cover;
+    padding: 10px;
+    top:39%;
+    z-index: 2;
+    
+}
+
+.offer-arrow-prev{
+    transform: rotate(180deg);
+    left: 5%;
+}
+
+.offer-arrow-next{
+    right: 0%;
 }
 
 /*============== footer Mobile===================*/
@@ -1429,7 +1712,6 @@ button{
 
 .mobile .foot-info {
     width: 100%;
-    /* height: 100px; */
     background-color: var(--Primario, #8B27B5);
     display: flex;
     justify-content: space-around;
@@ -1489,7 +1771,6 @@ button{
 
 
 .appstores {
-    /* margin-left: 80px; */
     margin-top: 100px;
     display: flex;
     justify-content: center;
@@ -1579,7 +1860,6 @@ button{
     .btn-big {
         width: 387px;
         height: 60px;
-        /* box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.40) inset; */
         box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.40);
         background-color: var(--acento);
         border-radius: 10px;
@@ -1587,11 +1867,6 @@ button{
         text-align: center;
         text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     }
-
-    /* .btn-big h4{
-        font-size: 24px;
-        font-weight: 600;
-    } */
 
     .btn-big:hover {
         background-color: var(--primario);
@@ -1676,8 +1951,8 @@ button{
     font-size: 18px;
 }
 .cart-discount .btn-main-inactive, .cart-btns .btn-main-inactive, .cart-btns .btn-main-active{
-    height: 40px;
-    font-size: 16px;
+    height: 35px;
+    font-size: 15px;
 }
 
 
@@ -1769,13 +2044,6 @@ button{
 }
 
 /*==============carrousel===================*/
-/*
-.carrousel{
-    display: flex;
-    flex-wrap: nowrap;
-    overflow: scroll;
-    gap: 20px;
-} */
 .carrousel{
     margin-left: 70px;
 
@@ -1807,13 +2075,9 @@ button{
     width: 260px;
     height: 310px;
     box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
-    /* transition: all 50ms ease-out; */
 }
 
 .card:hover{
-    /* transform: translate(0px, -10px); */
-
-    /* transform: rotateZ(5deg); */
     transform: scale(1.05);
     box-shadow: 5px 5px 0 0 var(--secundario-s1);
 }
@@ -1834,16 +2098,13 @@ button{
         font-size: 12px;
     }
     .card-price{
-        top: -5px;
+        top: -3px;
     }
 }
 
 .tag.gratis {
     .card-title{
         width: 170px;
-    }
-    .card-price{
-        right: 18px;
     }
 }
 
@@ -1868,8 +2129,8 @@ button{
 }
 
 .card-title{
-    width: 150px;
-     margin-top: 5px;
+    width: 145px;
+    margin-top: 5px;
 }
 
 .card-description{
@@ -1880,13 +2141,13 @@ button{
 }
 
 .card-btns{
+    padding: 0;
     width: 228px;
 }
 
 .card-btn-buy {
     width: 40px;
     height: 25px;
-    margin-right: 10px;
 }
 
 .card-btn-play {
@@ -1894,9 +2155,6 @@ button{
 
 }
 
-.card-btn-play:hover{
-    transform: rotateZ(25deg);
-}
 .ya-es-tuyo{
     .card-body::before{
         height: 85px;
@@ -1913,6 +2171,100 @@ button{
         text-shadow: 4px 4px 4px var(--negro);
     }
 }
+
+.carrousel-title .view-all:hover{
+    font-size: 16px;
+    font-weight: 600;
+}
+/*==================cards oferta==================*/
+
+
+.container-cards-offers{
+    height: 500px;
+    margin: 0;
+    margin-left: 50px;
+    white-space: nowrap;
+}
+.card-offer{
+    width: 480px;
+    height: 400px;
+    margin: 12px;
+    margin-left: 30px;
+}
+
+.card-offer h3.card-offer-title{
+    margin-top: 20px;
+    font-size: 26px ;
+} 
+
+.container-card-offer{
+    width: 50%;
+    height: 300px;
+    right: -6%;
+    white-space: wrap;
+}
+
+.container-card-offer h4{
+    width: 175px;
+}
+
+.container-card-offer button{
+    width: 160px;
+    height: 45px;
+    border: none;
+    background-size: 80px 22px;
+    padding-right: 30px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.card-offer img:nth-child(2){
+    max-height: 380px;
+}
+
+.card-offer img:last-child{
+    width: 350px;
+    bottom: 0;
+    left: 9%;
+}
+
+.container-count-down   p.title-count-down{
+    bottom: 16%;
+    left: 7%;
+}
+
+.container-count-down .count-down{
+    bottom: 5%;
+    left: 5%;
+    gap: 5px;
+}
+
+.count-down div{
+    width: 50px;
+    height: 45px;
+    
+}
+
+.offer-arrow-prev{
+    left: 7.5%;
+}
+
+.offer-arrow-next{
+    right: 0;
+}
+
+.container-count-down .count-down p.time {
+    font-size: 10px;
+}
+
+.container-count-down .count-down p.body-bold {
+
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+
 /* =====================appstores================ */
 
 .appstores {
