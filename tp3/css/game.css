@@ -1,0 +1,755 @@
+*:root{
+    --font: 'Poppins', sans-serif;
+    --acento-l1: #f69b1280;
+    --gris-1: #6e5c75;
+    --gris-2: #cac1cd;
+    --gris-3: #e4e4e5;
+    --gris-4: #f6f5f7;
+    --primario: #8b27b5;
+    --primario-l1: #dbbce8;
+    --primario-l2: #eedff4;
+    --primario-l3: #f3e9f8;
+    --primario-s1: #6f1f91;
+    --primario-s2: #681d88;
+    --primario-s3: #53176d;
+    --secundario: #a7ef2b;
+    --secundario-l1: #e4fabd;
+    --secundario-l2: #f2fddf;
+    --secundario-l3: #f6fdea;
+    --secundario-s1: #96d727;
+    --secundario-s2: #7db320;
+    --secundario-s3: #4b6c13;
+    --acento: #F69B12;
+    --blanco: #FAF3FE;
+    --error-color: #d33636;
+    --exito-color: #66b527;
+    --negro: #2B043B;  
+    --warning-color: #E8E020;
+}
+
+#header-home-game{
+    width: 100%;
+    height: 80px;
+    background-color: var(--primario);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    z-index: 600;
+}
+
+#juegos{
+    margin-top: 0;
+}
+
+#juegos .menu-side{
+    top: 0;
+    height: 100vh;
+}
+
+.rules p span{
+    color: var(--secundario, #a7ef2b);
+}
+
+.rules p{
+    line-height: 140%;
+}
+
+.how-to-play img, .related-games img, .comments-section img {
+    /* max-width: 100%;  */
+    /* background-size: cover; */
+    max-height: 100%;
+}
+
+.col-1 {
+    width: 50%; 
+    /* padding-right: 20px; */
+    padding-top: 10px;
+}
+
+.col-2 {
+    width: 25%; 
+    padding: 10px 0 5px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+ }
+
+.col-3 {
+    width: 25%;
+    background: var(--Primario-S2, #681D88);
+    padding: 10px;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow-y: hidden;
+}
+
+.comments-section .col-3 , .comment-box{
+    background: var(--blanco);
+}
+
+.col-1-2 {
+    /* border: solid red; */
+    width: 75%; 
+    /* padding-right: 20px; */
+    padding: 10px;
+}
+
+.breadcrumb {
+    background: var(--Primario-S2, #681D88);
+    height: 60px;
+    padding-top: 23px;
+    padding-left: 70px;
+    width: 100%;
+    color: var(--blanco);
+}
+
+.breadcrumb a{
+    color: var(--secundario);
+    text-decoration: underline;
+    
+}
+
+.buttons-choice-board{
+    position: absolute;
+    top: 230px;
+    right: 35px;
+    
+}
+
+.buttons-choice-board button{
+    background-color: var(--acento);
+    border: none;
+    margin: 0px 2px;
+    border-radius: 5px;
+    height: 30px;
+    width: 100px;
+    color: var(--blanco);
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.40);
+}
+
+.title-game{
+    position: absolute;
+    top: 150px;
+    right: 180px;
+    color: var(--negro);
+    font-size: 30px;
+    font-family: 'Tsukimi Rounded', sans-serif;
+    text-shadow: 2px 2px 3px #00000080;
+    /* text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25); */
+}
+
+.game-options{
+    position: absolute;
+    top: 200px;
+    right: 354px;
+    color: var(--negro);
+    font-size: 14px;
+}
+    
+.game {
+    /*width: 100%; ancho y alt de todo el grid*/
+    /* height: 775px; */
+    padding-left: 70px; 
+    padding-right: 10px;
+    background: var(--Primario-S2, #681D88);
+    display:flex;
+    flex-direction: column;
+    
+}
+
+.game .col-1-2 {
+    margin-top: 10px;
+    padding: 0;
+}
+
+
+.board img {
+    background-size: cover;
+    width: 100%;
+}
+
+.game-image {
+    position: relative;
+}
+
+.btn-play {
+    width: 20%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; 
+    transition: transform 0.2s ease;
+}
+
+  .btn-play:hover {
+    transform: translate(-50%, -50%) scale(1.1); 
+}
+
+.game .controls {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    background-color: var(--negro);
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.controls .body-bold {
+    color: var(--secundario);
+    font-size: 20px;
+}
+
+.game-name {
+    width: 35%;
+    padding-left: 25px;
+}
+
+.control-icons {
+    width: 65%;
+    padding-right: 9px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.controls img {
+    height: 40px;
+}
+
+.control-icons a img{
+    height: 40px;
+    width: 60px;
+}
+
+.chat {
+    width: 100%;
+    height: 50%;
+    background: var(--primario);
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chat-header, .chat-footer {
+    background-color: var(--negro);
+    height: 40px;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-top: -10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat .comment-container{
+    margin-top: 0px;
+}
+
+
+.chat-header img {
+    margin-right: 65%;
+}
+
+.chat-header p, .chat-footer p {
+    color: var(--blanco);
+}
+
+.chat-header .close-chat {
+    color: var(--secundario);
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.chat .comment .body-bold {
+    color: var(--secundario, #a7ef2b);
+} 
+
+.chat .comment p.body-bold span {
+    color: var(--blanco);
+}
+
+.chat .comment p.body {
+    color: var(--negro);
+    font-weight: 600;
+}
+
+.chat-footer {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+
+.video {
+    position: relative;
+}
+
+.video .btn-play {
+    width: 30%;
+}
+
+.video img{
+    width:100%;
+  }
+  
+
+/*****PUBLICIDADES******/
+.publi-juego {
+    height: 50%;
+    width: 100%;
+    background: repeating-linear-gradient(45deg,rgba(255,255,255,0.1),rgba(255,255,255,0.1),rgba(255,255,255,0.1),rgba(255,255,255,0.1) 4px,rgba(0,0,0,0.15) 6px);
+    background-color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.publi-juego img {
+    height: 80%;
+}
+
+.publi-how-to-play {
+    height: 100%;
+    width: 100%;
+    background: repeating-linear-gradient(45deg,rgba(255,255,255,0.1),rgba(255,255,255,0.1),rgba(255,255,255,0.1),rgba(255,255,255,0.1) 4px,rgba(0,0,0,0.15) 6px);
+    background-color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+
+.publi-medium {
+    height: 350px;
+    width: 100%;
+    background: repeating-linear-gradient(45deg,rgba(255,255,255,0.1),rgba(255,255,255,0.1),rgba(255,255,255,0.1),rgba(255,255,255,0.1) 4px,rgba(0,0,0,0.15) 6px);
+    background-color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.publi-large {
+    height: 650px;
+    width: 100%;
+    background: repeating-linear-gradient(45deg,rgba(255,255,255,0.1),rgba(255,255,255,0.1),rgba(255,255,255,0.1),rgba(255,255,255,0.1) 4px,rgba(0,0,0,0.15) 6px);
+    background-color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/************************/
+/*======seccion compartir==========*/
+.share{
+    width: 580px;
+    height: auto;
+    position: absolute;
+    top: 470px;
+    left: 71px;
+    z-index: 1;
+    padding: 5px;
+    background-color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    display: none;
+}
+
+.share-title{
+    color: var(--primario);
+    position: relative;
+}
+
+.arrow-close{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.arrow-close img {
+    width: 30px;
+    height: 30px;
+}
+
+.share-socials{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.share-socials img{
+    width: 20px;
+    height: 20px;
+}
+
+.share-link{
+    width: 95%;
+    height: 50px;
+    background-color: var(--gris-3);
+    display: flex;
+    align-items: center;
+}
+
+.share-btn{
+    width: 95%;
+}
+
+.share-btn button{
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    background: var(--primario);
+    color: var(--blanco);
+}
+
+.btn-share-cancel button {
+    color: var(--primario);
+    border: 2px solid var(--primario);
+    background: var(--primario-l2);
+} 
+
+/*==========seccion controles jugador==========*/
+.instruction-controls{
+    width: 300px;
+    height: 250px;
+    position: absolute;
+    top:470px;
+    right: 11px;
+    z-index: 1;
+    padding: 5px;
+    background-color: var(--blanco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.container-instruction-controls{
+    position: relative;
+    width: 85%;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--primario);
+    border-radius: 10px;
+    color: var(--blanco);
+    gap: 10px;
+}
+
+.controls-description{
+    width: 95%;
+    padding: 0 5px;
+    font-size: 12px;
+}
+
+.controls-description ul{
+    
+}
+
+.controls-description ul li{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: var(--blanco);
+}
+
+.controls-description ul li span{
+    padding-left: 10px;
+    
+}
+
+.controls-description ul li span img{
+    padding-top: 10px;
+}
+
+
+/************************/
+.how-to-play{
+    /* padding-top: 10px;
+    padding-bottom: 10px; */
+    width: 100%; 
+    /* height: 550px; */
+    padding-left: 70px; 
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: var(--Primario-S2, #681D88);
+    color: white;
+    display: flex;
+    flex-direction: row; 
+}
+
+.rating{
+    display: flex;
+    width: 100%; 
+    height: 80px;
+    align-items: center;
+    /* border: solid red; */
+}
+
+.rating h1 {
+    margin-right: 50px;
+    color: var(--acento);
+}
+.rating img {
+    width: 50px;
+}
+
+.related-games {
+    padding: 40px;
+    background: var(--blanco, #FAF3FE);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.related-games h4 {
+    margin-left: -30px;
+    background: var(--blanco, #FAF3FE);
+
+}
+.juegos-relacionados {
+    margin-top: 10px;
+    width: 99%;
+    overflow: hidden;
+    display: flex;
+}
+
+.juegos-relacionados img {
+    width: 160px;
+    height: 160px;
+    padding: 10px;
+    border-radius:20px;
+}
+.comments-section{
+    width: 100%; 
+    padding-left: 70px; 
+    background: var(--blanco, #FAF3FE);
+    display: flex;
+    flex-direction: row; 
+}
+
+.comment-tittle {
+        margin-bottom: 20px;
+        /* background-color: red; */
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        border-radius: 7px;
+}
+
+.comment-tittle img {
+    width: 60px;
+    height: 38px;
+}
+
+.comment-box {
+    width: 90%; 
+    padding: 20px;
+    border: solid 1px var(--gris-2);
+    border-radius: 10px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.comment-box .avatar {
+    margin-right: 20px;
+}
+
+.comment-box .comment-opinion {
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+
+.stars-and-button {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-opinion input{
+    border: solid 1px var(--gris-2);
+    border-radius: 5px;
+    width: 100%;
+    height: 70px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+.stars-and-button .stars img{
+    width: 20px;
+}
+
+.stars-and-button .btn-comment {
+    width: 150px;
+    height: 30px;
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.40);
+    background-color: var(--acento);
+    border-radius: 10px;
+    color: var(--blanco, #FAF3FE);
+    text-align: center;
+    border: none;
+    font-size: small;
+}
+
+.comment-amount{
+    margin-left: 50%;
+    /* margin-bottom: 50px; */
+    transform: translate(-50%);
+    width: 301px;
+    height: 70px;
+    background-color: var(--Gris-2, #CAC1CD);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+}
+
+.comment-amount img {
+    height: 30px;
+    margin-left: 10px;
+}
+.comment img {
+    height: 30px;
+}
+
+.comment{
+    padding-top: 15px;
+}
+
+.comment p.body{
+    padding-top: 10px;
+
+}
+
+.comment-container{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 40px;
+    position: relative;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    margin-right: 10px;
+    background-color: #a7ef2b;
+}
+
+.avatar::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+.avatar.orange {
+    background-color: orange;
+    position: relative;
+}
+
+.avatar.orange::after {
+    content: "E";
+}
+
+.avatar.purple {
+    background-color: var(--Primario, #8B27B5);
+    position: relative;
+}
+
+.avatar.purple::after {
+    content: "A";
+}
+
+.avatar.turq {
+    background-color: turquoise;
+    position: relative;
+}
+
+.avatar.turq::after {
+    content: "P";
+}
+
+.avatar.green {
+    position: relative;
+}
+
+.avatar.green::after {
+    content: "J";
+}
+
+
+.avatar img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.comment p.body-bold span {
+    color: var(--Gris-1, #6E5C75);
+}
+
+.comment p.body {
+    margin-bottom: 10px;
+}
+
+.comment a {
+    color: var(--Primario-S2);
+}
+
+.admin {
+    margin-top: 5px;
+    margin-left: 60px;
+}
+
+.overflow-wrap {
+    white-space: pre-wrap;       /* Permite saltos de línea */
+    overflow-wrap: break-word;   /* Dividir palabras que no caben */
+    max-width: 100%;            /* Establece el ancho máximo del contenedor */
+  }
+
+  .appstores {
+    margin-left: 80px;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .appstores img {
+    margin: 20px;
+  }
+
+.open{
+    display: flex;
+}

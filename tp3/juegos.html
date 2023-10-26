@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleMobile.css">
+    <link rel="stylesheet" href="./css/game.css">
+    <title>Juego</title>
+</head>
+
+<body id="juegos">
+    <header id="header-home-game">
+        <div class="header-left">
+            <div class="menu-burger" id="btn-open">
+                <img src="./img/icons/iconHamb.svg" alt="menu-burger">
+            </div>
+            <figure>
+                <a href="home.html">
+                <img class="logo-header" src="./img/Home/logoVioletaOscuro.png" alt="logo">
+            </a>
+        </figure>
+        </div>
+        <div class="container-header">
+            <div class="container-search"> 
+                <img src="./img/lupaNegra.png" alt="search">
+                <input class="input-search" type="text" placeholder="Busca tu juego">
+            </div>
+            <div class="container-btn-header">
+                <button id="btn-buy" class="btn-buy"></button>
+                <button id="btn-user" class="btn-user-login"></button>
+            </div>
+        </div>
+        
+    </header>
+    <nav class="menu-side" id="menu-side">
+        <div class="side-options" >
+            <a id="menu-side-input-search" href="#">
+                <div class="option option-search">
+                    <img src="./img/lupaNegra.png" alt="search">
+                    <input type="text" placeholder="Busca tu juego">
+                </div>
+            </a>
+            <a href="#">
+                 <div class="option">
+                    <img src="./img/icons/iconFuego.svg" alt="populares" title="Populares">
+                    <p class="body-bold">Más Populares</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <img src="./img/icons/iconNuevo.svg" alt="nuevos">
+                    <p class="body-bold">Nuevos</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <img src="./img/icons/iconParaVos.png" alt="paravos" >
+                    <p class="body-bold">Para Vos</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <img src="./img/icons/iconPromo.svg" alt="promo" >
+                    <p class="body-bold">Promo</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <img src="./img/icons/iconGratis.svg" alt="gratis" >
+                    <p class="body-bold">Gratis</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <img src="./img/icons/iconAventura.svg" alt="aventura" >
+                    <p class="body-bold">Aventura</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <img src="./img/icons/iconAccion.svg" alt="accion" >
+                    <p class="body-bold">Acción</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <img src="./img/icons/iconInfantil.svg" alt="infantiles" >
+                    <p class="body-bold">Infantiles</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <img src="./img/icons/iconEstrategia.svg" alt="estrategia" >
+                    <p class="body-bold">Estrategia</p>
+                </div>
+            </a>
+        </div>
+    </nav>
+    <nav id="menu-user" class="menu-user">
+        <div class="side-options">
+            <p class="body-bold name-user">Hola Ema!</p>
+            <a href="#">
+                 <div class="option">
+                    <img src="./img/icons/iconUser.svg" alt="avatar">
+                    <p class="body-bold">Mi cuenta</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <img src="./img/carrito.svg" alt="carrito">
+                    <p class="body-bold">Mis Compras</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <img src="./img/icons/iconCorazon.svg" alt="mis juegos" >
+                    <p class="body-bold">Mis Juegos</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <img src="./img/icons/iconCerrarSesion.svg" alt="cerrar sesion" >
+                    <p class="body-bold">Cerrar Sesión</p>
+                </div>
+            </a>
+        </div>
+    </nav>
+    <div class="breadcrumb">
+        <p>
+            <a href="home.html">juegos</a> >> estrategia >> 4 en línea
+        </p>
+        <div class="buttons-choice-board">
+            <button id="4-en-linea">4 En Línea</button>
+            <button id="5-en-linea">5 En Línea</button>
+            <button id="6-en-linea">6 En Línea</button>
+            <button id="7-en-linea">7 En Línea</button>
+        </div>
+        <p class="title-game">4 en Línea</p>
+        <p class="game-options">Elegi tu tablero:</p>
+
+        
+    </div>
+        
+        
+    <section class="game">
+        <canvas id="myCanvas" width="1080" height="530" style="border:1px solid #000000; background-color:#f3e9f8">
+            <img id="arriba-izq" src="./img/juego/arribaizq.png" alt="arriba-izq">
+            <img  id="arriba-borde" src="./img/juego/center.png" alt="arriba-borde">
+            <img  id="arriba-der" src="./img/juego/arribaDer.png" alt="arribader">
+            <img  id="abajo-izq" src="./img/juego/abajoIzq.png" alt="abajo-izq">
+            <img  id="abajo-borde" src="./img/juego/center.png" alt="abajo-borde">
+            <img  id="abajo-der" src="./img/juego/abajoDer.png" alt="abajo-der">
+            <img  id="izq-borde" src="./img/juego/izq.png" alt="izq-borde">
+            <img  id="der-borde" src="./img/juego/der.png" alt="der-borde">
+            <img  id="medio" src="./img/juego/center.png" alt="/medio">
+        </canvas>
+        <div class="controls">
+            <div class="game-name">
+                <h4 class="body-bold">4 en linea</h4>
+            </div>
+            <div class="control-icons">
+                <a id="shareIcon" href="">
+                    <img  src="./img/icons/compartir.svg" alt="">
+                </a>
+                
+                <img src="./img/icons/like.svg" alt="">
+                <h4 class="body-bold">85%</h4>
+                <img src="./img/icons/dislike.svg" alt="">
+                <h4 class="body-bold">15%</h4>
+                <img src="./img/icons/heart.svg" alt="">
+                <img id="play-controls" src="./img/icons/joystick.svg" alt="">
+                <img src="./img/icons/fullscreen.svg" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="share">
+        <div class="share-title">
+            <h4>Compartir</h4>
+        </div>
+        <div class="arrow-close">
+            <img src="./img/4enLinea/iconoCruz.png" alt="close">
+        </div>
+        <div class="share-socials">
+            <img src="./img/4enLinea/twitter.svg" alt="twitter">
+            <img src="./img/4enLinea/facebook.svg" alt="facebook">
+            <img src="./img/4enLinea/whatsapp.svg" alt="whatsapp">
+            <img src="./img/4enLinea/instagram.svg" alt="instagram">
+        </div>
+        <div class="share-link">
+            <p class="body-bold">https://www.mundogaming.com/juegos/estrategia/4-en-linea</p>
+        </div>
+        <div class="share-btn"><button>Copiar</button></div>
+        <div class="share-btn btn-share-cancel"><button>Cancelar</button></div>
+    </section>
+    <section class="instruction-controls">
+        <div class="arrow-close">
+            <img src="./img/4enLinea/iconoCruz.png" alt="close">
+        </div>
+        <div class="container-instruction-controls">
+            <div class="controls-title">
+                <p class="body-bold">Controles jugador</p>
+            </div>
+            <div class="controls-description">
+                <ul >
+                    <li>Mover izquierda: tecla A o <span><img src="./img/4enLinea/flechaIzq.svg" alt="flecha izquierda"></span></li>
+                    <li>Mover derecha: tecla D o <span><img src="./img/4enLinea/flechaDer.svg" alt="flecha derecha"></span></li>
+                    <li>Soltar ficha: tecla W o <span><img src="./img/4enLinea/flechaAbajo.svg" alt="flecha abajo"></span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="how-to-play">
+        <div class="col-1">
+            <div class="rules">
+                <p class="body-bold">Características</p><br>
+                <p class="body">Clasificación: 8,6</p>
+                <p class="body">Desarrollador: <span>XGame</span></p>
+                <p class="body">Publicado en: marzo de 2023</p>
+                <p class="body">Tecnología: HTML5</p>
+                <p class="body">Plataformas: Browser (desktop, mobile, tablet), iOS, Android</p>
+                <p class="body"><span>Clasificación: Juegos >> Estrategia >> 4 En Linea</span></p> <br><br>
+            </div>
+            <div class="rules">
+                <p class="body-bold">Como jugar</p><br>
+                <p>El 4 en Línea pertenece a la familia de juegos
+                    populares ya que sus sencillas reglas se pueden
+                    aprender rápidamente ofreciendo un gran entretenimiento
+                    durante un largo tiempo. El objetivo de este juego
+                    consiste en colocar cuatro fichas en una fila contínua
+                    vertical, horizontal o diagonalmente.</p> <br><br>
+            </div>
+            <div class="rules">
+                <p class="body-bold">Calificaciones de este juego</p><br>
+            </div>
+            <div class="rating">
+                <h1>4.6</h1>
+                <img src="./img/icons/Qstarfull.svg" alt="">
+                <img src="./img/icons/Qstarfull.svg" alt="">
+                <img src="./img/icons/Qstarfull.svg" alt="">
+                <img src="./img/icons/Qstarfull.svg" alt="">
+                <img src="./img/icons/QstarHalf.svg" alt="">
+            </div>
+        </div>
+
+        <article class="col-2">
+            <div class="video">
+                <img  src="./img/4enLinea/video1.png" alt="">
+                <img class="btn-play" src="./img/4enLinea/play.png" alt="">
+                <!-- <iframe src="https://www.youtube.com/embed/M33XPLghiXM?si=d3NEanZMAta_Qo1f&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            </div> -->
+            </div>
+            <div class="video">
+                <img src="./img/4enLinea/video2.png" alt="">
+                <img class="btn-play" src="./img/4enLinea/play.png" alt="">
+                <!-- <iframe src="https://www.youtube.com/embed/IeaEzUuzFqQ?si=Kl8qu8aPpORC-9rn&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            </div> -->
+            </div>
+            <div class="video">
+                <img src="./img/4enLinea/video3.png" alt="">
+                <img class="btn-play" src="./img/4enLinea/play.png" alt="">
+                <!-- <iframe src="https://www.youtube.com/embed/t_WJQ5vN38A?si=G62GPsxh9GzZPEmY&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            </div> -->
+            </div>
+        </article>
+        <aside class="col-3">
+            <aside class="publi-how-to-play">
+                <img src="./img/4enLinea/publicidadDespegar.png" alt="">
+            </aside>
+        </aside>
+    </section>
+
+    <section class="related-games carrousel">
+        <h4>Juegos relacionados</h4>
+        <img id="prev" class="control prev" src="./img/icons/flechaCarrusel.svg" alt="flecha carrusel">
+
+        <div id="related-games" class="juegos-relacionados">
+            <img src="./img/4enLinea/ludo.webp" alt="">
+            <img src="./img/4enLinea/ladyBugLuck.webp" alt="">
+            <img src="./img/4enLinea/yearRabbit.jpg" alt="">
+            <img src="./img/4enLinea/ruleta.png" alt="">
+            <img src="./img/4enLinea/spiceman.webp" alt="">
+            <img src="./img/4enLinea/pacman.jpg" alt="">
+            <img src="./img/4enLinea/ajedrez.webp" alt="">
+            <img src="./img/4enLinea/yearRabbit.jpg" alt="">
+            <img src="./img/4enLinea/ladyBugLuck.webp" alt="">
+            <img src="./img/4enLinea/yearRabbit.jpg" alt="">
+            <img src="./img/4enLinea/ruleta.png" alt="">
+            <img src="./img/4enLinea/yearRabbit.jpg" alt="">
+            <img src="./img/4enLinea/ruleta.png" alt="">
+            <img src="./img/4enLinea/spiceman.webp" alt="">
+            <img src="./img/4enLinea/pacman.jpg" alt="">
+        </div>
+        <img id="next" class="control next" src="./img/icons/flechaCarrusel.svg" alt="flecha carrusel">
+
+
+    </section>
+    <section class="comments-section">
+        <div class="col-1-2">
+            <div class="comment-tittle">
+                <img src="./img/icons/comentarios.svg" alt="">
+                <h4>Comentarios</h4>
+            </div>
+            <div class="comment-box">
+                <div class="avatar">
+                    <img src="./img/avatars/mariavazquez.jpeg" alt="">
+                </div>
+                <div class="comment-opinion">
+                    <input type="textarea" placeholder="Qué opinas de este juego?">
+                    <div class="stars-and-button">
+                        <div class="stars">
+                            <img src="./img/icons/star_vacia.svg" alt="star">
+                            <img src="./img/icons/star_vacia.svg" alt="star">
+                            <img src="./img/icons/star_vacia.svg" alt="star">
+                            <img src="./img/icons/star_vacia.svg" alt="star">
+                            <img src="./img/icons/star_vacia.svg" alt="star">
+                        </div>
+                        <button class="btn-comment">Comentar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comment-amount">
+                <h4>15 comentarios</h4>
+                <img src="./img/icons/comentarios.svg" alt="">
+            </div>
+            <div class="comment-container">
+                <div class="avatar orange"></div>
+                <div class="comment">
+                    <p class="body-bold">Eugenia Parodi <span>@eugeparodi - 2d</span></p>
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <p class="body">Me encanto!!! Super divertido, lo juego todos los dias. Lo recomiendo y lo
+                        compartiré con amigos...</p>
+                    <a class="tx-small btn-third" href="">Responder</a>
+                </div>
+            </div>
+            <div class="comment-container">
+                <div class="avatar">
+                    <img src="./img/avatars/mariavazquez.jpeg" alt="">
+                </div>
+                <div class="comment">
+                    <p class="body-bold">María Vazquez <span>@emvazquez - 2d</span></p>
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <p class="body">Me parecio super fácil de usar !, muy intuitiva la plataforma ! Ojalá hubiera más
+                        juegos gratis</p>
+                    <a class="tx-small btn-third" href="">Responder</a>
+                </div>
+            </div>
+
+            <div class="comment-container">
+                <div class="avatar">
+                    <img src="./img/avatars/martinadiaz.jpeg" alt="">
+                </div>
+                <div class="comment">
+                    <p class="body-bold">Martina Díaz <span>@mar-diaz - 3d</span></p>
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <p class="body">Me aburrió un poco</p>
+                    <a class="tx-small btn-third" href="">Responder</a>
+                </div>
+            </div>
+
+            <div class="comment-container">
+                <div class="avatar">
+                    <img src="./img/avatars/victorialopez.jpeg" alt="">
+                </div>
+                <div class="comment">
+                    <div>
+                        <p class="body-bold">Victoria López <span>@vlopez28 - 4d</span></p>
+                    </div>
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <p class="body">Lo recomiendo y lo compartiré con amigos, creo que es un gran juego! linda
+                        plataforma....</p>
+                    <a class="tx-small btn-third" href="">Responder</a>
+                </div>
+            </div>
+            <div class="comment-container admin">
+                <div class="avatar purple">
+                </div>
+                <div class="comment">
+                    <p class="body-bold">Administrador <span>@admin - 3d</span></p>
+                    <p class="body">Muchas gracias por tu respuesta</p>
+                    <a class="tx-small btn-third" href="">Responder</a>
+                </div>
+            </div>
+
+            <div class="comment-container">
+                <div class="avatar green">
+                </div>
+                <div class="comment">
+                    <p class="body-bold">Juan Martinez <span>@jmartinez% - 5d</span></p>
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <p class="body">Me gustó!!! </p>
+                    <a class="tx-small btn-third" href="">Responder</a>
+                </div>
+            </div>
+
+            <div class="comment-container">
+                <div class="avatar turq">
+                </div>
+                <div class="comment">
+                    <div>
+                        <p class="body-bold">Pedro Ledesma <span>@pedro3 - 5d</span></p>
+                    </div>
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <p class="body">Lo recomiendo, siempre juego con amigos, yl les gano.... jejeje</p>
+                    <a class="tx-small btn-third" href="">Responder</a>
+                </div>
+            </div>
+            <div class="comment-container admin">
+                <div class="avatar purple">
+                </div>
+                <div class="comment">
+                    <p class="body-bold">Administrador <span>@admin - 7d</span></p>
+                    <p class="body">Muchas gracias por tu respuesta</p>
+                    <a class="tx-small btn-third" href="">Responder</a>
+                </div>
+            </div>
+
+            <div class="comment-container">
+                <div class="avatar">
+                    <img src="./img/avatars/carloslopez.jpeg" alt="">
+                </div>
+                <div class="comment">
+                    <p class="body-bold">Carlos López <span>@clopez - 7d</span></p>
+                    <img src="./img/icons/stars.svg" alt="">
+                    <img src="./img/icons/stars.svg" alt="">
+                    <p class="body">No me gustó</p> 
+                    <a class="tx-small btn-third" href="">Responder</a>
+                </div>
+            </div>
+            <br><br><br><br>
+            <a class="tx-small btn-third" href="">Ver más</a>
+
+            <section class="appstores">
+                <img src="./img/descargaAppStore.png" alt="apple store">
+                <img src="./img/descargaGooglePlay.png" alt="google play">
+            </section>
+        
+        </div>
+
+        <div class="col-3">
+            <aside class="publi-medium">
+                <img src="./img/4enLinea/publicidadCorreo1.png" alt="publicidad">
+            </aside>
+            <aside class="publi-medium">
+                <img src="./img/4enLinea/publicidadCorreo2.png" alt="publicidad">
+            </aside>
+            <aside class="publi-large">
+                <img src="./img/4enLinea/publicidadJuegos.png" alt="publicidad">
+            </aside>
+            <aside class="publi-large">
+                <img src="./img/4enLinea/publicidadPoxipol.png" alt="publicidad">
+            </aside>
+        </div>
+    </section>
+
+    <footer>
+        <div class="payment">
+            <img src="./img/Home/svg/debin.svg" alt="">
+            <img src="./img/Home/svg/trasnferencia.svg" alt="">
+            <img src="./img/Home/svg/mp.webp" alt="">
+            <img src="./img/Home/svg/visa.svg" alt="">
+            <img src="./img/Home/svg/mastercard.svg" alt="">
+            <img src="./img/Home/svg/bank trasnfer.svg" alt="">
+            <img src="./img/Home/svg/astropay.svg" alt="">
+        </div>
+        <div class="foot-info">
+            <div class="footer-col">
+                <div>
+                    <br><h3>General</h3><br><br>
+                    <div>
+                        <p class="link">Quienes Somos</p>
+                        <p class="link">FAQs</p>
+                        <p class="link">Contáctanos</p>
+                        <p class="link">Trabaja con Nosotros</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-col">
+                <div>
+                    <br><h3>Categorías</h3><br><br>
+                    <div>
+                        <p class="link">Los Más Populares</p>
+                        <p class="link">Nuevos</p>
+                        <p class="link">Elegidos Para Vos</p>
+                        <p class="link">Promo</p>
+                        <p class="link">Gratis</p>
+                        <p class="link">Ver todos</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-col">
+                <div>
+                    <br><h3>Seguinos</h3><br><br>
+                    <div >
+                        <p class="instagram link">Instagram</p>
+                        <p class="facebook link">Facebook</p>
+                        <p class="twitter link">Twitter</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p class="body">2023© mundoGaming.com Todos los derechos reservados</p>
+            <img class="footer-img" src="./img/Home/logoVioletaOscuro.png" alt="logo">
+        </div>
+    </footer>
+</body>
+<script src="./js/relGames.js"></script>
+<script src="./js/index.js"></script>
+<script src="./js/4enLinea.js/Tablero.js"></script>
+<script src="./js/4enLinea.js/main.js"></script>
+<!-- <script src="./js/4enLinea.js/Figure.js"></script>
+<script src="./js/4enLinea.js/Circle.js"></script>
+<script src="./js/4enLinea.js/main2.js"></script> -->
+</html>
