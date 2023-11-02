@@ -101,7 +101,7 @@
 
 .breadcrumb {
     background: var(--Primario-S2, #681D88);
-    height: 60px;
+    height: 150px;
     padding-top: 23px;
     padding-left: 70px;
     width: 100%;
@@ -115,9 +115,9 @@
 }
 
 .buttons-choice-board{
-    position: absolute;
+/* 
     top: 230px;
-    right: 35px;
+    right: 35px; */
     
 }
 
@@ -132,10 +132,13 @@
     box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.40);
 }
 
+.buttons-choice-board button:disabled{
+    background-color: var(--acento-l1);
+}
+
 .title-game{
-    position: absolute;
-    top: 150px;
-    right: 180px;
+    /* top: 80px;
+    right: 180px; */
     color: var(--negro);
     font-size: 30px;
     font-family: 'Tsukimi Rounded', sans-serif;
@@ -144,9 +147,9 @@
 }
 
 .game-options{
-    position: absolute;
-    top: 200px;
-    right: 354px;
+    /* position: absolute;
+    top: 100px;
+    right: 354px; */
     color: var(--negro);
     font-size: 14px;
 }
