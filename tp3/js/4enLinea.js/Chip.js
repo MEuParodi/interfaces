@@ -1,4 +1,4 @@
-class Ficha{
+class Chip{
     //let radius;
 
     constructor(posX, posY, radius, ctx, img){
@@ -13,11 +13,10 @@ class Ficha{
         this.resaltadoEstilo = 'red';
     }
 
-//drawFicha2();
+//drawChip2();
 
 
-    drawFicha() {
-        console.log("dibujar ficha")
+    drawChip() {
         this.ctx.beginPath();
         this.ctx.arc(this.posX, this.posY, this.radius, 0 , 2 * Math.PI);
         // ctx.shadowBlur = 10;
@@ -90,7 +89,7 @@ class Ficha{
         let _x = this.posX - x;
         let _y = this.posY - y;
         //distancia entre  2puntos
-        return Math.sqrt(_x * _x + _y * _y) < this.radius;
+        return Math.sqrt(_x * _x + _y * _y) < this.getRadius();
     }
 
     setResaltado(resaltado){

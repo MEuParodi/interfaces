@@ -1,5 +1,5 @@
 
-class Tablero{
+class Board{
     constructor(col, filas, ctx, x, y, w, h){       
         this.cantColumnas = col;
         this.cantFilas =filas; 
@@ -43,18 +43,18 @@ class Tablero{
     //centrar tablero
     centerBoard(widthGame, heightGame){
         let centroAncho = widthGame/2;
-        let anchoTablero = this.cantColumnas * this.w;
+        let anchoBoard = this.cantColumnas * this.w;
     
         let centroAlto = heightGame/2;
-        let altoTablero = this.cantFilas * this.h;
+        let altoBoard = this.cantFilas * this.h;
         
         //dejo un margen inferior mas chico
-        let inicioTableroY = centroAlto - (altoTablero/2) + 35;
-        this.y = inicioTableroY + inicioGameY;
+        let inicioBoardY = centroAlto - (altoBoard/2) + 35;
+        this.y = inicioBoardY + inicioGameY;
     
-        let inicioTableroX = centroAncho - (anchoTablero/2);
+        let inicioBoardX = centroAncho - (anchoBoard/2);
         
-        this.x = inicioTableroX + inicioGameX;
+        this.x = inicioBoardX + inicioGameX;
     }
 
 }
