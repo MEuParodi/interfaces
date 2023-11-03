@@ -4,6 +4,10 @@ class Chip{
     constructor(posX, posY, radius, ctx, img){
         this.posX = posX;
         this.posY = posY;
+        this.posInitial = {
+            posX,
+            posY
+        }
         this.radius = radius;
        // this.fill = fill;
         this.ctx = ctx;
@@ -57,12 +61,18 @@ class Chip{
         
         ctx.closePath();
     }
-
-    
     getRadius(){
         return this.radius;
     }
 
+    setPositionInitial(x, y){
+        this.posInitial.posX = x,
+        this.posInitial.posY = y
+    }
+
+    getPositionInitial(){
+        return this.posInitial;
+    }
     
     setPosition(x, y){
         this.posX = x;

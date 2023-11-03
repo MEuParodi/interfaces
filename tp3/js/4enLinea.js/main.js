@@ -149,10 +149,6 @@ function calculateXeY(e){
 function onMouseDown(e){
     e.preventDefault();
     isMouseDown = true;
-    
-    // ctx.beginPath();
-    // ctx.arc(xActual, yActual, 4, 0, 2 * Math.PI);
-    // ctx.stroke();
     let actualValues = calculateXeY(e);
     let xActual = actualValues.xActual;
     let yActual = actualValues.yActual;
@@ -171,6 +167,16 @@ function onMouseDown(e){
 }
 function onMouseUp(e){
     isMouseDown = false;
+
+    for (let i = 0; i < chips.length; i++) {
+        const chip = chips[i];
+        const posicionInicial = chip.getPositionInitial();
+        chip.setPosition(posicionInicial.posX, posicionInicial.posY);
+    }
+
+    //let f = lastClickedFigure;
+    //lastClickedFigure.setPosition(lastClickedFigure.getPositionInitial().posX, lastClickedFigure.getPositionInitial().posX);
+    seeChips();
 }
 
 function onMouseMove(e){
