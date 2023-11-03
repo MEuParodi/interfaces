@@ -10,7 +10,7 @@ class Chip{
         //this.radius = radius * 0.90;
         this.img = img;
         this.resaltado = false;
-        this.resaltadoEstilo = 'red';
+        this.resaltadoEstilo = 'blue';
     }
 
 //drawChip2();

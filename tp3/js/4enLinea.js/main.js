@@ -35,9 +35,9 @@ const heightGame = altoCanvas;
 //variables para crear board
 let col = 7;
 let rows =6;
-let x;
-let y;
-let w = 90;
+let x = inicioGameX;
+let y = inicioGameY;
+let w = 85;
 let h = 90;
 
 
@@ -50,23 +50,26 @@ let isMouseDown = false;
 const board = new Board(col, rows, ctx, x, y, w, h);
 drawGame(board);
 //dibuja las chips
-createChips(imgChipPepsi, 21, 100, 100, 35);
-createChips(imgChipCoca, 21, 1000, 100, 35);
-
+createChips(imgChipPepsi, 21, 50, 565, 35);
+createChips(imgChipCoca, 21, 980, 565, 35);
+seeChips();
 
 //distintos tipos de tableros, redefino la cantidad de filas y columnas
 _4EnLinea.addEventListener('click', ()=>{
     //drawGame();
     col = 7;
     rows =6;
-    w = 90;
+    w = 85;
     h = 90;
-    let board = new Board(col, rows, ctx, x, y, w, h);
+    board.setCantCols(col);
+    board.setCantRows(rows);
+    board.setH(h);
+    board.setW(w);
     drawGame(board);
     chips = [];
-    createChips(imgChipPepsi, 21, 40, 250, 35);
-    createChips(imgChipCoca, 21, 900, 250, 35);
-
+    createChips(imgChipPepsi, 21, 50, 565, 35);
+    createChips(imgChipCoca, 21, 980, 565, 35);
+    seeChips();
     _5EnLinea.disabled = true;
     _6EnLinea.disabled = true;
     _7EnLinea.disabled = true;
@@ -74,14 +77,19 @@ _4EnLinea.addEventListener('click', ()=>{
 
 _5EnLinea.addEventListener('click', ()=>{
     col = 8;
-    rows =7;
-    w = 60;
-    h = 60;
-    let board = new Board(col, rows, ctx, x, y, w, h);
-    drawGame(board);
+    rows = 7;
+    w = 75;
+    h = 80;
+    board.setCantCols(col);
+    board.setCantRows(rows);
+    board.setH(h);
+    board.setW(w);
     chips = [];
-    createChips(imgChipPepsi, 28, 40, 250, 20);
-    createChips(imgChipCoca, 28, 900, 250, 20);
+
+    createChips(imgChipPepsi, 28, 50, 565, 30);
+    createChips(imgChipCoca, 28, 980, 565, 30);
+    drawGame(board);
+    seeChips();
     _4EnLinea.disabled = true;
     _6EnLinea.disabled = true;
     _7EnLinea.disabled = true;
@@ -90,10 +98,17 @@ _5EnLinea.addEventListener('click', ()=>{
 _6EnLinea.addEventListener('click', ()=>{
     col = 9;
     rows =8;
-    w = 55;
-    h = 55;
-    let board = new Board(col, rows, ctx, x, y, w, h);
+    w = 60;
+    h = 65;
+    board.setCantCols(col);
+    board.setCantRows(rows);
+    board.setH(h);
+    board.setW(w);
+    chips = [];
+    createChips(imgChipPepsi, 36, 80, 565, 25);
+    createChips(imgChipCoca, 36, 980, 565, 25);
     drawGame(board);
+    seeChips();
     _4EnLinea.disabled = true;
     _5EnLinea.disabled = true;
     _7EnLinea.disabled = true;
@@ -102,10 +117,17 @@ _6EnLinea.addEventListener('click', ()=>{
 _7EnLinea.addEventListener('click', ()=>{
     col = 10;
     rows =9;
-    w = 50;
-    h = 50;
-    let board = new Board(col, rows, ctx, x, y, w, h);
+    w = 55;
+    h = 60;
+    board.setCantCols(col);
+    board.setCantRows(rows);
+    board.setH(h);
+    board.setW(w);
+    chips = [];
+    createChips(imgChipPepsi, 45, 80, 570, 22);
+    createChips(imgChipCoca, 45, 980, 570, 22);
     drawGame(board);
+    seeChips();
     _4EnLinea.disabled = true;
     _5EnLinea.disabled = true;
     _6EnLinea.disabled = true;
@@ -163,9 +185,8 @@ function onMouseMove(e){
 
 
 function findClickedFigure(x, y){    
-    for(let i =0; i < chips.length; i++){
-    //  console.log("buscar"+chips[i].getPosition());
-        const element = chips[i];
+    for(let i =0; i < chips.length; i++){    
+    const element = chips[i];
         if(element.isPointerInside(x, y)){
             return element;
         }
@@ -173,38 +194,53 @@ function findClickedFigure(x, y){
 }
 
   //dibuja el contenedor del board, con el board y las chips
-function drawGame(board){    
+function drawGame(board){  
+    console.log("hola");  
     ctx.drawImage(imgFondo,inicioGameX, inicioGameY, widthGame, heightGame);   
     board.centerBoard(widthGame,heightGame);
     board.draw(); 
 }
 
- 
-function createChips(img, cant, x, y, r){
-    let chip; 
-    let star = y;
-    let margin = r*2 + 10;
-    for(let i = 0; i < cant/3; i++){
-        chip = new Chip(x, y, r, ctx, img );
-        chips.push(chip);
-        y+=margin;
+
+function createChips(img, cant, x, y, r) {
+    let chip;
+    let starY = y;
+    let starX = x;
+    let margin = r * 2 + 10;
+    let finalY;
+    let columns = 4; // Inicialmente, 4 columnas
+
+    if (cant > 28) {
+        columns = 5; // Más de 28 fichas, cambia a 5 columnas
     }
-    y = star;
-    x+=margin;
-    for(let i = 0; i < cant/3; i++){
-        chip = new Chip(x, y, r, ctx, img );
-        chips.push(chip);
-        y+=margin;
+    
+    // if (cant > 40) {
+    //     columns = 6; // Más de 40 fichas, cambia a 6 columnas
+    // }
+    
+    let chipsPerColumn = Math.floor(cant / columns);
+    let remainder = cant % columns;
+    
+    for (let i = 0; i < columns; i++) {
+        for (let j = 0; j < chipsPerColumn; j++) {
+            chip = new Chip(x, y, r, ctx, img);
+            chips.push(chip);
+            y -= margin;
+        }
+        finalY = y;
+        y = starY;
+        x += margin;
     }
-    y = star;
-    x+=margin;
-    for(let i = 0; i < cant/3; i++){
-        chip = new Chip(x, y, r, ctx, img );
+    
+    for (let i = 0; i < remainder; i++) {
+        chip = new Chip(starX, finalY, r, ctx, img);
         chips.push(chip);
-        y+=margin;
+        y -= margin;
     }
-    seeChips();
+    
+    console.log("chips:" + chips.length);
 }
+
 
 function seeChips(){ 
     clearCanvas();  
@@ -212,7 +248,7 @@ function seeChips(){
         chips[i].drawChip();
     }
       
-  }
+}
 function clearCanvas(){
     drawGame(board);  
 }
