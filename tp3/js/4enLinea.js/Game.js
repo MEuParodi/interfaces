@@ -26,6 +26,8 @@ class Game {
        // this.canvas.addEventListener('click', this.onCanvasClick.bind(this));
         this.canvas.addEventListener('mousedown', (e) => this.onMouseDown(e), false);
         this.canvas.addEventListener('mouseup', (e) => this.onMouseUp(e), false);
+        this.canvas.addEventListener('mousemove', (e) => this.onMouseMove(e), false);
+        this.canvas.addEventListener('mouseleave', (e) => this.onMouseLeave(e), false);
         this.drawGame();
         //crear fichas pepsi
         console.log('img', )
@@ -81,7 +83,12 @@ class Game {
         }
     }
 
-   
+   onMouseLeave(e){
+        this.lastClickedFigure.setPosition(this.lastClickedFigure.getPositionInitial().posX, this.lastClickedFigure.getPositionInitial().posY);
+        this.lastClickedFigure.setResaltado(false);
+        this.lastClickedFigure = null;
+        this.drawChips();
+   }
 
     onMouseDown(e){
         e.preventDefault();
@@ -115,30 +122,32 @@ class Game {
             this.drawChips();
             return;
         }
+        if (this.checkForWin()) {
+            console.log(`¡Jugador ${this.currentPlayer + 1} ha ganado!`);
+            this.isGameOver = true;
+        } else {
+            // Cambiar al siguiente jugador.
+            this.currentPlayer = 1 - this.currentPlayer; // Alternar entre 0 y 1.
         
-        // Calcula la columna seleccionada a partir de las coordenadas del ratón
-       
-        // if(column == -1 || this.isColumnFull(column)){
-        //     this.lastClickedFigure.setPosition(this.lastClickedFigure.getPositionInitial().posX, this.lastClickedFigure.getPositionInitial().posY);
-        //     this.lastClickedFigure.setResaltado(false);
-        //     this.lastClickedFigure = null;
-        //     this.drawChips();
-        // }
+console.log('holiiiiiiiii')
+            // Encuentra la fila vacía más baja en la columna
+            const row = this.findLowestEmptyRow(column);
+            // Calcula las coordenadas x e y para dibujar la ficha en la fila vacía
+            const xToDraw = this.board.x + column*this.modes.width + this.modes.width/2;
+            const yToDraw = this.board.y + row * this.modes.height+this.modes.height/2;
 
-        // Encuentra la fila vacía más baja en la columna
-        const row = this.findLowestEmptyRow(column);
-        console.log("x y tabl",this.board.x,this.board.y);
-        // Calcula las coordenadas x e y para dibujar la ficha en la fila vacía
-        const xToDraw = this.board.x + column*this.modes.width + this.modes.width/2;
-        const yToDraw = this.board.y + row * this.modes.height+this.modes.height/2;
+            // Actualiza la posición de la ficha
+            this.lastClickedFigure.setPosition(xToDraw, yToDraw);
+            this.lastClickedFigure.setResaltado(false);
+            this.lastClickedFigure = null;
+            
+            this.drawChips();
+            this.saveChip(column, row, xToDraw, yToDraw, this.currentPlayer);
+        }
+    }
 
-        // Actualiza la posición de la ficha
-        this.lastClickedFigure.setPosition(xToDraw, yToDraw);
-        this.lastClickedFigure.setResaltado(false);
-        this.lastClickedFigure = null;
-        
-        this.drawChips();
-        this.saveChip(column, row, xToDraw, yToDraw);
+    checkForWin(){
+        return false;
     }
 
     isValidArea(xActual, yActual){
@@ -150,7 +159,10 @@ class Game {
     }
 
     getColumnFromCoordinates(xActual){
+        //xactual - inicio tabl / ancho  de mi ficha
+        //busco cuantas veces entra el ancho de mi col, en la diferencia, redondeo para abajo 
         const column = Math.floor((xActual - this.board.x) / this.modes.width);
+        //si esa cant es menor a 1 o mayor q mi cant de col no me interesa, no es una col valida
         if(column < 0 || column > this.modes.col){
             return -1;
         }
@@ -250,12 +262,18 @@ class Game {
     }
 
     //seria createChip ver
-    saveChip(col, row, x, y) {
+    saveChip(col, row, x, y, player) {
         // Colocar una ficha en la columna y actualiza la matriz del tablero
         //const row = this.getLowestEmptyRow(col);
         if (row !== -1) {
-            const player = this.players[this.currentPlayer];
-            const chip = new Chip(x, y, player, this.modes.sizeChip,  this.ctx, this.chipImages.imgCoca);
+            let img;
+            if(player == 0){
+                img = this.chipImages.imgPepsi;
+            } else {
+                img = this.chipImages.imgCoca;
+            }
+           // const player = this.players[this.currentPlayer];
+            const chip = new Chip(x, y, player, this.modes.sizeChip,  this.ctx, img);
             this.chips.push(chip);
 
             // Actualiza la matriz del tablero
@@ -279,9 +297,5 @@ class Game {
         // return -1; // La columna está llena
     }
 
-    checkForWin() {
-        // Implementa la lógica para verificar si hay un ganador
-        // Aquí debes verificar horizontalmente, verticalmente y en diagonal
-        // Si encuentras un ganador, devuelve true; de lo contrario, devuelve false
-    }
+    
 }
