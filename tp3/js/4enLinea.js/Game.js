@@ -126,9 +126,7 @@ class Game {
             console.log(`¡Jugador ${this.currentPlayer + 1} ha ganado!`);
             this.isGameOver = true;
         } else {
-            // Cambiar al siguiente jugador.
-            this.currentPlayer = 1 - this.currentPlayer; // Alternar entre 0 y 1.
-        
+           
 console.log('holiiiiiiiii')
             // Encuentra la fila vacía más baja en la columna
             const row = this.findLowestEmptyRow(column);
@@ -143,6 +141,9 @@ console.log('holiiiiiiiii')
             
             this.drawChips();
             this.saveChip(column, row, xToDraw, yToDraw, this.currentPlayer);
+             // Cambiar al siguiente jugador.
+             this.currentPlayer = 1 - this.currentPlayer; // Alternar entre 0 y 1.
+        
         }
     }
 
