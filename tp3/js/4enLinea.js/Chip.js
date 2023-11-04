@@ -83,6 +83,10 @@ class Chip{
         };
     }
 
+    getPlayer(){
+        return this.player;
+    }
+
     getPosX(){
         return this.posX;
     }

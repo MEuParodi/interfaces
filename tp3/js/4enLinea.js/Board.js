@@ -13,8 +13,6 @@ class Board{
         this.inicioGameY = 0;
     }
 
-    
-
     setCantCols(col){
         this.cantCols = col;
     }
@@ -61,5 +59,7 @@ class Board{
         this.x = inicioBoardX + this.inicioGameX;
        
     }
+
+    
 
 }

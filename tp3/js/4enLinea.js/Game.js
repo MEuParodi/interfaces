@@ -4,8 +4,8 @@ class Game {
         this.inicioGameX = 0;
         this.inicioGameY = 0;
         this.board = new Board(modes.col, modes.row, ctx, this.inicioGameX, this.inicioGameY, modes.width, modes.height, chipImages.imgTablero);
-        this.players = ['Pepsi', 'Coca']; // Nombres de los jugadores
-        this.currentPlayer = 0; // Índice del jugador actual
+       // this.players = ['Pepsi', 'Coca']; // Nombres de los jugadores
+        this.currentPlayer = 'Pepsi'; // jugador actual
         this.chips = []; // Array para almacenar las fichas en el tablero
         this.lastClickedFigure = null;
         let isMouseDown = false;
@@ -20,8 +20,6 @@ class Game {
         this.initializeGameState(modes.col, modes.row);
     }
 
-
-
     init() {
        // this.canvas.addEventListener('click', this.onCanvasClick.bind(this));
         this.canvas.addEventListener('mousedown', (e) => this.onMouseDown(e), false);
@@ -30,9 +28,8 @@ class Game {
         this.canvas.addEventListener('mouseleave', (e) => this.onMouseLeave(e), false);
         this.drawGame();
         //crear fichas pepsi
-        console.log('img', )
-        this.createChips(this.chipImages.imgPepsi, this.modes.cantChips, 70, 550, this.modes.sizeChip);
-        this.createChips(this.chipImages.imgCoca, this.modes.cantChips, 980, 550, this.modes.sizeChip);
+        this.createChips(this.chipImages.imgPepsi, this.modes.cantChips, 70, 550, this.modes.sizeChip, 'Pepsi');
+        this.createChips(this.chipImages.imgCoca, this.modes.cantChips, 980, 550, this.modes.sizeChip, 'Coca');
         this.drawChips();
         //crear fichas coca
     }
@@ -101,9 +98,9 @@ class Game {
             this.lastClickedFigure.setResaltado(false);
             this.lastClickedFigure = null;
         }
-    
-        let clickFig = this.findClickedFigure(xActual, yActual);
-        if(clickFig != null){
+        let clickFig = this.findClickedChip(xActual, yActual);
+        console.log("current player", clickFig.getPlayer());
+        if(clickFig != null && clickFig.getPlayer() == this.currentPlayer){
             clickFig.setResaltado(true);
             this.lastClickedFigure = clickFig;
         }
@@ -115,6 +112,7 @@ class Game {
         let xActual = actualValues.xActual;
         let yActual = actualValues.yActual;
         const column = this.getColumnFromCoordinates(xActual);
+        //mensaje de columna llena
         if (!this.isValidArea(xActual, yActual) || this.isColumnFull(column)) {
             this.lastClickedFigure.setPosition(this.lastClickedFigure.getPositionInitial().posX, this.lastClickedFigure.getPositionInitial().posY);
             this.lastClickedFigure.setResaltado(false);
@@ -123,11 +121,9 @@ class Game {
             return;
         }
         if (this.checkForWin()) {
-            console.log(`¡Jugador ${this.currentPlayer + 1} ha ganado!`);
+            console.log(`¡Jugador ${this.currentPlayer} ha ganado!`);
             this.isGameOver = true;
         } else {
-           
-console.log('holiiiiiiiii')
             // Encuentra la fila vacía más baja en la columna
             const row = this.findLowestEmptyRow(column);
             // Calcula las coordenadas x e y para dibujar la ficha en la fila vacía
@@ -137,13 +133,25 @@ console.log('holiiiiiiiii')
             // Actualiza la posición de la ficha
             this.lastClickedFigure.setPosition(xToDraw, yToDraw);
             this.lastClickedFigure.setResaltado(false);
-            this.lastClickedFigure = null;
             
-            this.drawChips();
             this.saveChip(column, row, xToDraw, yToDraw, this.currentPlayer);
+            this.drawChips();
              // Cambiar al siguiente jugador.
-             this.currentPlayer = 1 - this.currentPlayer; // Alternar entre 0 y 1.
+            console.log("jugador actual"+this.currentPlayer);
+            console.log('ficha actual', this.lastClickedFigure);
+            this.switchPlayer();
+            //podria mostrar un msj que ahora es el turno del otro jugador
+            this.lastClickedFigure = null;
+           // this.currentPlayer = 1 - this.currentPlayer; // Alternar entre 0 y 1.
         
+        }
+    }
+
+    switchPlayer() {
+        if (this.currentPlayer === 'Pepsi') {
+            this.currentPlayer = 'Coca';
+        } else {
+            this.currentPlayer = 'Pepsi';
         }
     }
 
@@ -175,7 +183,7 @@ console.log('holiiiiiiiii')
         let actualValues = this.getMousePosition(e);
         let xActual = actualValues.xActual;
         let yActual = actualValues.yActual;
-        if(this.isMouseDown && this.lastClickedFigure != null){
+        if(this.isMouseDown && this.lastClickedFigure != null && this.lastClickedFigure.getPlayer() == this,this.currentPlayer){
             this.lastClickedFigure.setPosition(xActual, yActual);
             this.drawChips();
         }
@@ -193,7 +201,7 @@ console.log('holiiiiiiiii')
         }
     }
     
-    findClickedFigure(x, y){    
+    findClickedChip(x, y){    
         for(let i =0; i < this.chips.length; i++){    
         const element = this.chips[i];
             if(element.isPointerInside(x, y)){
@@ -205,7 +213,6 @@ console.log('holiiiiiiiii')
     clearCanvas() {
         this.drawGame(); 
     }
-
     //seeChips
     drawChips() {
         this.clearCanvas();  
@@ -215,7 +222,7 @@ console.log('holiiiiiiiii')
         //this.chips.forEach(chip => chip.drawChip());
     }
 
-    createChips(img, cant, x, y, r) {
+    createChips(img, cant, x, y, r, player) {
         let chip;
         let starY = y;
         let starX = x;
@@ -237,7 +244,7 @@ console.log('holiiiiiiiii')
         for (let i = 0; i < columns; i++) {
             
             for (let j = 0; j < chipsPerColumn; j++) {
-                chip = new Chip(x, y, null, r, this.ctx, img);
+                chip = new Chip(x, y, player, r, this.ctx, img);
                 this.chips.push(chip);
                 y -= margin;
             }
@@ -247,7 +254,7 @@ console.log('holiiiiiiiii')
         }
         
         for (let i = 0; i < remainder; i++) {
-            chip = new Chip(starX, finalY, null, r, this.ctx, img);
+            chip = new Chip(starX, finalY, player, r, this.ctx, img);
             this.chips.push(chip);
             y -= margin;
         }
@@ -262,21 +269,24 @@ console.log('holiiiiiiiii')
         return this.gameState[col].every(row => row !== null);
     }
 
-    //seria createChip ver
+    
     saveChip(col, row, x, y, player) {
         // Colocar una ficha en la columna y actualiza la matriz del tablero
         //const row = this.getLowestEmptyRow(col);
         if (row !== -1) {
             let img;
-            if(player == 0){
+            if(player === 'Pepsi'){
                 img = this.chipImages.imgPepsi;
             } else {
                 img = this.chipImages.imgCoca;
             }
+            //ver bien q hace
            // const player = this.players[this.currentPlayer];
+           //setear la ficha
+
             const chip = new Chip(x, y, player, this.modes.sizeChip,  this.ctx, img);
             this.chips.push(chip);
-
+            //this.lastClickedFigure.setPosition(x, y);
             // Actualiza la matriz del tablero
             this.gameState[col][row] = chip;
         }
@@ -290,12 +300,6 @@ console.log('holiiiiiiiii')
             }
         }
         return -1; // La columna está llena
-        // for (let row = this.board.cantRows - 1; row >= 0; row--) {
-        //     if (!this.chips.some(chip => chip.col === col && chip.row === row)) {
-        //         return row;
-        //     }
-        // }
-        // return -1; // La columna está llena
     }
 
     
