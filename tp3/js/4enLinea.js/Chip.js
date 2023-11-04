@@ -1,9 +1,10 @@
 class Chip{
     //let radius;
 
-    constructor(posX, posY, radius, ctx, img){
+    constructor(posX, posY, player, radius, ctx, img){
         this.posX = posX;
         this.posY = posY;
+        this.player = player;
         this.posInitial = {
             posX,
             posY
@@ -11,7 +12,6 @@ class Chip{
         this.radius = radius;
        // this.fill = fill;
         this.ctx = ctx;
-        //this.radius = radius * 0.90;
         this.img = img;
         this.resaltado = false;
         this.resaltadoEstilo = 'blue';
@@ -35,9 +35,6 @@ class Chip{
 
         this.ctx.closePath(); 
         this.drawStroke(this.ctx, this.radius);
-
-    // drawFace2(ctx, radius);
-    
     }
 
     drawStroke(ctx, radius) {
