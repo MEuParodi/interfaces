@@ -20,7 +20,7 @@ let chipImages = {
     imgCoca : document.getElementById('ficha-coca'),
     imgTablero: document.getElementById('img-fija')
 }
-
+ctx.drawImage(chipImages.imgFondo, 0,0, canvas.width, canvas.height);
 let divMsg = {
     spanPlayer : document.querySelector(".player-turn")
 }
@@ -68,45 +68,74 @@ let modes = {
     }
 }
 //elegir modo x defecto es 4 en linea
-let chosenMode = modes.beginner;
-const game = new Game(canvas, chosenMode, ctx, chipImages, divMsg);
 
+// _4EnLinea.addEventListener('click', ()=>{
+//     chosenMode = modes.beginner;
+//     _5EnLinea.disabled = true;
+//     _6EnLinea.disabled = true;
+//     _7EnLinea.disabled = true;
+// });
+
+// _5EnLinea.addEventListener('click', ()=>{
+//     console.log('hola 5 en linea')
+//     chosenMode = modes.normal;
+//     game.kill();
+//     game = new Game(canvas, chosenMode, ctx, chipImages, divMsg);
+//     game.init();
+//     _4EnLinea.disabled = true;
+//     _6EnLinea.disabled = true;
+//     _7EnLinea.disabled = true;
+// });
+
+// _6EnLinea.addEventListener('click', ()=>{
+//     chosenMode = modes.hard;
+//     game.kill();
+//     game = new Game(canvas, chosenMode, ctx, chipImages, divMsg);
+//     game.init();
+//     _4EnLinea.disabled = true;
+//     _5EnLinea.disabled = true;
+//     _7EnLinea.disabled = true;
+// });
+
+// _7EnLinea.addEventListener('click', ()=>{
+//     chosenMode = modes.pro;
+//     game.kill();
+//     game = new Game(canvas, chosenMode, ctx, chipImages, divMsg);
+//     game.init();
+//     _4EnLinea.disabled = true;
+//     _5EnLinea.disabled = true;
+//     _6EnLinea.disabled = true;
+// });
+let chosenMode;
 _4EnLinea.addEventListener('click', ()=>{
     chosenMode = modes.beginner;
-    _5EnLinea.disabled = true;
-    _6EnLinea.disabled = true;
-    _7EnLinea.disabled = true;
+
 });
 
 _5EnLinea.addEventListener('click', ()=>{
-    console.log('hola 5 en linea')
     chosenMode = modes.normal;
-    const game = new Game(canvas, chosenMode, ctx, chipImages, divMsg);
-    game.init();
-    _4EnLinea.disabled = true;
-    _6EnLinea.disabled = true;
-    _7EnLinea.disabled = true;
+    console.log(chosenMode);
+
 });
 
 _6EnLinea.addEventListener('click', ()=>{
     chosenMode = modes.hard;
-    const game = new Game(canvas, chosenMode, ctx, chipImages, divMsg);
-    game.init();
-    _4EnLinea.disabled = true;
-    _5EnLinea.disabled = true;
-    _7EnLinea.disabled = true;
+    console.log(chosenMode);
+
 });
 
 _7EnLinea.addEventListener('click', ()=>{
     chosenMode = modes.pro;
-    const game = new Game(canvas, chosenMode, ctx, chipImages, divMsg);
-    game.init();
-    _4EnLinea.disabled = true;
-    _5EnLinea.disabled = true;
-    _6EnLinea.disabled = true;
+    console.log(chosenMode);
 });
 
-game.init();
+let play = document.getElementById("btn-play");
+play.addEventListener('click', ()=>{
+    const game = new Game(canvas, chosenMode, ctx, chipImages, divMsg);
+    game.init();
+})
+
+
 
 
 

@@ -35,6 +35,14 @@ class Game {
    
     }
 
+    kill(){
+        this.canvas.removeEventListener('mousedown', (e) => this.onMouseDown(e), false);
+        this.canvas.removeEventListener('mouseup', (e) => this.onMouseUp(e), false);
+        this.canvas.removeEventListener('mousemove', (e) => this.onMouseMove(e), false);
+        this.canvas.removeEventListener('mouseleave', (e) => this.onMouseLeave(e), false);
+       
+    }
+
     //calcula el x e y inicial a partir del cual se crearan las fichas
     getInitialXY(){
         let xPepsi = parseInt(this.inicioGameX + 100);
@@ -44,14 +52,17 @@ class Game {
     }
 
     onMouseLeave(e){
-            this.lastClickedChip.setPosition(this.lastClickedChip.getPositionInitial().posX, this.lastClickedChip.getPositionInitial().posY);
-            this.lastClickedChip.setResaltado(false);
+            e.preventDefault();
+            e.stopPropagation();
+            this.lastClickedChip?.setPosition(this.lastClickedChip.getPositionInitial().posX, this.lastClickedChip.getPositionInitial().posY);
+            this.lastClickedChip?.setResaltado(false);
             this.lastClickedChip = null;
             this.drawChips();
     }
 
     onMouseDown(e){
         e.preventDefault();
+        e.stopPropagation();
         this.isMouseDown = true;
         if(this.isGameOver){
             return;
@@ -74,55 +85,60 @@ class Game {
     }
     
     onMouseMove(e){
+        e.preventDefault();
+        e.stopPropagation();
         let actualValues = this.getMousePosition(e);
         let xActual = actualValues.xActual;
         let yActual = actualValues.yActual;
-        if(this.isMouseDown && this.lastClickedChip != null && this.lastClickedChip.getPlayer() == this,this.currentPlayer){
-            this.lastClickedChip.setPosition(xActual, yActual);
+        if(this.isMouseDown && this.lastClickedChip && this.lastClickedChip.getPlayer() == this.currentPlayer){
+            this.lastClickedChip?.setPosition(xActual, yActual);
             this.drawChips();
         }
     }
 
     onMouseUp(e){
-        this.isMouseDown = false;
-        let actualValues = this.getMousePosition(e);
-        let xActual = actualValues.xActual;
-        let yActual = actualValues.yActual;
-        const column = this.getColumnFromCoordinates(xActual);
-        
-        
-        //mensaje de columna llena
-        if (!this.isValidArea(xActual, yActual) || this.isColumnFull(column)) {
-            this.lastClickedChip.setPosition(this.lastClickedChip.getPositionInitial().posX, this.lastClickedChip.getPositionInitial().posY);
-            this.lastClickedChip.setResaltado(false);
-            this.lastClickedChip = null;
-            this.drawChips();
-            return;
-        }
-        // Encuentra la fila vacía más baja en la columna
-        const row = this.findLowestEmptyRow(column);
-        // Calcula las coordenadas x e y para dibujar la ficha en la fila vacía
-        const xToDraw = this.board.x + column*this.modes.width + this.modes.width/2;
-        const yToDraw = this.board.y + row * this.modes.height+this.modes.height/2;
+        e.preventDefault();
+        e.stopPropagation();
+        if(this.lastClickedChip){
+            this.isMouseDown = false;
+            let actualValues = this.getMousePosition(e);
+            let xActual = actualValues.xActual;
+            let yActual = actualValues.yActual;
+            const column = this.getColumnFromCoordinates(xActual);
+            // si no es un valor falsi ?, ejecuta lo siguiente
+            //mensaje de columna llena
+            if (!this.isValidArea(xActual, yActual) || this.isColumnFull(column)) {
+                this.lastClickedChip?.setPosition(this.lastClickedChip.getPositionInitial().posX, this.lastClickedChip.getPositionInitial().posY);
+                this.lastClickedChip?.setResaltado(false);
+                this.lastClickedChip = null;
+                this.drawChips();
+                return;
+            }
+            // Encuentra la fila vacía más baja en la columna
+            const row = this.findLowestEmptyRow(column);
+            // Calcula las coordenadas x e y para dibujar la ficha en la fila vacía
+            const xToDraw = this.board.x + column*this.modes.width + this.modes.width/2;
+            const yToDraw = this.board.y + row * this.modes.height+this.modes.height/2;
 
-        // Actualiza la posición de la ficha
-        this.lastClickedChip.setPosition(xToDraw, yToDraw);
-        this.lastClickedChip.setResaltado(false);
-        this.saveChip(column, row, xToDraw, yToDraw);
-        this.drawChips();
-        let rdo = this.checkForWin(column, row);
-        
-       if (rdo != null && rdo.result === true) {
-        //if (false) {
-            this.showMsg(`¡Jugador ${this.currentPlayer} ha ganado!`);
-            this.lastClickedChip = null;
-            this.chipShowAsWinner(rdo.winners);
+            // Actualiza la posición de la ficha
+            this.lastClickedChip?.setPosition(xToDraw, yToDraw);
+            this.lastClickedChip?.setResaltado(false);
+            this.saveChip(column, row, xToDraw, yToDraw);
             this.drawChips();
-            this.isGameOver = true;
-        } else {
-            // Cambiar al siguiente jugador.
-            this.switchPlayer();
-            this.lastClickedChip = null;        
+            let rdo = this.checkForWin(column, row);
+            
+        if (rdo != null && rdo.result === true) {
+            //if (false) {
+                this.showMsg(`¡Jugador ${this.currentPlayer} ha ganado!`);
+                this.lastClickedChip = null;
+                this.chipShowAsWinner(rdo.winners);
+                this.drawChips();
+                this.isGameOver = true;
+            } else {
+                // Cambiar al siguiente jugador.
+                this.switchPlayer();
+                this.lastClickedChip = null;        
+            }
         }
     } 
     
@@ -266,9 +282,9 @@ class Game {
     saveChip(col, row, x, y) {
         if (row !== -1) {    
            //setear la ficha
-            this.lastClickedChip.setPosition(x, y);
+            this.lastClickedChip?.setPosition(x, y);
             //para que no se mueva una vez dentro del tablero
-            this.lastClickedChip.setUsed(true);
+            this.lastClickedChip?.setUsed(true);
             // Actualiza la matriz del tablero
             this.gameState[col][row] = this.lastClickedChip;
         }
@@ -325,7 +341,37 @@ class Game {
         }
     }
 
+
     checkVerticalWin(col, row) {
+        let limit = this.modes.line;
+        let chipsWinners = [];
+        //guardo la primer ficha
+        chipsWinners.push(this.gameState[col][row]);
+        //hacia abajo
+        let count = 1; 
+        //fila actual
+        let currentRow = row + 1;
+    
+        while (count <= limit && currentRow < this.modes.row && this.gameState[col][currentRow].getPlayer() === this.currentPlayer) {
+            chipsWinners.push(this.gameState[col][currentRow]);
+            count++;
+            currentRow++;
+        }
+        console.log('check vert', count);
+        if(count == limit){
+            return{
+                result: true,
+                winners: chipsWinners
+            }
+        } else {
+            return{
+                result: false,
+            }
+        }
+        
+    }
+
+    checkVerticalWin2(col, row) {
         let chipsWinners = [];
         //guardo la primer ficha
         chipsWinners.push(this.gameState[col][row]);
