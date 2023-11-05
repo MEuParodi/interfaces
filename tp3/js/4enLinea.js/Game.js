@@ -138,7 +138,7 @@ class Game {
     chipShowAsWinner(chipWinners){
         console.log('ganadoras', chipWinners);
         for(let i = 0; i < chipWinners.length; i++){
-            chipWinners[i].setResaltadoEstilo("red");
+            chipWinners[i].setResaltadoEstilo("#F69B12");
             chipWinners[i].setResaltado(true);
         }
     }
