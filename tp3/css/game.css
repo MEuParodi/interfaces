@@ -101,7 +101,7 @@
 
 .breadcrumb {
     background: var(--Primario-S2, #681D88);
-    height: 150px;
+    height: auto;
     padding-top: 23px;
     padding-left: 70px;
     width: 100%;
@@ -113,6 +113,15 @@
     text-decoration: underline;
     
 }
+/*==============4 en linea==============*/
+
+.game-msj{
+    position: absolute;
+    top: 350px;
+    left: 46%; 
+    color: var(--acento);
+    background-color: var(--negro);
+}
 
 .buttons-choice-board{
 /* 
@@ -121,10 +130,16 @@
     
 }
 
-.buttons-choice-board button{
+.form-game label input{
+    height: 15px;
+    width: 15px;
+}
+
+
+.buttons-choice-board {
     background-color: var(--acento);
     border: none;
-    margin: 0px 2px;
+    margin: 10px 2px;
     border-radius: 5px;
     height: 30px;
     width: 100px;

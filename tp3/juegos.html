@@ -132,16 +132,31 @@
         </p>
         <p class="title-game">4 en Línea</p>
         <p class="game-options">Elegi tu tablero:</p>
-        <div id="game-msg" class="popup" >
-            <p id="msgPopup"></p>
-        </div>
-        <div class="buttons-choice-board">
-            <button id="4-en-linea">Pricipiante</button>
+        <div id="game-msj" class="game-msj"><span class="player-turn"></span> </div>
+        <!-- <div class="buttons-choice-board">
+            <button id="4-en-linea">Beginner</button>
             <button id="5-en-linea">Normal</button>
-            <button id="6-en-linea">Dificil</button>
-            <button id="7-en-linea">Experto</button>
-            <button id="popup-btn">Ver popup</button>
+            <button id="6-en-linea">Hard</button>
+            <button id="7-en-linea">Pro</button>
+        </div> -->
+        <div class="form-game">
+            <form >
+            <label>
+                <input id="4-en-linea" type="radio" name="opcion" value="opcion1"> Beginner
+            </label><br>
+            <label>
+                <input id="5-en-linea" type="radio" name="opcion" value="opcion2"> Normal
+            </label><br>
+            <label>
+                <input id="6-en-linea"  type="radio" name="opcion" value="opcion3"> Hard
+            </label><br>
+            <label>
+                <input id="7-en-linea" type="radio" name="opcion" value="opcion4"> Pro
+            </label><br>
+        </form>
+        <button id="btn-play" class="buttons-choice-board">Jugar</button>
         </div>
+        
         
 
         
@@ -150,20 +165,10 @@
         
     <section class="game">
         <canvas id="myCanvas" style="border:1px solid #000000; background-color:#f3e9f8">
-            <img id="img-fija" src="./img/juego/casillaAzulBrillante.png" alt="img-tablero">
-            <img id="fondo-tablero" src="./img/juego/fondoTablero.jpg" alt="fondo-tablero">
+            <img id="img-fija" src="./img/juego/casillaOscuraAzul.png" alt="img-tablero">
+            <img id="fondo-tablero" src="./img/juego/fondoTablero4.jpeg" alt="fondo-tablero">
             <img id="ficha-pepsi" src="./img/juego/pepsiNuevaChica.png" alt="pepsi">
-            <img id="ficha-coca" src="./img/juego/LOGOCOCA2.png" alt="coca">
-            
-            <!-- <img id="arriba-izq" src="./img/juego/arribaizq.png" alt="arriba-izq">
-            <img  id="arriba-borde" src="./img/juego/center.png" alt="arriba-borde">
-            <img  id="arriba-der" src="./img/juego/arribaDer.png" alt="arribader">
-            <img  id="abajo-izq" src="./img/juego/abajoIzq.png" alt="abajo-izq">
-            <img  id="abajo-borde" src="./img/juego/center.png" alt="abajo-borde">
-            <img  id="abajo-der" src="./img/juego/abajoDer.png" alt="abajo-der">
-            <img  id="izq-borde" src="./img/juego/izq.png" alt="izq-borde">
-            <img  id="der-borde" src="./img/juego/der.png" alt="der-borde">
-            <img  id="medio" src="./img/juego/center.png" alt="/medio"> -->
+            <img id="ficha-coca" src="./img/juego/fichaCoca.png" alt="coca">
         </canvas>
         <div class="controls">
             <div class="game-name">
@@ -537,7 +542,6 @@
 <script src="./js/index.js"></script>
 <script src="./js/4enLinea.js/Board.js"></script>
 <script src="./js/4enLinea.js/Chip.js"></script>
-
 <script src="./js/4enLinea.js/Game.js"></script>
 <script src="./js/4enLinea.js/main.js"></script>
 <!-- <script src="./js/4enLinea.js/Figure.js"></script>
