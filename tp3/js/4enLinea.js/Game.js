@@ -203,8 +203,6 @@ class Game {
             this.chips.push(chip);
             y -= margin;
         }
-        
-        console.log("chips:" + this.chips.length);
     }
 
     //define el area valida donde se soltara la ficha
@@ -298,49 +296,90 @@ class Game {
             return this.checkHorizontalWin(col, row)
     }
 
+    // checkHorizontalWin2(col, row) {
+    //     let chipsWinners = [];
+    //     //guardo la primer ficha
+    //     chipsWinners.push(this.gameState[col][row]);
+    //     //hacia izq
+    //     let count = 1; 
+    //     //fila actual
+    //     let currentCol = col - 1;
+    //     console.log('', this.gameState[currentCol, row]);
+    //     while (currentCol >= 0 && this.gameState[currentCol][row] != null && this.gameState[currentCol][row].getPlayer() === this.currentPlayer) {
+    //         chipsWinners.push(this.gameState[currentCol][row]);
+    //         count++;
+    //         currentCol--;
+    //     }
+        
+    //     if(count >= this.modes.line){
+    //         return{
+    //             result: true,
+    //             winners: chipsWinners
+    //         }
+    //     } else{
+    //         chipsWinners = [];
+    //         chipsWinners.push(this.gameState[col][row]);
+    //     }
+    //     //hacia der
+    //     currentCol = row + 1;
+    //     while (currentCol < this.modes.col && this.gameState[currentCol][row] != null &&this.gameState[currentCol][row].getPlayer() === this.currentPlayer) {
+    //         chipsWinners.push(this.gameState[currentCol][row]);
+    //         count++;
+    //         currentCol++;
+    //     }
+    //     if(count >= this.modes.line){
+    //         return{
+    //             result: true,
+    //             winners: chipsWinners
+    //         }
+    //     } else {
+    //         return{
+    //             result: false,
+    //         }
+    //     }
+    // }
+
     checkHorizontalWin(col, row) {
+        let limit = this.modes.line;
         let chipsWinners = [];
         //guardo la primer ficha
         chipsWinners.push(this.gameState[col][row]);
         //hacia izq
         let count = 1; 
         //fila actual
-        let currentCol = col - 1;
-        console.log('', this.gameState[currentCol, row]);
-        while (currentCol >= 0 && this.gameState[currentCol][row] != null && this.gameState[currentCol][row].getPlayer() === this.currentPlayer) {
-            chipsWinners.push(this.gameState[currentCol][row]);
-            count++;
-            currentCol--;
-        }
-        
-        if(count >= this.modes.line){
-            return{
-                result: true,
-                winners: chipsWinners
-            }
-        } else{
-            chipsWinners = [];
-            chipsWinners.push(this.gameState[col][row]);
-        }
-        //hacia der
-        currentCol = row + 1;
-        while (currentCol < this.modes.col && this.gameState[currentCol][row] != null &&this.gameState[currentCol][row].getPlayer() === this.currentPlayer) {
+        let currentCol = col + 1;
+        while (count < limit && currentCol < this.modes.col && this.gameState[currentCol][row] && this.gameState[currentCol][row].getPlayer() === this.currentPlayer) {
             chipsWinners.push(this.gameState[currentCol][row]);
             count++;
             currentCol++;
         }
-        if(count >= this.modes.line){
-            return{
+
+        if(count === limit){
+            return {
                 result: true,
                 winners: chipsWinners
             }
-        } else {
+        }
+        //hacia izq
+        currentCol = col - 1;
+        
+        while (count < limit && currentCol >= 0 && this.gameState[currentCol][row] && this.gameState[currentCol][row].getPlayer() === this.currentPlayer) {
+            chipsWinners.push(this.gameState[currentCol][row]);
+            count++;
+            currentCol--;
+        }     
+        console.log('horiz', count);   
+        if(count === limit){
+            return {
+                result: true,
+                winners: chipsWinners
+            }
+        } else{
             return{
-                result: false,
+                result: false
             }
         }
     }
-
 
     checkVerticalWin(col, row) {
         let limit = this.modes.line;
@@ -420,7 +459,6 @@ class Game {
 
      //mostrar mensajes
      showMsg(msg){
-        console.log("hola msj");
         this.divMsg.spanPlayer.innerHTML = msg;
 
     }
