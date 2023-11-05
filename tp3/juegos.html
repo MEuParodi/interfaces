@@ -22,7 +22,7 @@
         </figure>
         </div>
         <div class="container-header">
-            <div class="container-search"> 
+            <div class="container-search">
                 <img src="./img/lupaNegra.png" alt="search">
                 <input class="input-search" type="text" placeholder="Busca tu juego">
             </div>
@@ -31,7 +31,7 @@
                 <button id="btn-user" class="btn-user-login"></button>
             </div>
         </div>
-        
+
     </header>
     <nav class="menu-side" id="menu-side">
         <div class="side-options" >
@@ -133,7 +133,11 @@
         <p class="title-game">4 en Línea</p>
         <p class="game-options">Elegi tu tablero:</p>
         <div id="game-msj" class="game-msj"><span class="player-turn"></span> </div>
-        <!-- <div class="buttons-choice-board">
+        <div id="game-msg2" class="popup" >
+            <p id="msgPopup"></p>
+        </div>
+        <button id="popup-btn">Ver popup</button>
+<!-- <div class="buttons-choice-board">
             <button id="4-en-linea">Beginner</button>
             <button id="5-en-linea">Normal</button>
             <button id="6-en-linea">Hard</button>
@@ -156,13 +160,13 @@
         </form>
         <button id="btn-play" class="buttons-choice-board">Jugar</button>
         </div>
-        
-        
 
-        
+
+
+
     </div>
-        
-        
+
+
     <section class="game">
         <canvas id="myCanvas" style="border:1px solid #000000; background-color:#f3e9f8">
             <img id="img-fija" src="./img/juego/casillaOscuraAzul.png" alt="img-tablero">
@@ -178,7 +182,7 @@
                 <a id="shareIcon" href="">
                     <img  src="./img/icons/compartir.svg" alt="">
                 </a>
-                
+
                 <img src="./img/icons/like.svg" alt="">
                 <h4 class="body-bold">85%</h4>
                 <img src="./img/icons/dislike.svg" alt="">
@@ -456,7 +460,7 @@
                     <p class="body-bold">Carlos López <span>@clopez - 7d</span></p>
                     <img src="./img/icons/stars.svg" alt="">
                     <img src="./img/icons/stars.svg" alt="">
-                    <p class="body">No me gustó</p> 
+                    <p class="body">No me gustó</p>
                     <a class="tx-small btn-third" href="">Responder</a>
                 </div>
             </div>
@@ -467,7 +471,7 @@
                 <img src="./img/descargaAppStore.png" alt="apple store">
                 <img src="./img/descargaGooglePlay.png" alt="google play">
             </section>
-        
+
         </div>
 
         <div class="col-3">
@@ -544,9 +548,8 @@
 <script src="./js/4enLinea.js/Chip.js"></script>
 <script src="./js/4enLinea.js/Game.js"></script>
 <script src="./js/4enLinea.js/main.js"></script>
+<script src="./js/4enLinea.js/popup.js"></script>
 <!-- <script src="./js/4enLinea.js/Figure.js"></script>
 <script src="./js/4enLinea.js/Circle.js"></script>
 <script src="./js/4enLinea.js/main2.js"></script> -->
-<script src="./js/4enLinea.js/popup.js"></script>
-
 </html>

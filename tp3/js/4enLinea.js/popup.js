@@ -1,5 +1,5 @@
 // Accede al elemento del mensaje emergente
-let popup = document.getElementById('game-msg');
+let popup = document.getElementById('game-msg2');
 let mostrar = document.getElementById('popup-btn');
 let msg = document.getElementById('msgPopup');
 
