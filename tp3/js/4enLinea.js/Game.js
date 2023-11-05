@@ -99,6 +99,7 @@ class Game {
             this.drawChips();
             return;
         }
+        // Encuentra la fila vacía más baja en la columna
         const row = this.findLowestEmptyRow(column);
         // Calcula las coordenadas x e y para dibujar la ficha en la fila vacía
         const xToDraw = this.board.x + column*this.modes.width + this.modes.width/2;
@@ -111,26 +112,17 @@ class Game {
         this.drawChips();
         let rdo = this.checkForWin(column, row);
         
-       if (rdo.result === true) {
+       if (rdo != null && rdo.result === true) {
         //if (false) {
-            console.log('resultadi', rdo);
             this.showMsg(`¡Jugador ${this.currentPlayer} ha ganado!`);
-            console.log(`¡Jugador ${this.currentPlayer} ha ganado!`);
             this.lastClickedChip = null;
             this.chipShowAsWinner(rdo.winners);
             this.drawChips();
             this.isGameOver = true;
         } else {
-            // Encuentra la fila vacía más baja en la columna
-            
-            
-             // Cambiar al siguiente jugador.
+            // Cambiar al siguiente jugador.
             this.switchPlayer();
-            
-            //podria mostrar un msj que ahora es el turno del otro jugador
-            this.lastClickedChip = null;
-           // this.currentPlayer = 1 - this.currentPlayer; // Alternar entre 0 y 1.
-        
+            this.lastClickedChip = null;        
         }
     } 
     
@@ -284,7 +276,53 @@ class Game {
 
     //chequear ganador
     checkForWin(col, row){
-        return this.checkVerticalWin(col, row)
+        if(this.checkVerticalWin(col, row).result == true)
+            return this.checkVerticalWin(col, row);
+        if(this.checkHorizontalWin(col, row).result == true)
+            return this.checkHorizontalWin(col, row)
+    }
+
+    checkHorizontalWin(col, row) {
+        let chipsWinners = [];
+        //guardo la primer ficha
+        chipsWinners.push(this.gameState[col][row]);
+        //hacia izq
+        let count = 1; 
+        //fila actual
+        let currentCol = col - 1;
+        console.log('', this.gameState[currentCol, row]);
+        while (currentCol >= 0 && this.gameState[currentCol][row] != null && this.gameState[currentCol][row].getPlayer() === this.currentPlayer) {
+            chipsWinners.push(this.gameState[currentCol][row]);
+            count++;
+            currentCol--;
+        }
+        
+        if(count >= this.modes.line){
+            return{
+                result: true,
+                winners: chipsWinners
+            }
+        } else{
+            chipsWinners = [];
+            chipsWinners.push(this.gameState[col][row]);
+        }
+        //hacia der
+        currentCol = row + 1;
+        while (currentCol < this.modes.col && this.gameState[currentCol][row] != null &&this.gameState[currentCol][row].getPlayer() === this.currentPlayer) {
+            chipsWinners.push(this.gameState[currentCol][row]);
+            count++;
+            currentCol++;
+        }
+        if(count >= this.modes.line){
+            return{
+                result: true,
+                winners: chipsWinners
+            }
+        } else {
+            return{
+                result: false,
+            }
+        }
     }
 
     checkVerticalWin(col, row) {
@@ -296,7 +334,7 @@ class Game {
         //fila actual
         let currentRow = row - 1;
         
-        while (currentRow >= 0 && this.gameState[col][currentRow] && this.gameState[col][currentRow].getPlayer() === this.currentPlayer) {
+        while (currentRow >= 0 && this.gameState[col][currentRow]  !== null && this.gameState[col][currentRow].getPlayer() === this.currentPlayer) {
             chipsWinners.push(this.gameState[col][currentRow]);
             count++;
             currentRow--;
