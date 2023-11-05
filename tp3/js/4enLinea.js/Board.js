@@ -1,6 +1,6 @@
 
 class Board{
-    constructor(col, filas, ctx, x, y, w, h, img){       
+    constructor(col, filas, ctx, x, y, w, h, img, marginBottom){       
         this.cantCols = col;
         this.cantRows =filas; 
         this.ctx = ctx;
@@ -9,6 +9,7 @@ class Board{
         this.w = w;
         this.h = h;
         this.imgFinal = img;
+        this.marginBottom = marginBottom;
         this.inicioGameX = 0;
         this.inicioGameY = 0;
     }
@@ -53,13 +54,13 @@ class Board{
         let altoBoard = this.cantRows * this.h;
        
         //dejo un margen inferior mas chico
-        let inicioBoardY = centroAlto - (altoBoard/2) + 25;
+        let inicioBoardY = centroAlto - (altoBoard/2)+ this.marginBottom;
         this.y = inicioBoardY + this.inicioGameY;
         let inicioBoardX = centroAncho - (anchoBoard/2);  
         this.x = inicioBoardX + this.inicioGameX;
        
     }
 
-    
+
 
 }

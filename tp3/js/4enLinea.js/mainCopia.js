@@ -295,3 +295,33 @@ function seeChips(){
 function clearCanvas(){
     drawGame(board);  
 }
+
+// onCanvasClick(e) {
+//     if (this.isGameOver) return;
+
+//     // Obtener la posición del clic en el tablero
+//     const { x, y } = this.getMousePosition(e);
+
+//     // Verificar si la columna está llena
+//     //if (this.isColumnFull(x)) return;
+    
+//     // Calcula la posición de la columna en la que se hizo clic
+//     const column = Math.floor((xActual - this.board.x) / this.modes.width);
+// // Verifica si la columna está dentro de los límites válidos del tablero
+//     if (column >= 0 && column < this.modes.col) {
+//         // La columna es válida, puedes proceder a colocar la ficha en esa columna
+//         // y realizar otras operaciones de juego.
+//         if (!this.isColumnFull(column)) {
+//             this.placeChip(column);
+//             this.drawGame();
+            
+//             if (this.checkForWin()) {
+//                 this.isGameOver = true;
+//                 console.log('¡Jugador ' + this.players[this.currentPlayer] + ' ha ganado!');
+//             } else {
+//                 // Cambiar al siguiente jugador
+//                 this.currentPlayer = 1 - this.currentPlayer;
+//             }
+//         }
+//     }
+// }

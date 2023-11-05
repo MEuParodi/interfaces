@@ -113,6 +113,15 @@
     text-decoration: underline;
     
 }
+/*==============4 en linea==============*/
+
+.game-msj{
+    position: absolute;
+    top: 250px;
+    left: 46%; 
+    color: var(--acento);
+    background-color: var(--negro);
+}
 
 .buttons-choice-board{
 /* 
@@ -120,6 +129,8 @@
     right: 35px; */
     
 }
+
+
 
 .buttons-choice-board button{
     background-color: var(--acento);
