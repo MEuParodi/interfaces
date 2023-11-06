@@ -105,6 +105,9 @@ class Chip{
         return this.posY;
     }
 
+    getImg(){
+        return this.img;
+    }
     
     isPointerInside(x, y){
         let _x = this.posX - x;

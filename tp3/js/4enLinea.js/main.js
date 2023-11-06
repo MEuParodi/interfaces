@@ -14,8 +14,6 @@ let _7EnLinea = document.getElementById('7-en-linea');
 //carga imagenes
 let chipImages = {
     imgFondo : document.getElementById("fondo-tablero2"),
-    //imgPepsi : document.getElementById('ficha-pepsi'),
-    //imgCoca : document.getElementById('ficha-coca'),
     imgTablero: document.getElementById('img-fija')
 }
 //elegir ficha
@@ -38,16 +36,29 @@ optionsPepsi.forEach(elem => {
 
 //dibujar fondo antes de jugar
 ctx.drawImage(document.getElementById("fondo-tablero"), 0,0, canvas.width, canvas.height);
+
 //div para mensajes
 let divMsg = {
-    spanPlayer : document.querySelector(".player-turn")
+    spanPlayer : document.querySelector(".player-turn"),
+    spanWin : document.getElementById("span-win"),
+    imgWin : document.getElementById("img-win"),
+    msgWin : document.getElementById("game-msg-win"),
+    divMsgPlayer : document.getElementById("game-msj"),
+    divMsgReload : document.getElementById("game-msg-reload"),
+    divTimer : document.getElementById("game-timer")
 }
 
+let btns ={
+    btnReplay : document.getElementById("btn-replay"),
+    btnReload : document.getElementById("btn-reload"),
+    btnReloadYes: document.getElementById("btn-reload-yes"),
+    btnReloadNo: document.getElementById("btn-reload-no")
+}
 
 //distintos modos cada uno con su configuracion necesaria
 let modes = {
     "beginner":{
-        "line": 4,
+        "line": 3,
         "col" : 7,
         "row" : 6,
         "cantChips": 21,
@@ -113,11 +124,12 @@ let play = document.getElementById("btn-play");
 play.addEventListener('click', ()=>{
     checkSelectedOptions();
     popUp.classList.add('close');
-
+    btns.btnReload.classList.remove('close');
+    divMsg.divTimer.classList.remove('close');
     msgPlayer.classList.remove('close');
     msgPlayer.classList.add('open');
     
-    const game = new Game(canvas, chosenMode, ctx, chipImages, divMsg, imgCoca, imgPepsi);
+    const game = new Game(canvas, chosenMode, ctx, chipImages, divMsg, imgCoca, imgPepsi, btns);
     game.init();
 })
 

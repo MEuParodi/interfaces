@@ -1,9 +1,11 @@
 class Game {
-    constructor(canvas, modes, ctx, chipImages, divMsg, imgCoca, imgPepsi) {
+    constructor(canvas, modes, ctx, chipImages, divMsg, imgCoca, imgPepsi, btns) {
         this.modes = modes;
         this.inicioGameX = 0;
         this.inicioGameY = 0;
-        this.board = new Board(modes.col, modes.row, ctx, this.inicioGameX, this.inicioGameY, modes.width, modes.height, chipImages.imgTablero, modes.marginBottom);
+        this.chipImages = chipImages; 
+        this.ctx = ctx;
+        this.board = new Board(this.modes.col, this.modes.row, this.ctx, this.inicioGameX, this.inicioGameY, this.modes.width, this.modes.height, this.chipImages.imgTablero, this.modes.marginBottom);
        // this.players = ['Pepsi', 'Coca']; // Nombres de los jugadores
         this.currentPlayer = 'Pepsi'; // jugador actual
         this.chips = []; // Array para almacenar las fichas en el tablero
@@ -11,13 +13,14 @@ class Game {
         let isMouseDown = false;
         this.isGameOver = false;
         this.canvas = canvas;
-        this.ctx = ctx;
-        this.chipImages = chipImages;
+       
+        
         this.divMsg = divMsg;
         this.anchoCanvas = this.canvas.width;
         this.altoCanvas = this.canvas.height;
         this.imgCoca = imgCoca;
         this.imgPepsi = imgPepsi;
+        this.btns = btns;
         this.gameState = []; // Matriz con estado del juego
         this.initializeGameState(modes.col, modes.row);
     }
@@ -27,6 +30,11 @@ class Game {
         this.canvas.addEventListener('mouseup', (e) => this.onMouseUp(e), false);
         this.canvas.addEventListener('mousemove', (e) => this.onMouseMove(e), false);
         this.canvas.addEventListener('mouseleave', (e) => this.onMouseLeave(e), false);
+        this.btns.btnReplay.addEventListener('click', (e) => this.reloadGame(e), false);
+        this.btns.btnReload.addEventListener('click', (e) => this.popUpReload(e), false);
+        this.btns.btnReloadYes.addEventListener('click', (e) => this.reloadGame(e), false);
+        this.btns.btnReloadNo.addEventListener('click', (e) => this.closePopUpReload(e), false);
+
         this.drawGame();
         //crear fichas
         this.createChips(this.imgPepsi, this.modes.cantChips, this.getInitialXY().xPepsi, this.getInitialXY().yInitial, this.modes.sizeChip, 'Pepsi');
@@ -128,12 +136,12 @@ class Game {
             let rdo = this.checkForWin(column, row);
             
         if (rdo != null && rdo.result === true) {
-            //if (false) {
-                this.showMsg(`¡Jugador ${this.currentPlayer} ha ganado!`);
-                this.lastClickedChip = null;
-                this.chipShowAsWinner(rdo.winners);
-                this.drawChips();
-                this.isGameOver = true;
+                this.win(rdo);
+                // this.showMsg(`¡Jugador ${this.currentPlayer} ha ganado!`);
+                // this.lastClickedChip = null;
+                // this.chipShowAsWinner(rdo.winners);
+                // this.drawChips();
+                // this.isGameOver = true;
             } else {
                 // Cambiar al siguiente jugador.
                 this.switchPlayer();
@@ -141,10 +149,60 @@ class Game {
             }
         }
     } 
+
+    //
+    win(rdo){
+        let imgWin = this.lastClickedChip.getImg();
+        this.showMsg(`¡Jugador ${this.currentPlayer} ha ganado!`);
+        this.lastClickedChip = null;
+        this.chipShowAsWinner(rdo.winners);
+        this.drawChips();
+        this.isGameOver = true;
+        this.showPlayerWin(imgWin);
+    }
+
+    reload2(){
+        //location.reload();
+         //const game = new Game(this.canvas, this.chosenMode, this.ctx, this.chipImages, this.divMsg, this.imgCoca, this.imgPepsi, this.btns);
+        // game.init();
+        // this.clearCanvas();
+        // this.divMsg.divMsgPlayer.classList.remove('close');
+        // this.divMsg.msgWin.classList.add('close');
+        // this.gameState = []; // Matriz con estado del juego
+        // this.initializeGameState(modes.col, modes.row);
+        // this.kill();
+        // //const game = new Game(this.canvas, this.chosenMode, this.ctx, this.chipImages, this.divMsg, this.imgCoca, this.imgPepsi, this.btns);
+        // this.init();
+    }
+
+    closePopUpReload(){
+        this.divMsg.divMsgReload.classList.add('close');
+    }
+
+    popUpReload(){
+        this.divMsg.divMsgReload.classList.remove('close');
+    }
+
+    reloadGame(){
+        //reiniciar juego 
+        setTimeout(function() {
+            location.reload();
+        }, 500); 
+    }
+
+    showPlayerWin(img){
+       
+        this.divMsg.divMsgPlayer.classList.add('close');
+        this.divMsg.msgWin.classList.remove('close');
+       // this.divMsg.msgWin.classList.add('open');
+
+        this.divMsg.spanWin.innerHTML = this.currentPlayer; 
+        console.log("div", this.divMsg.imgWin);
+        this.divMsg.imgWin.appendChild(img);
+    }
     
     //pinto como ganadoras las fichas
     chipShowAsWinner(chipWinners){
-        console.log('ganadoras', chipWinners);
         for(let i = 0; i < chipWinners.length; i++){
             chipWinners[i].setResaltadoEstilo("#F69B12");
             chipWinners[i].setResaltado(true);

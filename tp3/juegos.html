@@ -132,6 +132,7 @@
         </p>
         
         <div id="game-msj" class="game-msj close"><span class="player-turn"></span> </div>
+        
         <div id="game-msg2" class="popup" >
             <!-- <p id="msgPopup"></p> -->
             <p class="title-game">Pepsi vs Coca</p>
@@ -195,11 +196,32 @@
                 <p id="msg-options"></p>   
             </div>
         </div>
+        <div id="game-msg-win" class="popup popup-win close" >
+            <div>
+                <p class="title-game">FELICITACIONES!  </p>
+                <p class="title-game">GANADOR:  <span id="span-win" class="title-game"></span></p>
+            </div>
+            <div id="img-win">
+                <img id="ficha-coca-1" src="./img/juego/fichaCoca.png" alt="coca-1" class="img-choice-ficha">
+            </div>
+            <button id="btn-replay" class="buttons-choice-board">Volver a Jugar</button>
+        </div>
+        <div id="game-msg-reload" class="popup popup-win close" >
+            <div>
+                <p class="title-game">Seguro que deseas reiniciar el juego?</p>
+                <p class="title-game">Perderas todo tu avance...</p>
+            </div>
+            <button id="btn-reload-yes" class="buttons-choice-board">Si</button>
+            <button id="btn-reload-no" class="buttons-choice-board">No</button>
+
+        </div> 
         <!-- <button id="popup-btn">Ver popup</button> -->
     </div>
 
 
     <section class="game">
+        <div id="game-timer" class="game-timer close"><p>Timer</p></div>
+        <button id="btn-reload" class="close"></button>
         <canvas id="myCanvas" style="border:1px solid #000000; background-color:#000">
             <img id="img-fija" src="./img/juego/casillaOscuraAzul.png" alt="img-tablero">
             <img id="fondo-tablero" src="./img/juego/fondoTablero4.jpeg" alt="fondo-tablero">
@@ -208,6 +230,7 @@
             <!-- <img id="ficha-pepsi" src="./img/juego/fichaPepsi1.png" alt="pepsi">
             <img id="ficha-coca" src="./img/juego/fichaCoca.png" alt="coca"> -->
         </canvas>
+        
         <div class="controls">
             <div class="game-name">
                 <h4 class="body-bold">4 en linea</h4>
