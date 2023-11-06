@@ -3,8 +3,6 @@ const canvas = document.getElementById("myCanvas");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 const ctx = canvas.getContext("2d");
-
-
 /**@type{CanvasRenderingContext2D}*/
 
 //elegir 4 tipos de tableros
@@ -15,29 +13,38 @@ let _7EnLinea = document.getElementById('7-en-linea');
 
 //carga imagenes
 let chipImages = {
-    imgFondo : document.getElementById("fondo-tablero"),
-    imgPepsi : document.getElementById('ficha-pepsi'),
-    imgCoca : document.getElementById('ficha-coca'),
+    imgFondo : document.getElementById("fondo-tablero2"),
+    //imgPepsi : document.getElementById('ficha-pepsi'),
+    //imgCoca : document.getElementById('ficha-coca'),
     imgTablero: document.getElementById('img-fija')
 }
-
 //elegir ficha
-let coca1 = document.getElementById("ficha-coca-1");
-let coca2 = document.getElementById("ficha-coca-2");
-let coca3 = document.getElementById("ficha-coca-3");
-let pepsi1 = document.getElementById("ficha-pepsi-1");
-let pepsi2 = document.getElementById("ficha-pepsi-2");
-let pepsi3 = document.getElementById("ficha-pepsi-3");
+let imgCoca =  null;
+let imgPepsi = null;
+let optionsCoca = document.querySelectorAll(".chip-coca");
+let optionsPepsi = document.querySelectorAll(".chip-pepsi"); 
+//elegir ficha de coca
+optionsCoca.forEach(elem => {
+    elem.addEventListener('click', function() {
+        imgCoca = elem.nextElementSibling;
+    })
+});
+//elegir ficha de pepsi
+optionsPepsi.forEach(elem => {
+    elem.addEventListener('click', function() {
+        imgPepsi = elem.nextElementSibling;
+    })
+});
 
-
-
-
-ctx.drawImage(chipImages.imgFondo, 0,0, canvas.width, canvas.height);
+//dibujar fondo antes de jugar
+ctx.drawImage(document.getElementById("fondo-tablero"), 0,0, canvas.width, canvas.height);
 //div para mensajes
 let divMsg = {
     spanPlayer : document.querySelector(".player-turn")
 }
 
+
+//distintos modos cada uno con su configuracion necesaria
 let modes = {
     "beginner":{
         "line": 4,
@@ -99,19 +106,56 @@ _7EnLinea.addEventListener('click', ()=>{
 });
 
 let popUp = document.getElementById("game-msg2");
+let msgPlayer = document.getElementById("game-msj");
 let play = document.getElementById("btn-play");
 
 //cuando clickea play
 play.addEventListener('click', ()=>{
     checkSelectedOptions();
     popUp.classList.add('close');
-    //choiceChip();
-    const game = new Game(canvas, chosenMode, ctx, chipImages, divMsg);
+
+    msgPlayer.classList.remove('close');
+    msgPlayer.classList.add('open');
+    
+    const game = new Game(canvas, chosenMode, ctx, chipImages, divMsg, imgCoca, imgPepsi);
     game.init();
 })
+
+
+
+//chequeos del form de inicio
+const checkSelectedOptions = (e) =>{
+    const boardSelected = document.querySelector('input[name="opcion"]:checked');
+    const chipPlayer1Selected = document.querySelector('input[name="opcion-ficha"]:checked');
+    const chipPlayer2Selected = document.querySelector('input[name="opcion-ficha2"]:checked');
+
+    // Verificar si se seleccionaron opciones en forms
+   if (!boardSelected) {
+        showMsg("Elige un tipo de tablero!")
+        e.preventDefault(); 
+    } else if (!chipPlayer1Selected) {
+        showMsg("Elige una ficha para el Jugador 1!")
+        e.preventDefault(); 
+    } else if (!chipPlayer2Selected) {
+        showMsg("Elige una ficha para el Jugador 2!")
+        e.preventDefault(); 
+    }
+}
+
+//mensajes de error del form
+function showMsg(text){
+    let msg = document.getElementById("msg-options");
+    msg.innerHTML = text;
+    
+    setTimeout(function() {
+        msg.innerHTML = "";
+    }, 1000);
+}
+
+
 // document.addEventListener("DOMContentLoaded", function () {
 
-//     function choiceChip (){   
+// function choiceChip (){   
 //     const playerOneForm = document.getElementById("form-coca");
 //     const playerTwoForm = document.querySelector("form-pepsi");
 //     let selectedImage;
@@ -147,37 +191,6 @@ play.addEventListener('click', ()=>{
 //     });
 // }
 // });
-
-//verifica que se elijan todas las opciones antes de jugar
-const checkSelectedOptions = () =>{
-    const boardSelected = document.querySelector('input[name="opcion"]:checked');
-    const chipPlayer1Selected = document.querySelector('input[name="opcion-ficha"]:checked');
-    const chipPlayer2Selected = document.querySelector('input[name="opcion-ficha2"]:checked');
-
-    // Verificar si se seleccionaron opciones en forms
-   if (!boardSelected) {
-        showMsg("Elige un tipo de tablero!")
-        e.preventDefault(); 
-    } else if (!chipPlayer1Selected) {
-        showMsg("Elige una ficha para el Jugador 1!")
-        e.preventDefault(); 
-    } else if (!chipPlayer2Selected) {
-        showMsg("Elige una ficha para el Jugador 2!")
-        e.preventDefault(); 
-    }
-}
-
-function showMsg(text){
-    let msg = document.getElementById("msg-options");
-    msg.innerHTML = text;
-    
-    setTimeout(function() {
-        msg.innerHTML = "";
-    }, 1000);
-}
-
-
-
 
 
 

@@ -1,5 +1,5 @@
 class Game {
-    constructor(canvas, modes, ctx, chipImages, divMsg) {
+    constructor(canvas, modes, ctx, chipImages, divMsg, imgCoca, imgPepsi) {
         this.modes = modes;
         this.inicioGameX = 0;
         this.inicioGameY = 0;
@@ -16,7 +16,8 @@ class Game {
         this.divMsg = divMsg;
         this.anchoCanvas = this.canvas.width;
         this.altoCanvas = this.canvas.height;
-
+        this.imgCoca = imgCoca;
+        this.imgPepsi = imgPepsi;
         this.gameState = []; // Matriz con estado del juego
         this.initializeGameState(modes.col, modes.row);
     }
@@ -28,8 +29,8 @@ class Game {
         this.canvas.addEventListener('mouseleave', (e) => this.onMouseLeave(e), false);
         this.drawGame();
         //crear fichas
-        this.createChips(this.chipImages.imgPepsi, this.modes.cantChips, this.getInitialXY().xPepsi, this.getInitialXY().yInitial, this.modes.sizeChip, 'Pepsi');
-        this.createChips(this.chipImages.imgCoca, this.modes.cantChips, this.getInitialXY().xCoca, this.getInitialXY().yInitial, this.modes.sizeChip, 'Coca');
+        this.createChips(this.imgPepsi, this.modes.cantChips, this.getInitialXY().xPepsi, this.getInitialXY().yInitial, this.modes.sizeChip, 'Pepsi');
+        this.createChips(this.imgCoca, this.modes.cantChips, this.getInitialXY().xCoca, this.getInitialXY().yInitial, this.modes.sizeChip, 'Coca');
         this.drawChips();
         this.showMsg("Turno Jugador 1")
     }
@@ -145,7 +146,7 @@ class Game {
     chipShowAsWinner(chipWinners){
         console.log('ganadoras', chipWinners);
         for(let i = 0; i < chipWinners.length; i++){
-            chipWinners[i].setResaltadoEstilo("#a7ef2b");
+            chipWinners[i].setResaltadoEstilo("#F69B12");
             chipWinners[i].setResaltado(true);
         }
     }

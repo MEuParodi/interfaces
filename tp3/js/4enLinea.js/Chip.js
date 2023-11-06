@@ -14,7 +14,7 @@ class Chip{
         this.ctx = ctx;
         this.img = img;
         this.resaltado = false;
-        this.resaltadoEstilo = 'blue';
+        this.resaltadoEstilo = '#F69B12';
     }
 
 //drawChip2();
@@ -43,17 +43,17 @@ class Chip{
     ctx.beginPath(); 
     const grad = this.ctx.createRadialGradient(this.posX, this.posY ,radius * 0.85, this.posX, this.posY, radius * 1.2);
         grad.addColorStop(0, 'grey');
-        grad.addColorStop(0.5, 'white');
+        grad.addColorStop(0.5, 'black');
         grad.addColorStop(1, 'grey');
     
-        ctx.arc(this.posX, this.posY, radius, 0, 2 * Math.PI);
+       // ctx.arc(this.posX, this.posY, radius, 0, 2 * Math.PI);
       //  ctx.fillStyle = 'white';
-        ctx.fill();
+       // ctx.fill();
         ctx.drawImage(this.img, this.posX -radius, this.posY-radius, radius*2, radius*2);
 
-        ctx.strokeStyle = grad;
-        ctx.lineWidth = radius*0.15;
-        ctx.stroke();
+        //ctx.strokeStyle = grad;
+        //ctx.lineWidth = radius*0.15;
+        //ctx.stroke();
         
         //ctx.beginPath();
         

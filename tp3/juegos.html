@@ -131,7 +131,7 @@
             <a href="home.html">juegos</a> >> estrategia >> 4 en línea
         </p>
         
-        <div id="game-msj" class="game-msj"><span class="player-turn"></span> </div>
+        <div id="game-msj" class="game-msj close"><span class="player-turn"></span> </div>
         <div id="game-msg2" class="popup" >
             <!-- <p id="msgPopup"></p> -->
             <p class="title-game">Pepsi vs Coca</p>
@@ -160,15 +160,15 @@
                         <fieldset>
                         <legend class="legend-player">Jugador 1:</legend>
                         <label>
-                            <input type="radio" name="opcion-ficha" value="coca-1" id="coca1">
+                            <input id="coca1" type="radio" name="opcion-ficha" value="coca-1"  class="chip-coca">
                             <img id="ficha-coca-1" src="./img/juego/fichaCoca.png" alt="coca-1" class="img-choice-ficha">
                         </label>
                         <label>
-                            <input type="radio" name="opcion-ficha" value="coca-2" id="coca2">
+                            <input type="radio" name="opcion-ficha" value="coca-2" id="coca2" class="chip-coca">
                             <img id="ficha-coca-2" src="./img/juego/fichaCoca3.png" alt="coca-2" class="img-choice-ficha">
                         </label>
                         <label>
-                            <input type="radio" name="opcion-ficha" value="coca-3" id="coca3" >
+                            <input type="radio" name="opcion-ficha" value="coca-3" id="coca3" class="chip-coca">
                             <img id="ficha-coca-3" src="./img/juego/fichaCocaZeero.png" alt="coca-3" class="img-choice-ficha">
                         </label>
                         </fieldset>
@@ -178,16 +178,16 @@
                         <fieldset>
                         <legend class="legend-player">Jugador 2:</legend>
                         <label>
-                        <input type="radio" name="opcion-ficha2" value="pepsi-1" id="pepsi1">
+                        <input id="pepsi1" type="radio" name="opcion-ficha2" value="pepsi-1"  class="chip-pepsi">
                         <img id="ficha-pepsi-1" src="./img/juego/fichaPepsi1.png" alt="Pepsi-1" class="img-choice-ficha">
                         </label>
                         <label>
-                        <input type="radio" name="opcion-ficha2" value="pepsi-2" id="pepsi2">
+                        <input type="radio" name="opcion-ficha2" value="pepsi-2" id="pepsi2" class="chip-pepsi">
                         <img id="ficha-pepsi-2" src="./img/juego/fichaPepsiSinNombre.png" alt="Pepsi-2" class="img-choice-ficha">
                         </label>
                         <label>
-                        <input type="radio" name="opcion-ficha2" value="pepsi-3" id="pepsi3" >
-                        <img id="ficha-pepsi-3" src="./img/juego/fichaPepsiRetro.png" alt="Pepsi-3" class="img-choice-ficha">
+                        <input type="radio" name="opcion-ficha2" value="pepsi-3" id="pepsi3" class="chip-pepsi">
+                        <img id="ficha-pepsi-3" src="./img/juego/fichaPepsiRetro2.svg" alt="Pepsi-3" class="img-choice-ficha">
                         </label>
                         </fieldset>
                     </form>
@@ -203,8 +203,10 @@
         <canvas id="myCanvas" style="border:1px solid #000000; background-color:#000">
             <img id="img-fija" src="./img/juego/casillaOscuraAzul.png" alt="img-tablero">
             <img id="fondo-tablero" src="./img/juego/fondoTablero4.jpeg" alt="fondo-tablero">
-            <img id="ficha-pepsi" src="./img/juego/fichaPepsi1.png" alt="pepsi">
-            <img id="ficha-coca" src="./img/juego/fichaCoca.png" alt="coca">
+            <img id="fondo-tablero2" src="./img/juego/fondoBlur3.svg" alt="fondo-tablero">
+            
+            <!-- <img id="ficha-pepsi" src="./img/juego/fichaPepsi1.png" alt="pepsi">
+            <img id="ficha-coca" src="./img/juego/fichaCoca.png" alt="coca"> -->
         </canvas>
         <div class="controls">
             <div class="game-name">
