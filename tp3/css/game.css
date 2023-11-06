@@ -117,17 +117,11 @@
 
 .game-msj{
     position: absolute;
-    top: 350px;
+    top: 180px;
     left: 46%; 
     color: var(--acento);
     background-color: var(--negro);
-}
-
-.buttons-choice-board{
-/* 
-    top: 230px;
-    right: 35px; */
-    
+    text-align: center;
 }
 
 .form-game label input{
@@ -137,14 +131,28 @@
 
 
 .buttons-choice-board {
-    background-color: var(--acento);
+    position: absolute;
+    right: 8%;
+    top: 25%;
+    background-color: var(--secundario);
     border: none;
     margin: 10px 2px;
-    border-radius: 5px;
-    height: 30px;
-    width: 100px;
-    color: var(--blanco);
+    border-radius: 10px;
+    height: 50px;
+    width: 200px;
+    color: var(--negro);
+    font-weight: bold;
     box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.40);
+    font-size: 20px;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+#msg-options{
+    position: absolute;
+    right: 5%;
+    bottom: 25%;
+    color: var(--primario-s3);
+    font-weight: bold;
 }
 
 .buttons-choice-board button:disabled{
@@ -154,20 +162,74 @@
 .title-game{
     /* top: 80px;
     right: 180px; */
-    color: var(--negro);
-    font-size: 30px;
+    color: var(--primario-s1);
+    font-size: 35px;
+    font-weight: bolder;
     font-family: 'Tsukimi Rounded', sans-serif;
-    text-shadow: 2px 2px 3px #00000080;
+    text-shadow: 2px 2px 2px #000000;
+    text-align: center;
+    margin-bottom: 30px;
     /* text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25); */
 }
 
-.game-options{
-    /* position: absolute;
-    top: 100px;
-    right: 354px; */
-    color: var(--negro);
-    font-size: 14px;
+.container-form-game{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    color: #000;
+    font-size: 18px;
+    padding-left: 50px;
+    position: relative;
 }
+
+.container-form-game .choice-chip{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: end;
+}
+
+.container-form-game input{
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}
+
+.container-form-game fieldset label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+.container-form-game legend{
+    color: var(--primario-s1);
+    font-weight: bold;
+    text-align: left;
+}
+
+.container-form-game legend.legend-player{
+    color: #000;
+}
+
+.form-choice-chip{
+    border: none;
+}
+
+.form-choice-chip fieldset{
+    border: none;
+    display: flex;
+}
+
+.img-choice-ficha{
+    height: 50px;
+    width: 50px;
+    
+/*border-radius: 50px*/;
+}
+
+/*=======================================================================*/
     
 .game {
     /*width: 100%; ancho y alt de todo el grid*/
@@ -775,19 +837,25 @@
 
 .popup {
     position: absolute;
-    transform: translate(115%, 120%);
-    width: 400px;
-    height: 200px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid #000;
+
+    transform: translate(25%, 20%);
+    width: 800px;
+    height: 450px;
+    background-color: rgba(144, 142, 142, 0.8);
+    border: 5px solid #000;
     text-align: center;
     font-size: 16px;
     color: #000;
-    display: none; /* Inicialmente oculto */
+    box-shadow: 0px 0px 10px 40px rgba(0, 0, 0, 0.70);
+    /*display: none;  Inicialmente oculto */
     z-index: 1; 
 }
 
-.popup p {
+.close{
+    display: none;
+}
+
+/* .popup p {
     transform: translateY(80px);
 
-  }
+  } */

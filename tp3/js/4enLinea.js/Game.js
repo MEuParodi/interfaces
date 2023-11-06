@@ -32,16 +32,15 @@ class Game {
         this.createChips(this.chipImages.imgCoca, this.modes.cantChips, this.getInitialXY().xCoca, this.getInitialXY().yInitial, this.modes.sizeChip, 'Coca');
         this.drawChips();
         this.showMsg("Turno Jugador 1")
-   
     }
 
-    kill(){
-        this.canvas.removeEventListener('mousedown', (e) => this.onMouseDown(e), false);
-        this.canvas.removeEventListener('mouseup', (e) => this.onMouseUp(e), false);
-        this.canvas.removeEventListener('mousemove', (e) => this.onMouseMove(e), false);
-        this.canvas.removeEventListener('mouseleave', (e) => this.onMouseLeave(e), false);
+    // kill(){
+    //     this.canvas.removeEventListener('mousedown', (e) => this.onMouseDown(e), false);
+    //     this.canvas.removeEventListener('mouseup', (e) => this.onMouseUp(e), false);
+    //     this.canvas.removeEventListener('mousemove', (e) => this.onMouseMove(e), false);
+    //     this.canvas.removeEventListener('mouseleave', (e) => this.onMouseLeave(e), false);
        
-    }
+    // }
 
     //calcula el x e y inicial a partir del cual se crearan las fichas
     getInitialXY(){
@@ -146,7 +145,7 @@ class Game {
     chipShowAsWinner(chipWinners){
         console.log('ganadoras', chipWinners);
         for(let i = 0; i < chipWinners.length; i++){
-            chipWinners[i].setResaltadoEstilo("#F69B12");
+            chipWinners[i].setResaltadoEstilo("#a7ef2b");
             chipWinners[i].setResaltado(true);
         }
     }
@@ -215,38 +214,38 @@ class Game {
      }
  
      //verifico q sea una columna valida
-     getColumnFromCoordinates(xActual){
-         //xactual - inicio tabl / ancho  de mi ficha
-         //busco cuantas veces entra el ancho de mi col, en la diferencia, redondeo para abajo 
-         const column = Math.floor((xActual - this.board.x) / this.modes.width);
-         //si esa cant es menor a 1 o mayor q mi cant de col no me interesa, no es una col valida
-         if(column < 0 || column > this.modes.col){
-             return -1;
-         }
-         return column;
-     }
+    getColumnFromCoordinates(xActual){
+        //xactual - inicio tabl / ancho  de mi ficha
+        //busco cuantas veces entra el ancho de mi col, en la diferencia, redondeo para abajo 
+        const column = Math.floor((xActual - this.board.x) / this.modes.width);
+        //si esa cant es menor a 1 o mayor q mi cant de col no me interesa, no es una col valida
+        if(column < 0 || column > this.modes.col){
+            return -1;
+        }
+        return column;
+    }
+
+    getMousePosition(e) {
+        // Obtener la posición del clic en el tablero
+        const rect = canvas.getBoundingClientRect();
+        const scaleX = canvas.width / rect.width; // Factor de escala X
+        const scaleY = canvas.height / rect.height; // Factor de escala Y
+        const xActual = (e.clientX - rect.left) * scaleX; // Coordenada X relativa al canvas
+        const yActual = (e.clientY - rect.top) * scaleY;
+        return {
+            xActual,
+            yActual
+        }
+    }
     
-     getMousePosition(e) {
-         // Obtener la posición del clic en el tablero
-         const rect = canvas.getBoundingClientRect();
-         const scaleX = canvas.width / rect.width; // Factor de escala X
-         const scaleY = canvas.height / rect.height; // Factor de escala Y
-         const xActual = (e.clientX - rect.left) * scaleX; // Coordenada X relativa al canvas
-         const yActual = (e.clientY - rect.top) * scaleY;
-         return {
-             xActual,
-             yActual
-         }
-     }
-     
-     findClickedChip(x, y){    
-         for(let i =0; i < this.chips.length; i++){    
-         const element = this.chips[i];
-             if(element.isPointerInside(x, y)){
-                 return element;
-             }
-         }
-     }
+    findClickedChip(x, y){    
+        for(let i =0; i < this.chips.length; i++){    
+        const element = this.chips[i];
+            if(element.isPointerInside(x, y)){
+                return element;
+            }
+        }
+    }
 
     findLowestEmptyRow(col) {
         // Encontrar la fila más baja vacía en la columna
@@ -294,6 +293,10 @@ class Game {
             return this.checkVerticalWin(col, row);
         if(this.checkHorizontalWin(col, row).result == true)
             return this.checkHorizontalWin(col, row)
+        if(this.checkDiagonalRightWin(col, row).result == true)
+            return this.checkDiagonalRightWin(col, row)
+        if(this.checkDiagonalLeftWin(col, row).result == true)
+            return this.checkDiagonalLeftWin(col, row)
     }
 
     // checkHorizontalWin2(col, row) {
@@ -381,6 +384,108 @@ class Game {
         }
     }
 
+    checkDiagonalRightWin(col, row) {
+        let limit = this.modes.line;
+        let chipsWinners = [];
+        chipsWinners.push(this.gameState[col][row]);
+        //hacia der y abajo
+        let count = 1; 
+        let currentCol = col + 1;
+        let currentRow = row + 1;
+        while (count < limit && currentCol < this.modes.col && currentRow < this.modes.row && this.gameState[currentCol][currentRow] && this.gameState[currentCol][currentRow].getPlayer() === this.currentPlayer) {
+            chipsWinners.push(this.gameState[currentCol][currentRow]);
+            count++;
+            currentRow++;
+            currentCol++;
+        }
+
+        if(count === limit){
+            return {
+                result: true,
+                winners: chipsWinners
+            }
+        }
+        //hacia arriba e izq
+        currentCol = col - 1;
+        currentRow = row - 1;
+        console.log();
+        while (count < limit 
+            && currentCol >= 0 
+            && currentRow >= 0 
+            && this.gameState[currentCol][currentRow] 
+            && this.gameState[currentCol][currentRow].getPlayer() === this.currentPlayer) {
+            chipsWinners.push(this.gameState[currentCol][row]);
+            count++;
+            currentCol--;
+            currentRow--;
+        }     
+        console.log('diag', count);   
+        if(count === limit){
+            return {
+                result: true,
+                winners: chipsWinners
+            }
+        } else{
+            return{
+                result: false
+            }
+        }
+    }
+
+    //hacerrrrr
+    checkDiagonalLeftWin(col, row) {
+        let limit = this.modes.line;
+        let chipsWinners = [];
+        chipsWinners.push(this.gameState[col][row]);
+        //hacia izq y abajo
+        let count = 1; 
+        let currentCol = col - 1;
+        let currentRow = row + 1;
+        while (count < limit 
+                && currentCol >= 0 
+                && currentRow < this.modes.row 
+                && this.gameState[currentCol][currentRow] 
+                && this.gameState[currentCol][currentRow].getPlayer() === this.currentPlayer) {
+                
+                    chipsWinners.push(this.gameState[currentCol][currentRow]);
+                    count++;
+                    currentRow++;
+                    currentCol--;
+        }
+
+        if(count === limit){
+            return {
+                result: true,
+                winners: chipsWinners
+            }
+        }
+        //hacia arriba y der
+        currentCol = col + 1;
+        currentRow = row - 1;
+       
+        while (count < limit 
+                && currentCol < this.modes.col 
+                && currentRow >= 0 
+                && this.gameState[currentCol][currentRow] 
+                && this.gameState[currentCol][currentRow].getPlayer() === this.currentPlayer) {
+                    chipsWinners.push(this.gameState[currentCol][row]);
+                    count++;
+                    currentCol++;
+                    currentRow--;
+        }     
+        console.log('diag izq', count);   
+        if(count === limit){
+            return {
+                result: true,
+                winners: chipsWinners
+            }
+        } else{
+            return{
+                result: false
+            }
+        }
+    }
+
     checkVerticalWin(col, row) {
         let limit = this.modes.line;
         let chipsWinners = [];
@@ -410,57 +515,12 @@ class Game {
         
     }
 
-    checkVerticalWin2(col, row) {
-        let chipsWinners = [];
-        //guardo la primer ficha
-        chipsWinners.push(this.gameState[col][row]);
-        //hacia arriba
-        let count = 1; 
-        //fila actual
-        let currentRow = row - 1;
-        
-        while (currentRow >= 0 && this.gameState[col][currentRow]  !== null && this.gameState[col][currentRow].getPlayer() === this.currentPlayer) {
-            chipsWinners.push(this.gameState[col][currentRow]);
-            count++;
-            currentRow--;
-        }
-        
-        if(count >= this.modes.line){
-            return{
-                result: true,
-                winners: chipsWinners
-            }
-        } else{
-            chipsWinners = [];
-        }
-        //hacia abajo
-        chipsWinners.push(this.gameState[col][row]);
-        currentRow = row + 1;
-    
-        while (currentRow < this.modes.row && this.gameState[col][currentRow].getPlayer() === this.currentPlayer) {
-            chipsWinners.push(this.gameState[col][currentRow]);
-            count++;
-            currentRow++;
-        }
-        //console.log('check vert', count);
-        if(count >= this.modes.line){
-            return{
-                result: true,
-                winners: chipsWinners
-            }
-        } else {
-            return{
-                result: false,
-            }
-        }
-        //return count >= this.modes.line;
-    }
+
     
 
      //mostrar mensajes
-     showMsg(msg){
+    showMsg(msg){
         this.divMsg.spanPlayer.innerHTML = msg;
-
     }
 
     //cambiar jugador

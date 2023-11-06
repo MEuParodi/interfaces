@@ -25,13 +25,13 @@ class Chip{
     drawChip() {
         this.ctx.beginPath();
         this.ctx.arc(this.posX, this.posY, this.radius, 0 , 2 * Math.PI);
-        // ctx.shadowBlur = 10;
-        // ctx.shadowOffsetY = 2;
-        // ctx.shadowOffsetX = 2;
-        // ctx.shadowColor = "black";
+       // ctx.shadowBlur = 5;
+        //ctx.shadowOffsetY = 1;
+        //ctx.shadowOffsetX = 1;
+       // ctx.shadowColor = "black";
         if(this.resaltado === true){
             this.ctx.strokeStyle = this.resaltadoEstilo;
-            this.ctx.lineWidth = 15;
+            this.ctx.lineWidth = 10;
             this.ctx.stroke();
         }
 
@@ -52,7 +52,7 @@ class Chip{
         ctx.drawImage(this.img, this.posX -radius, this.posY-radius, radius*2, radius*2);
 
         ctx.strokeStyle = grad;
-        ctx.lineWidth = radius*0.20;
+        ctx.lineWidth = radius*0.15;
         ctx.stroke();
         
         //ctx.beginPath();
