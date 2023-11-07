@@ -6,51 +6,65 @@ class Game {
         this.chipImages = chipImages; 
         this.ctx = ctx;
         this.board = new Board(this.modes.col, this.modes.row, this.ctx, this.inicioGameX, this.inicioGameY, this.modes.width, this.modes.height, this.chipImages.imgTablero, this.modes.marginBottom);
-       // this.players = ['Pepsi', 'Coca']; // Nombres de los jugadores
         this.currentPlayer = 'Pepsi'; // jugador actual
         this.chips = []; // Array para almacenar las fichas en el tablero
         this.lastClickedChip = null;
         let isMouseDown = false;
         this.isGameOver = false;
-        this.canvas = canvas;
-       
-        
+        this.canvas = canvas;      
         this.divMsg = divMsg;
         this.anchoCanvas = this.canvas.width;
         this.altoCanvas = this.canvas.height;
         this.imgCoca = imgCoca;
         this.imgPepsi = imgPepsi;
         this.btns = btns;
-        this.gameState = []; // Matriz con estado del juego
-        this.initializeGameState(modes.col, modes.row);
+        this.gameState = []; //Matriz, estado del juego
+        this.timer = new Timer(300, () => {
+            //cuando se agote el tiempo, llama a esta funcion
+            this.handleTimeout();
+        });
+        console.log("inicio tablero", this.board.x, this.board.y);
+        this.arrow = null;
     }
 
-    init() {
+
+    init() { 
+        this.initializeGameState(this.modes.col, this.modes.row);
+        this.initializeEvent();
+        
+        this.drawGame();
+       // this.arrow = new Arrow(this.ctx, this.board.x, this.board.y, this.modes.width, this.modes.height, this.modes.line, this.chipImages.imgArrow);
+       console.log("inicio tablero", this.board.x, this.board.y);
+        //crear fichas
+        this.createChips(this.imgPepsi, this.modes.cantChips, this.getInitialXY().xPepsi, this.getInitialXY().yInitial, this.modes.sizeChip, 'Pepsi');
+        this.createChips(this.imgCoca, this.modes.cantChips, this.getInitialXY().xCoca, this.getInitialXY().yInitial, this.modes.sizeChip, 'Coca');
+        
+        this.arrow = new Arrow(this.ctx, this.board.x, this.board.y, this.modes.width, this.modes.height, this.modes.col, this.chipImages.imgArrow);
+        this.drawChips();
+        this.showMsg("Juega Pepsi");
+        this.timer.start();
+        this.updateTimerDisplay();
+        //actualiza la vista del timer cada un segundo
+        setInterval(() => {
+            this.updateTimerDisplay();
+        }, 1000);
+        
+    }
+
+    //iniacializa escucha de eventos
+    initializeEvent(){
         this.canvas.addEventListener('mousedown', (e) => this.onMouseDown(e), false);
         this.canvas.addEventListener('mouseup', (e) => this.onMouseUp(e), false);
         this.canvas.addEventListener('mousemove', (e) => this.onMouseMove(e), false);
         this.canvas.addEventListener('mouseleave', (e) => this.onMouseLeave(e), false);
         this.btns.btnReplay.addEventListener('click', (e) => this.reloadGame(e), false);
         this.btns.btnReload.addEventListener('click', (e) => this.popUpReload(e), false);
-        this.btns.btnReloadYes.addEventListener('click', (e) => this.reloadGame(e), false);
+        this.btns.btnReloadYes.addEventListener('click', (e) => this.reset(e), false);
         this.btns.btnReloadNo.addEventListener('click', (e) => this.closePopUpReload(e), false);
-
-        this.drawGame();
-        //crear fichas
-        this.createChips(this.imgPepsi, this.modes.cantChips, this.getInitialXY().xPepsi, this.getInitialXY().yInitial, this.modes.sizeChip, 'Pepsi');
-        this.createChips(this.imgCoca, this.modes.cantChips, this.getInitialXY().xCoca, this.getInitialXY().yInitial, this.modes.sizeChip, 'Coca');
-        this.drawChips();
-        this.showMsg("Turno Jugador 1")
+        this.btns.btnTie.addEventListener('click', (e) => this.reloadGame(e), false);
+        
     }
-
-    // kill(){
-    //     this.canvas.removeEventListener('mousedown', (e) => this.onMouseDown(e), false);
-    //     this.canvas.removeEventListener('mouseup', (e) => this.onMouseUp(e), false);
-    //     this.canvas.removeEventListener('mousemove', (e) => this.onMouseMove(e), false);
-    //     this.canvas.removeEventListener('mouseleave', (e) => this.onMouseLeave(e), false);
-       
-    // }
-
+    
     //calcula el x e y inicial a partir del cual se crearan las fichas
     getInitialXY(){
         let xPepsi = parseInt(this.inicioGameX + 100);
@@ -113,13 +127,19 @@ class Game {
             let xActual = actualValues.xActual;
             let yActual = actualValues.yActual;
             const column = this.getColumnFromCoordinates(xActual);
-            // si no es un valor falsi ?, ejecuta lo siguiente
-            //mensaje de columna llena
+            
             if (!this.isValidArea(xActual, yActual) || this.isColumnFull(column)) {
+                //si no es un valor falsi ?, ejecuta lo siguiente
                 this.lastClickedChip?.setPosition(this.lastClickedChip.getPositionInitial().posX, this.lastClickedChip.getPositionInitial().posY);
                 this.lastClickedChip?.setResaltado(false);
                 this.lastClickedChip = null;
                 this.drawChips();
+                if(this.isColumnFull(column)){
+                    this.showMsg("Columna llena, elige otra!");
+                    setTimeout(() => {
+                        this.showMsg("Juega "+ this.currentPlayer);
+                    }, 1000);
+                }
                 return;
             }
             // Encuentra la fila vacía más baja en la columna
@@ -135,22 +155,17 @@ class Game {
             this.drawChips();
             let rdo = this.checkForWin(column, row);
             
-        if (rdo != null && rdo.result === true) {
-                this.win(rdo);
-                // this.showMsg(`¡Jugador ${this.currentPlayer} ha ganado!`);
-                // this.lastClickedChip = null;
-                // this.chipShowAsWinner(rdo.winners);
-                // this.drawChips();
-                // this.isGameOver = true;
+            if (rdo != null && rdo.result === true) {
+                    this.win(rdo);
             } else {
                 // Cambiar al siguiente jugador.
                 this.switchPlayer();
                 this.lastClickedChip = null;        
             }
-        }
+            }
     } 
 
-    //
+    //cuando hay un ganador
     win(rdo){
         let imgWin = this.lastClickedChip.getImg();
         this.showMsg(`¡Jugador ${this.currentPlayer} ha ganado!`);
@@ -158,31 +173,51 @@ class Game {
         this.chipShowAsWinner(rdo.winners);
         this.drawChips();
         this.isGameOver = true;
-        this.showPlayerWin(imgWin);
+        setTimeout(() => {
+            this.showPlayerWin(imgWin);
+        }, 1000);
+        this.timer.stop();
     }
 
-    reload2(){
-        //location.reload();
-         //const game = new Game(this.canvas, this.chosenMode, this.ctx, this.chipImages, this.divMsg, this.imgCoca, this.imgPepsi, this.btns);
-        // game.init();
-        // this.clearCanvas();
-        // this.divMsg.divMsgPlayer.classList.remove('close');
-        // this.divMsg.msgWin.classList.add('close');
-        // this.gameState = []; // Matriz con estado del juego
-        // this.initializeGameState(modes.col, modes.row);
-        // this.kill();
-        // //const game = new Game(this.canvas, this.chosenMode, this.ctx, this.chipImages, this.divMsg, this.imgCoca, this.imgPepsi, this.btns);
-        // this.init();
+    //reseteo del juego
+    reset(e) {
+        this.closePopUpReload(e);
+        //jugador que empieza por defecto
+        this.currentPlayer = 'Pepsi';
+        this.timer.stop();
+        //Reinicia la matriz con null
+        this.initializeGameState(this.modes.col, this.modes.row);
+        //Elimina todas las fichas
+        this.chips = [];
+        //crear las fichas iniciales
+        this.createChips(this.imgPepsi, this.modes.cantChips, this.getInitialXY().xPepsi, this.getInitialXY().yInitial, this.modes.sizeChip, 'Pepsi');
+        this.createChips(this.imgCoca, this.modes.cantChips, this.getInitialXY().xCoca, this.getInitialXY().yInitial, this.modes.sizeChip, 'Coca');
+        //redibuja juego y fichas
+        this.drawGame();
+        this.drawChips();
+        //Reinicia el timer
+        this.timer.reset();
+        this.timer.start();
+        this.updateTimerDisplay();
+        //mensaje de inicio
+        this.showMsg("Juega Pepsi");
+        this.isGameOver = false;
     }
 
+    //cierra el pop up de reinicio
     closePopUpReload(){
+        this.timer.start();
         this.divMsg.divMsgReload.classList.add('close');
+        
     }
 
+    //abre el pop up de reinicio
     popUpReload(){
         this.divMsg.divMsgReload.classList.remove('close');
+        this.timer.stop();
     }
 
+    //reinicia el juego, empieza de cero
     reloadGame(){
         //reiniciar juego 
         setTimeout(function() {
@@ -190,12 +225,10 @@ class Game {
         }, 500); 
     }
 
+    //muestra el jugador y la ficha ganadora
     showPlayerWin(img){
-       
         this.divMsg.divMsgPlayer.classList.add('close');
         this.divMsg.msgWin.classList.remove('close');
-       // this.divMsg.msgWin.classList.add('open');
-
         this.divMsg.spanWin.innerHTML = this.currentPlayer; 
         console.log("div", this.divMsg.imgWin);
         this.divMsg.imgWin.appendChild(img);
@@ -221,11 +254,11 @@ class Game {
     }
     //limpio el canvas y dibujo las fichas
     drawChips() {
-        this.clearCanvas();  
+        this.clearCanvas();
+        this.arrow.draw();  
         for(let i = 0; i < this.chips.length; i ++){
             this.chips[i].drawChip();
         }
-        //this.chips.forEach(chip => chip.drawChip());
     }
 
     //dibujo las fichas iniaciales
@@ -317,15 +350,36 @@ class Game {
     }
 
     // Verificar si la columna está llena dentro de la matriz
-    isColumnFull(col) {
-       
-        return this.gameState[col].every(row => row !== null);
+    isColumnFull(col) { 
+        return this.gameState[col][0];   
     }
     
+    //actualizar timer, mostrar en pantalla
+    updateTimerDisplay() {
+        //obtiene el tiempo restante en segundos
+        const remainingTime = this.timer.getRemainingTime();
+        //calcula la cant de minutos redondeado para abajo
+        const minutes = Math.floor(remainingTime / 60);
+        //cant de segundos
+        const seconds = remainingTime % 60;
+        //funcion para string, agrega el caracter 0, hasta llegar a longitud de 2
+        //los minutos y segundos tienen 2 digitos, se agregan ceros a la izquierda de ser necesario
+        const formattedTime = `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+        this.divMsg.divTimer.textContent = formattedTime;
+    }
+
+    //cuando termina el tiempo
+    handleTimeout() {
+        this.isGameOver = true;
+        this.divMsg.divTie.classList.remove('close');
+        this.divMsg.msgTie.innerHTML = "Se ha terminado el tiempo";
+    }
+
+
     //logica de juego
 
+    //inicializa la matriz con celdas vacias
     initializeGameState(col, row) {
-        //inicializa la matriz con celdas vacias
         for (let i = 0; i < col; i++) {
             this.gameState[i] = [];
             for (let j = 0; j < row; j++) {
@@ -356,50 +410,16 @@ class Game {
             return this.checkDiagonalRightWin(col, row)
         if(this.checkDiagonalLeftWin(col, row).result == true)
             return this.checkDiagonalLeftWin(col, row)
+        if(this.checkTie() == true){
+            this.tie();
+        }
     }
 
-    // checkHorizontalWin2(col, row) {
-    //     let chipsWinners = [];
-    //     //guardo la primer ficha
-    //     chipsWinners.push(this.gameState[col][row]);
-    //     //hacia izq
-    //     let count = 1; 
-    //     //fila actual
-    //     let currentCol = col - 1;
-    //     console.log('', this.gameState[currentCol, row]);
-    //     while (currentCol >= 0 && this.gameState[currentCol][row] != null && this.gameState[currentCol][row].getPlayer() === this.currentPlayer) {
-    //         chipsWinners.push(this.gameState[currentCol][row]);
-    //         count++;
-    //         currentCol--;
-    //     }
-        
-    //     if(count >= this.modes.line){
-    //         return{
-    //             result: true,
-    //             winners: chipsWinners
-    //         }
-    //     } else{
-    //         chipsWinners = [];
-    //         chipsWinners.push(this.gameState[col][row]);
-    //     }
-    //     //hacia der
-    //     currentCol = row + 1;
-    //     while (currentCol < this.modes.col && this.gameState[currentCol][row] != null &&this.gameState[currentCol][row].getPlayer() === this.currentPlayer) {
-    //         chipsWinners.push(this.gameState[currentCol][row]);
-    //         count++;
-    //         currentCol++;
-    //     }
-    //     if(count >= this.modes.line){
-    //         return{
-    //             result: true,
-    //             winners: chipsWinners
-    //         }
-    //     } else {
-    //         return{
-    //             result: false,
-    //         }
-    //     }
-    // }
+    //empate
+    tie(){
+        this.divMsg.divTie.classList.remove('close');
+        this.divMsg.msgTie.innerHTML = "El tablero esta lleno...";
+    }
 
     checkHorizontalWin(col, row) {
         let limit = this.modes.line;
@@ -491,7 +511,6 @@ class Game {
         }
     }
 
-    //hacerrrrr
     checkDiagonalLeftWin(col, row) {
         let limit = this.modes.line;
         let chipsWinners = [];
@@ -574,10 +593,18 @@ class Game {
         
     }
 
+    //chequear empate
+    checkTie(){
+        for (let col = 0; col < this.modes.col; col++) {
+            if (!this.isColumnFull(col)) {
+                return false; 
+            }
+        }
+        //todas las columnas estan llenas
+        return true; 
+    }
 
-    
-
-     //mostrar mensajes
+    //mostrar mensajes
     showMsg(msg){
         this.divMsg.spanPlayer.innerHTML = msg;
     }
@@ -585,10 +612,10 @@ class Game {
     //cambiar jugador
     switchPlayer() {
         if (this.currentPlayer === 'Pepsi') {
-            this.showMsg("Turno Jugador 2")
+            this.showMsg("Juega Coca")
             this.currentPlayer = 'Coca';
         } else {
-            this.showMsg("Turno Jugador 1")
+            this.showMsg("Juega Pepsi")
             this.currentPlayer = 'Pepsi';
         }
     } 

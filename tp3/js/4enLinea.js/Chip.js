@@ -1,6 +1,4 @@
 class Chip{
-    //let radius;
-
     constructor(posX, posY, player, radius, ctx, img){
         this.posX = posX;
         this.posY = posY;

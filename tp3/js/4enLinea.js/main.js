@@ -14,7 +14,8 @@ let _7EnLinea = document.getElementById('7-en-linea');
 //carga imagenes
 let chipImages = {
     imgFondo : document.getElementById("fondo-tablero2"),
-    imgTablero: document.getElementById('img-fija')
+    imgTablero: document.getElementById('img-fija'),
+    imgArrow : document.getElementById('img-arrow')
 }
 //elegir ficha
 let imgCoca =  null;
@@ -45,20 +46,23 @@ let divMsg = {
     msgWin : document.getElementById("game-msg-win"),
     divMsgPlayer : document.getElementById("game-msj"),
     divMsgReload : document.getElementById("game-msg-reload"),
-    divTimer : document.getElementById("game-timer")
+    divTimer : document.getElementById("game-timer"),
+    divTie : document.getElementById("game-msg-tie"),
+    msgTie : document.getElementById("msg-tie")
 }
 
 let btns ={
     btnReplay : document.getElementById("btn-replay"),
     btnReload : document.getElementById("btn-reload"),
     btnReloadYes: document.getElementById("btn-reload-yes"),
-    btnReloadNo: document.getElementById("btn-reload-no")
+    btnReloadNo: document.getElementById("btn-reload-no"),
+    btnTie : document.getElementById("btn-tie")
 }
 
 //distintos modos cada uno con su configuracion necesaria
 let modes = {
     "beginner":{
-        "line": 3,
+        "line": 4,
         "col" : 7,
         "row" : 6,
         "cantChips": 21,
@@ -164,45 +168,6 @@ function showMsg(text){
     }, 1000);
 }
 
-
-// document.addEventListener("DOMContentLoaded", function () {
-
-// function choiceChip (){   
-//     const playerOneForm = document.getElementById("form-coca");
-//     const playerTwoForm = document.querySelector("form-pepsi");
-//     let selectedImage;
-//     let selectedImage2;
-//     console.log("hola choice option", playerOneForm, playerTwoForm);
-//     // Evento 'change' en el formulario del jugador 1, sucede cuando se elige una opcion
-//     playerOneForm.addEventListener("change", (e) => {
-//         const selectedOption = document.querySelector('#form-coca input[name="opcion-ficha');
-//         console.log("Jugador 1 seleccionó: ", selectedOption);
-        
-//         if (selectedOption) {
-//             const selectedValue = selectedOption.value;
-//             selectedImage = document.querySelector(`#ficha-${selectedValue}`);
-//            console.log("Jugador 1 seleccionó: " + selectedValue);
-//             if (selectedImage) {
-//                 // Aquí puedes hacer algo con la imagen seleccionada, por ejemplo, mostrarla o almacenarla en una variable.
-                
-//             }
-//         }
-//     });
-
-//     //Evento 'change' en el formulario del jugador 2
-//     playerTwoForm.addEventListener("change", (e) => {
-//         const selectedOption = document.querySelector('#form-pepsi input[name="opcion-ficha');
-//         if (selectedOption) {
-//             const selectedValue = selectedOption.value;
-//             selectedImage2 = document.querySelector(`#ficha-${selectedValue}`);
-//             if (selectedImage2) {
-//                 // Aquí puedes hacer algo con la imagen seleccionada, por ejemplo, mostrarla o almacenarla en una variable.
-//                 console.log("Jugador 2 seleccionó: " + selectedValue);
-//             }
-//         }
-//     });
-// }
-// });
 
 
 

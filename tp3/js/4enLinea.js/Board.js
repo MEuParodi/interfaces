@@ -12,6 +12,7 @@ class Board{
         this.marginBottom = marginBottom;
         this.inicioGameX = 0;
         this.inicioGameY = 0;
+    
     }
 
     setCantCols(col){
@@ -29,6 +30,7 @@ class Board{
     setH(h){
         this.h = h;
     }
+
 
     draw(){
        
@@ -58,7 +60,6 @@ class Board{
         this.y = inicioBoardY + this.inicioGameY;
         let inicioBoardX = centroAncho - (anchoBoard/2);  
         this.x = inicioBoardX + this.inicioGameX;
-       
     }
 
 

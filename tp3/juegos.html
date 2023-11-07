@@ -213,9 +213,15 @@
             </div>
             <button id="btn-reload-yes" class="buttons-choice-board">Si</button>
             <button id="btn-reload-no" class="buttons-choice-board">No</button>
-
-        </div> 
-        <!-- <button id="popup-btn">Ver popup</button> -->
+        </div>
+        <div id="game-msg-tie" class="popup popup-win close" >
+            <div>
+                <br>
+                <p class="title-game">Juego Empatado</p>
+                <p id="msg-tie"></p>
+            </div>
+            <button id="btn-tie" class="buttons-choice-board">Volver a Jugar</button>
+        </div>
     </div>
 
 
@@ -226,9 +232,8 @@
             <img id="img-fija" src="./img/juego/casillaOscuraAzul.png" alt="img-tablero">
             <img id="fondo-tablero" src="./img/juego/fondoTablero4.jpeg" alt="fondo-tablero">
             <img id="fondo-tablero2" src="./img/juego/fondoBlur3.svg" alt="fondo-tablero">
+            <img id="img-arrow" src="./img/juego/arrow.svg" alt="arrow">
             
-            <!-- <img id="ficha-pepsi" src="./img/juego/fichaPepsi1.png" alt="pepsi">
-            <img id="ficha-coca" src="./img/juego/fichaCoca.png" alt="coca"> -->
         </canvas>
         
         <div class="controls">
@@ -601,12 +606,10 @@
 </body>
 <script src="./js/relGames.js"></script>
 <script src="./js/index.js"></script>
+<script src="./js/4enLinea.js/Arrow.js"></script>
+<script src="./js/4enLinea.js/Timer.js"></script>
 <script src="./js/4enLinea.js/Board.js"></script>
 <script src="./js/4enLinea.js/Chip.js"></script>
 <script src="./js/4enLinea.js/Game.js"></script>
 <script src="./js/4enLinea.js/main.js"></script>
-<script src="./js/4enLinea.js/popup.js"></script>
-<!-- <script src="./js/4enLinea.js/Figure.js"></script>
-<script src="./js/4enLinea.js/Circle.js"></script>
-<script src="./js/4enLinea.js/main2.js"></script> -->
 </html>
