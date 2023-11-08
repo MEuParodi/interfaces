@@ -82,10 +82,28 @@ h3{
 }
 
 /*==========Secciones===========*/
-heADER {
+header {
     height: 100px;
     background-color: #4B95F4;
 }
+
+.width-1080{
+    width: 1080px;
+}
+
+/*====keyframe========*/
+@keyframes zoomOutBilding {
+    0%{
+        transform: scale(1.2);
+        translateX: 30px;
+    }
+    100%{
+        transform: scale(1);
+    }
+    
+}
+
+
 .section1 {
     display: flex;
     justify-content: center;
@@ -118,7 +136,12 @@ heADER {
     position: absolute;
     bottom: 0px;
     right: 0px;
+    transition: zoomOutBilding 2s linear;
 }
+.section1 .bildingRight:hover{
+    transition: zoomOutBilding 2s linear;
+}
+
 
 .section1 .spiderBco {
     position: absolute;
@@ -130,28 +153,14 @@ heADER {
 .section1 .spiderRed {
     position: absolute;
     top: 270px;
-    left: 30%;
+    left: -15%;
     z-index: 1;
 }
 
 .section1 .spiderBlack {
     position: absolute;
     top: 200px;
-    right: 14%;
-    z-index: 1;
-}
-
-.section1 .telaLeft {
-    position: absolute;
-    top: 250px;
-    left: 0;
-    z-index: 1;
-}
-
-.section1 .telaRight {
-    position: absolute;
-    top: 250px;
-    right: 0;
+    right: -14%;
     z-index: 1;
 }
 
