@@ -93,8 +93,8 @@ heADER {
     /* width: 1280px; */
     /* height: 720px; */
     background-image: url(./img/seccion1/sky.png);
-    background-size: cover; 
-    background-repeat: no-repeat; 
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .section1 .logo {
@@ -154,16 +154,41 @@ heADER {
     right: 0;
     z-index: 1;
 }
-.section2 {                  /*clipart*/
-    background-color: var(--purple);
+
+.section2 {
     width: 100%;
-    height: 844.5px;
+    /* background-color: var(--purple);
+     height: 844.5px; */
 }
 
 .section3 {                 /*clipart*/
     background-color: var(--white);
     width: 100%;
     height: 1085px;
+
+}
+
+.container3 {
+    margin-left: 100px;
+    margin-right: 100px;
+    padding-top: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container3 img {
+  width: 30%; /* Establece un ancho en porcentaje para cada imagen */
+  max-height: auto; /* Ajusta la altura automáticamente para mantener la proporción */
+}
+
+.image-wrapper {
+  flex: 1; /* Distribuye el espacio de manera equitativa entre las imágenes */
+  max-width: 30%;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
 }
 
 .section5 {
