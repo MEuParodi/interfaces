@@ -6,8 +6,9 @@
     text-decoration: none;
 }
 
-html {
-    width: 1280px;
+body {
+    width: 100%;
+    overflow-x: hidden;
     background-color: black;
 }
 /* =============Variables=============*/
@@ -23,7 +24,7 @@ html {
     --dark-grey: #5E5E5D;
     --purple: #8F6AA6;
     --background-header: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0.00) 100%);
-    --background-section-7: linear-gradient(180deg, #F7E3D8 21.2%, #8FBEFC 81.48%);
+    --background-section-8: linear-gradient(180deg, #F7E3D8 21.2%, #8FBEFC 81.48%);
 }
 /*================Clases generales=============*/
 
@@ -90,14 +91,66 @@ h3{
     height: 720px;
 }
 
-.section2 {
+.section2 {                  /*clipart*/
     background-color: var(--purple);
     width: 100%;
     height: 844.5px;
 }
 
-.section2 {                                 /*clipart*/
+.section3 {                 /*clipart*/
     background-color: var(--white);
     width: 100%;
     height: 1085px;
+}
+
+.section5 {
+    position: relative;
+    height: 528px;
+    display: flex;
+    justify-content: center;
+}
+
+.section5 img {
+    position: absolute;
+    top:500px;
+}
+
+.section5 .girl {
+    left:0px;
+    width: 451.258px;
+    height: 591.442px;
+    transform: rotate(-12.483deg);
+    flex-shrink: 0;
+}
+
+.section5 .hulk {
+    right:0px;
+}
+
+.section5 .grass {
+    position: relative;
+}
+
+.section6 {
+    height: 2195px;
+    background-color: var(--white);
+}
+
+.sectionComprar {
+    height: 248px;
+}
+
+.section7 {
+    height: 1296px;
+    background-color: var(--white);
+}
+
+.section8 {
+    height: 1296px;
+    background-color: yellow;
+}
+
+footer {
+    height: 678px;
+    background-color: var(--dark-grey);
 }
