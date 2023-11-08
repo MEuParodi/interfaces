@@ -81,16 +81,79 @@ h3{
     line-height: normal;
 }
 
+/*==========Secciones===========*/
+heADER {
+    height: 100px;
+    background-color: #4B95F4;
+}
 .section1 {
     display: flex;
     justify-content: center;
+    position: relative;
+    /* width: 1280px; */
+    /* height: 720px; */
+    background-image: url(./img/seccion1/sky.png);
+    background-size: cover; 
+    background-repeat: no-repeat; 
 }
 
-.section1 img {
-    width: 1280px;
-    height: 720px;
+.section1 .logo {
+    position: absolute;
+    top: -30px;
 }
 
+.section1 .bildingLeft {
+    position: absolute;
+    bottom: -20px;
+    left: 0px;
+}
+
+.section1 .bildingCenter {
+    position: absolute;
+    bottom: 0px;
+    left: 31%;
+}
+
+.section1 .bildingRight {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+.section1 .spiderBco {
+    position: absolute;
+    top: 250px;
+    left: 80px;
+    z-index: 1;
+}
+
+.section1 .spiderRed {
+    position: absolute;
+    top: 270px;
+    left: 30%;
+    z-index: 1;
+}
+
+.section1 .spiderBlack {
+    position: absolute;
+    top: 200px;
+    right: 14%;
+    z-index: 1;
+}
+
+.section1 .telaLeft {
+    position: absolute;
+    top: 250px;
+    left: 0;
+    z-index: 1;
+}
+
+.section1 .telaRight {
+    position: absolute;
+    top: 250px;
+    right: 0;
+    z-index: 1;
+}
 .section2 {                  /*clipart*/
     background-color: var(--purple);
     width: 100%;
