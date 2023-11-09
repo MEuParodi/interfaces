@@ -89,6 +89,7 @@ header {
 
 .width-1080{
     width: 1080px;
+    margin: auto;
 }
 
 /*====keyframe========*/
@@ -154,35 +155,85 @@ header {
     position: absolute;
     top: 270px;
     left: -15%;
-    z-index: 1;
+    z-index: 10;
 }
 
 .section1 .spiderBlack {
     position: absolute;
     top: 200px;
     right: -14%;
-    z-index: 1;
+    z-index: 10;
 }
-
+/*=============seccion 2========================*/
 .section2 {
     width: 100%;
-    /* background-color: var(--purple);
-     height: 844.5px; */
+    position: relative;
+    height: 844.5px;
+    z-index: 2;
 }
 
+.section2 .container-background-section2{
+    position: absolute;
+    top: -75px;
+    left: 0;
+}
+.section2 .width-1080{
+    position: relative;
+}
+
+
+.section2 .width-1080 h1, .section2 .width-1080 p{
+    position: absolute;
+    color: var(--white);
+}
+
+.section2 .width-1080 h1{
+    width: 646px;
+    top: 160px;
+    left: 0;
+}
+
+.section2 .width-1080 p{
+    width: 546px;
+    height: 154px;
+    top: 300px;
+    left: 0;
+    line-height: normal;
+}
+.container-img-section2{
+    position: relative;
+}
+.section2 .container-img-section2 .img-greenBuilding{
+    position: absolute;
+    left: 0;
+    top: 435px;
+}
+.section2 .container-img-section2 .img-green-elf{
+    position: absolute;
+    right: -100px;
+    top: 70px;
+}
+
+
+
+
+/*============================================================*/
 .section3 {                 /*clipart*/
     background-color: var(--white);
     width: 100%;
     height: 1085px;
-
+    margin-top: -210px; /*agregue esto para q la seccion se meta atras de la anterior ver!!!*/
 }
+
 
 .container3 {
     margin-left: 100px;
     margin-right: 100px;
-    padding-top: 200px;
+    padding-top: 370px; /*agrande el padding xq al poner margin negativo se subia el contenido*/
     display: flex;
     justify-content: space-between;
+    
+    
 }
 
 .container3 img {
@@ -200,6 +251,52 @@ header {
   height: auto;
 }
 
+/*=========section 4============*/
+.section4{
+    width: 100%;
+    height: 566px;
+    margin-top: -60px;
+    background-image: url(./img/seccion4/background.png);
+}
+.section4 .width-1080{
+    position: relative;
+}
+
+
+
+.section4 .section-4-card1{
+    position: absolute;
+    top: -155px;
+    left: -45px;
+    width: 546.108px;
+    height: 326.509px;
+    /* transform: rotate(-13.078deg); */
+    flex-shrink: 0;
+}
+
+.section4 .section-4-card2{
+    position: absolute;
+    left: -55px;
+    top: -20px;
+    width: 543.218px;
+    height: 325.787px;
+    /* transform: rotate(-26.474deg); */
+    flex-shrink: 0;
+}
+
+.section4 .section-4-card3{
+    position: absolute;
+    left:0;
+    left: -25px;
+    top: 175px;
+    width: 546.108px;
+    height: 326.509px;
+    /* transform: rotate(-36.016deg); */
+    flex-shrink: 0;
+}
+
+
+/*========section 5===================*/
 .section5 {
     position: relative;
     height: 528px;
@@ -229,6 +326,7 @@ header {
 }
 
 .section6 {
+    
     height: 2195px;
     background-color: var(--white);
 }
@@ -247,7 +345,32 @@ header {
     background-color: yellow;
 }
 
+/*=====footer========*/
 footer {
     height: 678px;
     background-color: var(--dark-grey);
+}
+
+footer .body  {
+    width: 820px;
+    height: 361px;
+    margin-top: 38px;
+    color: var(--white);
+    letter-spacing: 2.2px;
+}
+footer .body span {
+    display: block;
+    margin-top: 20px;
+    text-decoration: underline;
+}
+
+footer img{
+    width: 100%;
+    height: 80px;
+}
+
+footer .width-1080 img{
+   margin-top: 80px;
+    width: 212px;
+    height: 41px;
 }
