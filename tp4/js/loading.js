@@ -1,21 +1,33 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const textElements = document.querySelectorAll('.animated-text');
-  
-    function isInViewport(element) {
-      const rect = element.getBoundingClientRect();
-      return (
-        rect.top >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-      );
-    }
+    const stickyImages = document.querySelectorAll('.sticky-image');
+    let currentImage = 1;
   
     function handleScroll() {
-      textElements.forEach(function (element) {
-        if (isInViewport(element)) {
-          element.classList.add('show');
+      stickyImages.forEach(function (image, index) {
+        const rect = image.getBoundingClientRect();
+        const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+  
+        if (isVisible) {
+          switchImage(index + 1);
         }
       });
     }
   
+    function switchImage(index) {
+      if (currentImage !== index) {
+        currentImage = index;
+        updateImage();
+      }
+    }
+  
+    function updateImage() {
+      stickyImages.forEach(function (image) {
+        image.style.opacity = 0;
+      });
+      const currentStickyImage = document.getElementById(`image${currentImage}`);
+      currentStickyImage.style.opacity = 1;
+    }
+  
     window.addEventListener('scroll', handleScroll);
   });
+  

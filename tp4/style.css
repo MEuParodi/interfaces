@@ -367,7 +367,7 @@ header {
     padding-top: 150px;
 }
 
-.s6-viewport-container {
+ .s6-sticky-container {
     position: relative;
     height: 100vh;
     padding-top: 50px;
@@ -376,27 +376,20 @@ header {
     justify-content: space-between;
 }
 
-.section6 .slider{
-    width:450px;
-}
-
-.sticky-image {
-    position: sticky;
-    /* top: 0; */
+  .sticky-image {
+    width: 50%; 
     height: 100%;
-    /* overflow: hidden; */
+    position: sticky;
+    top: 50px; 
+    transition: opacity 0.5s ease-in-out;
   }
 
-.animated-text {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.9s, transform 0.9s;
+ 
+  .text-container {
+    width: 45%;
+    padding-left: 2%;
   }
   
-  .animated-text.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
 
 /*======== section Comprar ===================*/
 
