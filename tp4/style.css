@@ -357,7 +357,7 @@ header {
 /*======== section 6 ===================*/
 
 .section6 {
-    height: 2195px;
+    height: 3195px;
     background-color: var(--white);
 }
 
@@ -367,7 +367,9 @@ header {
     padding-top: 150px;
 }
 
-.section6 .s6-card-descr {
+.s6-viewport-container {
+    position: relative;
+    height: 100vh;
     padding-top: 50px;
     padding-bottom: 25px;
     display: flex;
@@ -376,13 +378,19 @@ header {
 
 .section6 .slider{
     width:450px;
-
 }
+
+.sticky-image {
+    position: sticky;
+    /* top: 0; */
+    height: 100%;
+    /* overflow: hidden; */
+  }
 
 .animated-text {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s, transform 0.5s;
+    transform: translateY(40px);
+    transition: opacity 0.9s, transform 0.9s;
   }
   
   .animated-text.show {
