@@ -344,9 +344,11 @@ header {
     transform: rotate(-12.483deg);
 }
 
-.parallax5 .panter {
-    left: 456px;
-    top:-260px;
+.parallax5 .panther {
+    width: 333px;
+    left: 511px;
+    top: -168px;
+    transform: rotate(14deg);
 }
 
 .parallax5 .hulk {
