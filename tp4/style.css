@@ -239,7 +239,6 @@ header {
     margin-top: -210px; /*agregue esto para q la seccion se meta atras de la anterior ver!!!*/
 }
 
-
 .container3 {
     margin-left: 100px;
     margin-right: 100px;
@@ -332,19 +331,22 @@ header {
 
 .parallax5 img {
     position: absolute;
+    transition: transform 0.3s ease-out;
 }
 
 .parallax5 .girl {
     left:100px;
     top: -86px;
-    transform: rotate(-12.483deg);
+    transform: rotate(-5.483deg);
+    /* transform: rotate(-12.483deg); */
 }
 
 .parallax5 .panther {
     width: 333px;
     left: 511px;
     top: -168px;
-    transform: rotate(14deg);
+    transform: rotate(4deg);
+    /* transform: rotate(14deg); */
 }
 
 .parallax5 .hulk {
