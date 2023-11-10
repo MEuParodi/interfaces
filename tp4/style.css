@@ -86,11 +86,11 @@ h3{
 
 .comprar {
     width: 292px;
-    height: 50px;   
+    height: 50px;
     border-radius: 111px;
     border: 8px solid var(--2982-ff, #2982FF);
     background: var(--yellow);
-    
+
     /* Drop Shadow */
     box-shadow: 4px 5px 0px 0px #02187E;
 }
@@ -114,7 +114,7 @@ header {
     100%{
         transform: scale(1);
     }
-    
+
 }
 
 
@@ -232,7 +232,7 @@ header {
 
 /*================= seccion 3 =========================*/
 
-.section3 {                
+.section3 {
     background-color: var(--white);
     width: 100%;
     height: 1085px;
@@ -246,8 +246,8 @@ header {
     padding-top: 370px; /*agrande el padding xq al poner margin negativo se subia el contenido*/
     display: flex;
     justify-content: space-between;
-    
-    
+
+
 }
 
 .container3 img {
@@ -316,11 +316,8 @@ header {
     height: 980px;
     display: flex;
     justify-content: center;
-    border: solid red 2px;
-}
+    margin-bottom: -90px;
 
-.parallax5 {
-    position: relative;
 }
 
 .section5 .width-1080 h1{
@@ -335,10 +332,6 @@ header {
 
 .parallax5 img {
     position: absolute;
-}
-
-.layer1 {
-    /* background-image: url("./img/seccion5/layerSky.png"); */
 }
 
 .parallax5 .girl {
@@ -356,8 +349,8 @@ header {
 
 .parallax5 .hulk {
     right: -50px;
-    top: 120px;
-} 
+    top: 117px;
+}
 
 /*======== section 6 ===================*/
 
@@ -383,7 +376,7 @@ header {
     justify-content: space-between;
 }
    .sticky-image {
-    width: 50%; 
+    width: 50%;
     height: 100%;
     position: sticky;
     top: 0;
@@ -398,8 +391,8 @@ header {
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
 
-  } 
-  
+  }
+
 /*======== section Comprar ===================*/
 
 .sectionComprar {
@@ -413,15 +406,83 @@ header {
 /*======== section7 ===================*/
 
 .section7 {
-    height: 720px;
+    height: 880px;
     background-color: var(--white);
+    position: relative;
 }
 
-.section7 .width-1080 img {
-    width: 350px; /* Establece un ancho fijo para cada imagen (1080px / 3 imágenes) */
+.section7 .width-1080 {
+    position: relative;
+}
+.section7 .width-1080 > img {
+    width: 350px;
     height: auto;
+    position: absolute;
+    top:150px;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+.section7 .width-1080 > img:hover {
+    transform: scale(1.4) skew(5deg);
+    filter: blur(0);
+}
+
+.section7 .width-1080 > img:not(:hover) {
+    filter: blur(5px);
+}
+
+.spider-white {
+    left: 0px;
+}
+
+#spider-red {
+    left: 30%;
   }
-    
+
+#spider-black {
+    right:0px;
+}
+
+.section7 .popup {
+    display: none;
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    height: 832px;
+    background-color: var(--black);
+    justify-content: space-around;
+    align-items: center;
+}
+
+.popup-text {
+    width: 56%;
+    color: var(--white);
+}
+
+.section7 .show {
+    display: flex;
+}
+
+.section7 .popup > img {
+    width: 284px;
+    height: 717px;
+    margin-left: 0px; /* 57(alto popup - alto imagen)/2 */
+
+}
+
+.section7 .popup .close {
+    position: absolute;
+    width: 89px;
+    top: -286px;
+    right: 28px;
+    /* color: #fff; */
+    /* font-size: 24px;
+    font-weight: 500; */
+    cursor: pointer;
+}
+
+
 /*======== section8 ===================*/
 
 .section8 {
@@ -440,7 +501,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 .section8 h1{
@@ -468,7 +529,7 @@ header {
     width: 231px;
     height: 145px;
     margin: 30px 0 0 -330px
-   
+
 }
 
 .container-btn-setion8{
@@ -495,7 +556,7 @@ box-shadow: 4px 5px 0px 0px #02187E;
     width: 218px;
     margin-left: -10px;
     border-radius: 0px 50px 50px 0px;
-    
+
 }
 
 /*=====footer========*/
@@ -511,10 +572,14 @@ footer .body  {
     color: var(--white);
     letter-spacing: 2.2px;
 }
+
+.body span {
+    text-decoration: underline;
+}
+
 footer .body span {
     display: block;
     margin-top: 20px;
-    text-decoration: underline;
 }
 
 footer img{
@@ -523,7 +588,7 @@ footer img{
 }
 
 footer .width-1080 img{
-   margin-top: 80px;
+   margin-top: 120px;
     width: 212px;
     height: 41px;
 }
