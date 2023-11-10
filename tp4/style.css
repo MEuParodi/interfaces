@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lato:wght@400;700;900&family=Oswald&family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;0,800;0,900;1,100&family=Roboto:wght@100&display=swap');
+
+
 *{
     margin: 0;
     padding: 0;
@@ -175,18 +178,18 @@ header {
     z-index: 10;
 }
 /*=============seccion 2========================*/
+/*mañana ver!!!!!! se ve mal el borde de abajo*/
 .section2 {
     width: 100%;
     position: relative;
     height: 844.5px;
+    background-image: url(./img/seccion2/fondoo.png);
+    background-size: cover ;
     z-index: 2;
+    margin-top: -100px;
 }
 
-.section2 .container-background-section2{
-    position: absolute;
-    top: -75px;
-    left: 0;
-}
+
 .section2 .width-1080{
     position: relative;
 }
@@ -359,7 +362,7 @@ header {
 /*======== section 6 ===================*/
 
 .section6 {
-    height: 3195px;
+    height: 3195px; /*verrr creo q es 2195px*/
     background-color: var(--white);
 }
 
@@ -406,7 +409,7 @@ header {
 /*======== section7 ===================*/
 
 .section7 {
-    height: 1296px;
+    height: 720px;
     background-color: var(--white);
 }
 
@@ -419,7 +422,76 @@ header {
 
 .section8 {
     height: 1296px;
-    background-color: yellow;
+    background: linear-gradient(180deg,  #8FBEFC 21.2%, #F7E3D8  81.48%);
+    position: relative;
+}
+
+.section8 .img-section8-building{
+    position: absolute;
+    bottom: 0;
+}
+
+.section8 .width-1080{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.section8 h1{
+    width: 816px;
+    text-align: center;
+    margin-top: 152px;
+
+}
+
+.section8 input, .section8 button{
+    margin-top: 45px;
+    width: 562px;
+    height: 100px;
+}
+
+.section8 .width-1080 p{
+    width: 578px;
+    height: 95px;
+    margin-top: 40px;
+    margin-left: -80px;
+
+}
+
+.section8 .width-1080 img{
+    width: 231px;
+    height: 145px;
+    margin: 30px 0 0 -330px
+   
+}
+
+.container-btn-setion8{
+    display: flex;
+}
+
+.container-btn-setion8 input{
+    border-radius: 50px 0px 0px 50px;
+    border-top: 9px solid #2982FF;
+    border-bottom: 9px solid #2982FF;
+    border-left: 9px solid #2982FF;
+    background: #FFF;
+/* Drop Shadow */
+box-shadow: 4px 5px 0px 0px #02187E;
+}
+
+.container-btn-setion8 input::placeholder{
+    color: var(--grey);
+    letter-spacing: 2.2px;
+    padding-left: 50px;
+}
+
+.container-btn-setion8 button{
+    width: 218px;
+    margin-left: -10px;
+    border-radius: 0px 50px 50px 0px;
+    
 }
 
 /*=====footer========*/
