@@ -137,7 +137,7 @@ header .width-1080 button{
     margin-top: -127px;
     /* width: 1280px; */
     height: 720px;
-    background-image: url(./img/seccion1/sky.png);
+    background-image: url(../img/seccion1/sky.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -207,7 +207,7 @@ header .width-1080 button{
     width: 100%;
     position: relative;
     height: 844.5px;
-    background-image: url(./img/seccion2/fondoo.png);
+    background-image: url(../img/seccion2/fondoo.png);
     background-size: 100% 90% ;
     background-repeat: no-repeat;
     z-index: 2;
@@ -299,7 +299,7 @@ header .width-1080 button{
     width: 100%;
     height: 566px;
     margin-top: -60px;
-    background-image: url(./img/seccion4/background.png);
+    background-image: url(../img/seccion4/background.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
