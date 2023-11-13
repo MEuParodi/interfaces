@@ -160,10 +160,10 @@ header .width-1080 button{
 
 .section1 .bildingCenter {
     position: absolute;
-    bottom: 5px;
-    left: 30%;
+    bottom: 0;
+    left: 29.5%;
     /* width: 658px; */
-    width: 47%;
+    width: 47.5%;
     height: 240px;
 }
 
@@ -190,8 +190,10 @@ header .width-1080 button{
 
 .section1 .spiderRed {
     position: absolute;
-    top: 270px;
-    left: -10%;
+    top: 190px;
+    width: 1100px;
+    height: 750px;
+    left: -11%;
     z-index: 10;
 }
 
@@ -206,26 +208,25 @@ header .width-1080 button{
 .section2 {
     width: 100%;
     position: relative;
-    height: 844.5px;
+    height: 924.5px;
     background-image: url(../img/seccion2/fondoo.png);
     background-size: 100% 90% ;
     background-repeat: no-repeat;
     z-index: 2;
-    margin-top: -85px;
+    margin-top: -80px;
 }
-
-
-
 
 .section2 .width-1080{
     position: relative;
+   
    
 }
 
 
 .section2 .width-1080 h1, .section2 .width-1080 p{
     position: absolute;
-    color: var(--white);
+    color: var(--white); 
+    margin-top: 50px;
 }
 
 .section2 .width-1080 h1{
@@ -248,12 +249,12 @@ header .width-1080 button{
 .section2 .container-img-section2 .img-greenBuilding{
     position: absolute;
     left: 0;
-    top: 435px;
+    top: 520px;
 }
 .section2 .container-img-section2 .img-green-elf{
     position: absolute;
     right: -100px;
-    top: 70px;
+    top: 140px;
 }
 
 
