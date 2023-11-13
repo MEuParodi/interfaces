@@ -27,16 +27,15 @@ body {
 
   .background-image .logo {
     position: absolute;
-    top: 50px;
+    top: 10%;
     left:50%;
     transform: translate(-50%);
   }
 
-  .visible{
+  .loading{
     width: 100%;
     height: 100%;
     position: absolute;
-    /* background: linear-gradient(180deg, rgba(250, 243, 254, 0.00) 0%, #000 100%); */
     top: 0px;
     right: 0px;
     display: flex;
@@ -45,13 +44,17 @@ body {
     align-items: center;
   }
 
-  .no-visible {
-    display:none;
+  .loading p {
+    font-size: 35px;
+    color: #FFE901;
+    -webkit-text-stroke: 2px #02187E; 
+    margin-top: 50px;
+    font-weight: 800;
   }
 
-  
-  .load {
-    margin-top: 320px;
+  .circule {
+    /* margin-top: 320px; */
+    margin-top: 30%;
     border: 7px solid #02187E;
     border-radius: 100%;
     border-top-color: #2880FF;
@@ -61,13 +64,6 @@ body {
     animation: loading 1.5s infinite linear;
   }
 
-  #porcentaje {
-    font-size: 35px;
-    color: #FFE901;
-    -webkit-text-stroke: 2px #02187E; 
-    margin-top: 50px;
-    font-weight: 800;
-  }
 
 
 

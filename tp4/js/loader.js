@@ -16,12 +16,10 @@ function actualizarPorcentaje() {
 
 function loadingCircle (e) {
         e.preventDefault();
-        loading.classList.remove('no-visible');        
-        loading.classList.add('visible');
         actualizarPorcentaje();
-        setTimeout(function() {
-            window.location.href = './index.html';
-        }, 5000);
+        // setTimeout(function() {
+        //     window.location.href = './index.html';
+        // }, 5000);
 }
 
 
