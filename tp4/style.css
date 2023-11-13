@@ -96,10 +96,23 @@ h3{
 }
 /*==========Secciones===========*/
 header {
-    height: 100px;
-    background-color: #4B95F4;
+    height: 227px;
+    z-index: 10;
+    background: linear-gradient(180deg, #5499F8 0%, #5499F8 67.91%, rgba(84, 153, 248, 0.00) 100%);
+}
+header .width-1080{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
 }
 
+header .width-1080 button{
+    width: 200px;
+    height: 50px;
+}
+
+/*===================================*/
 .width-1080{
     width: 1080px;
     margin: auto;
@@ -122,6 +135,7 @@ header {
     display: flex;
     justify-content: center;
     position: relative;
+    margin-top: -127px;
     /* width: 1280px; */
     height: 720px;
     background-image: url(./img/seccion1/sky.png);
@@ -131,23 +145,33 @@ header {
 
 .section1 .logo {
     position: absolute;
+    width: 590px;
+    height: 301px;
     top: -30px;
 }
 
 .section1 .bildingLeft {
     position: absolute;
+    width: 32%;
+    /* width: 452px; */
+    height: 720px;
     bottom: -20px;
     left: 0px;
 }
 
 .section1 .bildingCenter {
     position: absolute;
-    bottom: 0px;
-    left: 31%;
+    bottom: 5px;
+    left: 30%;
+    /* width: 658px; */
+    width: 47%;
+    height: 240px;
 }
 
 .section1 .bildingRight {
     position: absolute;
+    width: 26.5%;
+    height: 727px;
     bottom: 0px;
     right: 0px;
     transition: zoomOutBilding 2s linear;
@@ -159,22 +183,23 @@ header {
 
 .section1 .spiderBco {
     position: absolute;
-    top: 250px;
-    left: 80px;
+    top: 255px;
+    /* left: 125px; */
+    left: 9%;
     z-index: 1;
 }
 
 .section1 .spiderRed {
     position: absolute;
     top: 270px;
-    left: -15%;
+    left: -10%;
     z-index: 10;
 }
 
 .section1 .spiderBlack {
     position: absolute;
-    top: 200px;
-    right: -14%;
+    top: 195px;
+    right: -11%;
     z-index: 10;
 }
 /*=============seccion 2========================*/
@@ -184,10 +209,10 @@ header {
     position: relative;
     height: 844.5px;
     background-image: url(./img/seccion2/fondoo.png);
-    background-size: cover ;
+    background-size: 100% 90% ;
     background-repeat: no-repeat;
     z-index: 2;
-    margin-top: -100px;
+    margin-top: -85px;
 }
 
 
@@ -195,6 +220,7 @@ header {
 
 .section2 .width-1080{
     position: relative;
+   
 }
 
 
@@ -204,6 +230,7 @@ header {
 }
 
 .section2 .width-1080 h1{
+    
     width: 646px;
     top: 160px;
     left: 0;
@@ -274,7 +301,7 @@ header {
     height: 566px;
     margin-top: -60px;
     background-image: url(./img/seccion4/background.png);
-    background-size: cover;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
 
 }
