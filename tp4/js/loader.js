@@ -17,9 +17,9 @@ function actualizarPorcentaje() {
 function loadingCircle (e) {
         e.preventDefault();
         actualizarPorcentaje();
-        // setTimeout(function() {
-        //     window.location.href = './index.html';
-        // }, 5000);
+        setTimeout(function() {
+            window.location.href = './index.html';
+        }, 5000);
 }
 
 
