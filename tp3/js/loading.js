@@ -8,7 +8,8 @@ function actualizarPorcentaje() {
     let intervalo = setInterval(function() {
         if (porcentaje < 100) {
             porcentaje += 10; 
-            porcentajeElement.textContent = 'cargando...' + porcentaje + '%';         } else {
+            porcentajeElement.textContent = 'cargando...' + porcentaje + '%';         
+        } else {
             clearInterval(intervalo); 
         }
         }, 500); 
