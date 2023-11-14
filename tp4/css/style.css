@@ -197,8 +197,8 @@ header .width-1080 button.comprar{
     justify-content: center;
     position: relative;
     margin-top: -127px;
-    /* width: 100%; */
-    width: 1280px;
+    width: 100%;
+    /* width: 1280px; */
     height: 720px;
     background-image: url(../img/seccion1/sky.png);
     background-size: cover;
@@ -254,7 +254,7 @@ header .width-1080 button.comprar{
 .section1 .spiderRed {
     position: absolute;
     top: 245px;
-    left: -14%;
+    left: -15%;
     z-index: 10;
 }
 
