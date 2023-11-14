@@ -107,7 +107,69 @@ header .width-1080{
     padding-top: 10px;
 }
 
-header .width-1080 button{
+header .width-1080 button.btn-hambur{
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: -2px;
+}
+ header .width-1080 button.btn-hambur div{
+    width: 42px;
+    height: 12px;
+    filter: drop-shadow(4px 5px 0px #02187E);
+    transition: opacity 0.4s ease;
+    
+}
+
+button.btn-hambur:hover div:first-child{
+
+    animation: changeHamburLineOne .5s linear forwards;
+}
+
+button.btn-hambur:hover div:last-child{
+    /* transform: rotate(-45deg) translateY(4px) translateX(-6px); */
+    animation: changeHamburLineTwo .5s linear forwards;
+} 
+
+@keyframes changeHamburLineOne {
+    0% {
+        transform: rotate(15deg) translateY(3px) translateX(3px);
+        filter: none;
+    }
+    50% {
+        filter: none;
+        transform: rotate(30deg) translateY(6px) translateX(6px);
+    }
+    100% {
+        filter: none;
+        transform: rotate(45deg) translateY(10px) translateX(10px);
+    }
+
+}
+
+@keyframes changeHamburLineTwo {
+    0% {
+        transform: rotate(-15deg) translateY(-3px) translateX(2px);
+        filter: none;
+    }
+    50% {
+        filter: none;
+        transform: rotate(-30deg) translateY(-6px) translateX(3px);
+    }
+    100% {
+        filter: none;
+        transform: rotate(-45deg) translateY(-8px) translateX(4px);
+    }
+
+}
+
+button.btn-hambur:hover div:nth-child(2){
+    opacity: 0;
+}
+
+
+header .width-1080 button.comprar{
     width: 200px;
     height: 50px;
 }
@@ -205,7 +267,7 @@ header .width-1080 button{
     z-index: 10;
 }
 /*=============seccion 2========================*/
-/*mañana ver!!!!!! se ve mal el borde de abajo*/
+
 .section2 {
     width: 100%;
     position: relative;
