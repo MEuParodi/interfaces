@@ -135,6 +135,7 @@ header .width-1080 button{
     justify-content: center;
     position: relative;
     margin-top: -127px;
+    width: 100%;
     /* width: 1280px; */
     height: 720px;
     background-image: url(../img/seccion1/sky.png);
@@ -218,10 +219,7 @@ header .width-1080 button{
 
 .section2 .width-1080{
     position: relative;
-   
-   
 }
-
 
 .section2 .width-1080 h1, .section2 .width-1080 p{
     position: absolute;
@@ -243,22 +241,22 @@ header .width-1080 button{
     left: 0;
     line-height: normal;
 }
+
 .container-img-section2{
     position: relative;
 }
+
 .section2 .container-img-section2 .img-greenBuilding{
     position: absolute;
     left: 0;
     top: 520px;
 }
+
 .section2 .container-img-section2 .img-green-elf{
     position: absolute;
     right: -100px;
     top: 140px;
 }
-
-
-
 
 /*================= seccion 3 =========================*/
 
@@ -276,8 +274,6 @@ header .width-1080 button{
     padding-top: 370px; /*agrande el padding xq al poner margin negativo se subia el contenido*/
     display: flex;
     justify-content: space-between;
-
-
 }
 
 .container3 img {
@@ -347,7 +343,6 @@ header .width-1080 button{
     display: flex;
     justify-content: center;
     margin-bottom: -90px;
-
 }
 
 .section5 .width-1080 h1{
@@ -398,32 +393,20 @@ header .width-1080 button{
     padding-top: 150px;
 }
 
- .s6-sticky-container {
-    /* position: relative; */
-    position: sticky;
-    top: 0;
+ .s6-sticky-container { /*aca posiciono las cols img y texto*/
     height: 100vh;
     padding-top: 50px;
     padding-bottom: 25px;
     display: flex;
     justify-content: space-between;
 }
+
    .sticky-image {
-    width: 50%;
-    height: 100%;
-    position: sticky;
-    top: 0;
-    left:0px;
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
   }
 
   .text-container {
     width: 45%;
     padding-left: 2%;
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-
   }
 
 /*======== section Comprar ===================*/
