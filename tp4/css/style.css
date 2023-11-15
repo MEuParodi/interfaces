@@ -316,6 +316,7 @@ header .width-1080 button.comprar{
     position: absolute;
     right: -100px;
     top: 140px;
+    transform: scale(0.9);
 }
 
 /*================= seccion 3 =========================*/
@@ -396,6 +397,12 @@ header .width-1080 button.comprar{
     flex-shrink: 0;
 }
 
+.section4 .section-4-card1:hover, 
+.section4 .section-4-card2:hover,
+.section4 .section-4-card3:hover{
+    transform: scale(1.1);
+    transition: all .5s ease-in-out;
+}
 
 /*========section 5===================*/
 .section5 {
@@ -413,6 +420,8 @@ header .width-1080 button.comprar{
 
 .parallax5 {
     position: relative;
+    /* overflow: hidden; */
+
 }
 
 .parallax5 img {
@@ -443,8 +452,12 @@ header .width-1080 button.comprar{
 /*======== section 6 ===================*/
 
 .section6 {
-    height: 3195px; /*verrr creo q es 2195px*/
-    background-color: var(--white);
+    height: 2195px; 
+    background-image: url(../img/seccion6/fondo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: -200px;
+    padding-top: 200px;
 }
 
 .section6 .width-1080 h1{
@@ -454,7 +467,7 @@ header .width-1080 button.comprar{
 }
 
  .s6-sticky-container { /*aca posiciono las cols img y texto*/
-    height: 100vh;
+    height: 400px;
     padding-top: 50px;
     padding-bottom: 25px;
     display: flex;
@@ -483,7 +496,7 @@ header .width-1080 button.comprar{
 
 .section7 {
     height: 880px;
-    background-color: var(--white);
+    background-image:  url(../img/seccion7/trapecioBlanco.png);
     position: relative;
 }
 
