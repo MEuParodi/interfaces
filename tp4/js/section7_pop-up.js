@@ -45,9 +45,9 @@ closePopup3.addEventListener('click', function(){
 
 spiderWhite.addEventListener('mouseover', function(){
     section7.style.backgroundImage = 'url("./img/seccion7/pink_bground.png")';
-    section7.style.backgroundSize = 'cover';
+    section7.style.backgroundSize = '100% 880px';
     section7.style.backgroundRepeat = 'no-repeat';
-    spiderWhite.style.transform = 'scale(1.1)';
+    spiderWhite.style.transform = 'scale(1.05)';
     spiderWhite.style.filter= 'blur(0)';
     spiderRed.style.transform = 'scale(0.7)';
     spiderRed.style.filter= 'blur(5px)';
@@ -57,7 +57,7 @@ spiderWhite.addEventListener('mouseover', function(){
 
 spiderRed.addEventListener('mouseover', function(){
     section7.style.backgroundImage = 'url("./img/seccion7/blue_bground.png")';
-    section7.style.backgroundSize = 'cover';
+    section7.style.backgroundSize = '100% 880px';
     section7.style.backgroundRepeat = 'no-repeat';
     spiderRed.style.transform= 'scale(1.1)';
     spiderRed.style.filter= 'blur(0)';
@@ -70,7 +70,7 @@ spiderRed.addEventListener('mouseover', function(){
 
 spiderBlack.addEventListener('mouseover', function(){
     section7.style.backgroundImage = 'url("./img/seccion7/grey_bground.png")';
-    section7.style.backgroundSize = 'cover';
+    section7.style.backgroundSize = '100% 880px';
     section7.style.backgroundRepeat = 'no-repeat';
     spiderBlack.style.transform ='scale(1.1)';
     spiderBlack.style.filter= 'blur(0)';
