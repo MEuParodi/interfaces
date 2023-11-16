@@ -574,6 +574,59 @@ header .width-1080 button.comprar{
     bottom: 0;
 }
 
+#sp_1 {
+    transform: scale(1.5);
+    position: absolute;
+    bottom: 3%;
+    left: 24%;
+    width: 40px;
+    height: 76px;
+    background-image: url(../img/spritesheet/rojo1.png);
+    background-repeat: repeat-x;
+    animation: climb 2.5s steps(7) infinite;
+}
+
+@keyframes climb {
+    0% { background-position:0 }
+    100% { background-position:-280px }
+  }
+
+
+#sp_2 {
+    transform: scale(1.5);
+    position: absolute;
+    bottom: 18%;
+    right: 11%;
+    width: 40px;
+    height: 76px;
+    background-image: url(../img/spritesheet/azul1.png);
+    background-repeat: repeat-x;
+    animation: climb 2.5s steps(7) infinite;
+}
+
+@keyframes climb {
+    0% { background-position:0 }
+    100% { background-position:-280px }
+  }
+
+  #sp_3 {
+    position: absolute;
+    transform: scale(.3);
+    bottom: 7%;
+    left: 37%;    
+    width: 230px;
+    height: 217px;
+    background-image: url(../img/spritesheet/rojo3.png);
+    background-repeat: repeat-x;
+    animation: walk .8s steps(5) infinite;
+}
+
+@keyframes walk {
+    0% { background-position:0 }
+    100% { background-position:-1150px }
+  }
+
+
 .section8 .width-1080{
     display: flex;
     flex-direction: column;
