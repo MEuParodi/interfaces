@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       panther.style.transform = `translateX(${moveX * -0.5}px) translateY(${moveY * -0.7}px) rotate(4deg)`;
       hulk.style.transform = `translateX(${moveX * -1.4}px) translateY(${moveY * -1.7}px)`;
-      girl.style.transform = `translateX(${moveX * -1.9}px) translateY(${moveY * -2.2}px) rotate(-5.483deg)`;
+      girl.style.transform = `translateX(${moveX * 1}px) translateY(${moveY * -2.2}px) rotate(-5.483deg)`;
     });
   });
   
