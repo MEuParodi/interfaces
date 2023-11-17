@@ -9,8 +9,8 @@ window.addEventListener('scroll', function(e){
     if (rect.top+100 <= window.innerHeight && rect.bottom-400 >= 0) {
         // Obtener el valor de desplazamiento vertical (scroll)
         let scroll = window.scrollY;
-        card1.style.transform = 'translate(0, calc(-50% + ' + scroll / 2 + 'px))';
-        card2.style.transform = 'translate(0, calc(-50% + ' + scroll / 2 + 'px))';
-        card3.style.transform = 'translate(0, calc(-50% + ' + scroll / 2 + 'px))';
+        card1.style.transform = 'translate(0, calc(-50% + ' + scroll / 12 + 'px))';
+        card2.style.transform = 'translate(0, calc(-50% + ' + scroll / 12 + 'px))';
+        card3.style.transform = 'translate(0, calc(-50% + ' + scroll / 12 + 'px))';
  }
 });

@@ -492,6 +492,10 @@ header .width-1080 button.comprar{
     color: var(--white);
 }
 
+.sectionComprar .comprar:hover {
+    background-color: #2982FF;
+}
+
 /*======== section7 ===================*/
 
 .section7 {
