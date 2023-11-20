@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", loading);
 
 function actualizarPorcentaje() {
@@ -22,6 +23,7 @@ function loading (e) {
         setTimeout(function() {
             window.location.href = './index.html';
         }, 5000);
+
 }
 
 
