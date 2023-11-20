@@ -352,6 +352,15 @@ header .width-1080 button.comprar{
   height: auto;
 }
 
+
+.translate-element {
+    transition: transform 0.5s ease; /* Transición suave de 0.5 segundos */
+  }
+  
+  /* Agrega una clase para aplicar la transformación cuando el elemento está en pantalla */
+  .translate-element.active {
+    transform: translate(0, 0); /* Modifica según tus necesidades */
+  }
 /*=========section 4============*/
 .section4 {
     width: 100%;
