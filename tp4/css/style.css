@@ -213,31 +213,13 @@ header .width-1080 button.comprar{
     margin: auto;
 }
 
-/*====keyframe========*/
-/* @keyframes zoomOutBilding {
-    0%{
-        transform: scale(1.2);
-        translateX: 30px;
-    }
-    100%{
-        transform: scale(1);
-    }
-
-} */
-
 .section1 {
     display: flex;
     justify-content: center;
     position: relative;
     margin-top: -127px;
     width: 100%;
-    /* width: 1280px; */
-    
     height: 720px;
-    /* background-image: url(../img/seccion1/sky.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center bottom 130px; */
 }
 
 .section1 .logo {
@@ -247,7 +229,7 @@ header .width-1080 button.comprar{
     height: 301px;
     top: -30px;
     
-    transition: ease .7s top .5s ease-in;  
+    transition: ease .7s;  
 }
 
 .logo.close {
@@ -541,6 +523,7 @@ header .width-1080 button.comprar{
     width: 646px;
     color: var(--white);
     margin-top: -250px;
+    margin-bottom: 50px;
 }
 
 .parallax5 {
