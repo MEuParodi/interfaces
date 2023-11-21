@@ -10,9 +10,8 @@ const sky = document.querySelector(".sky");
 const imagesSection1 = [spiderBco1, spiderRed1, spiderBlack1, bildingLeft, bildingRight, bildingCenter, logo];
 
 const cargarElem = () => {
-  console.log("cargar")
   imagesSection1.forEach((c) => {
-    c.classList.remove("close");
+    c.classList.remove("invisible");
   });
 };
 

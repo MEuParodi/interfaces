@@ -233,7 +233,7 @@ header .width-1080 button.comprar{
     transition: ease .7s;  
 }
 
-.logo.close {
+.logo.invisible {
     top: -250px;
     opacity: 0;
   }
@@ -253,7 +253,7 @@ header .width-1080 button.comprar{
     /* left: -80px; */
     transition: left .4s linear;
 }
-.bildingLeft.close {
+.bildingLeft.invisible {
     left: -100px;
     opacity: 0;
   }
@@ -268,7 +268,7 @@ header .width-1080 button.comprar{
     transition: all 0.4s linear;
 }
 
-.bildingCenter.close {
+.bildingCenter.invisible {
     bottom: -10px;
     opacity: 0;
   }
@@ -283,7 +283,7 @@ header .width-1080 button.comprar{
     transition: right .4s linear;
     z-index: 2;
 }
-.bildingRight.close {
+.bildingRight.invisible {
     right: -100px;
     opacity: 0;
 }
@@ -299,7 +299,7 @@ header .width-1080 button.comprar{
     transition: .5s linear;
 }
 
-.spiderBco.close {
+.spiderBco.invisible {
     left: -150px;
     opacity: 0;
   }
@@ -312,7 +312,7 @@ header .width-1080 button.comprar{
     transition: .5s linear;
 }
 
-.spiderRed.close {
+.spiderRed.invisible {
     bottom: -350px;
     opacity: 0;
   }
@@ -324,7 +324,7 @@ header .width-1080 button.comprar{
     z-index: 10;
     transition: .5s linear;
 }
-.spiderBlack.close {
+.spiderBlack.invisible {
     right: -350px;
     opacity: 0;
   }
