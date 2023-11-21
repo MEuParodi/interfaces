@@ -20,19 +20,23 @@ document.addEventListener("DOMContentLoaded", function () {
   let img4 = document.getElementById("image4");
 
   const observador = new IntersectionObserver(entries => {
+    //itera x cada entrada, por cada texto
     entries.forEach(entry => {
+      //esta visible?
       if (entry.isIntersecting) {
-        //indice del título actual del arreglo texts
+        //indice del texto actual del arreglo texts, asi se ve cual texto es el visible
+        //entry.target(me devuelve el obj), indexof el indice de ese obj en arrglo
+   
         const index = texts.indexOf(entry.target);
 
-        // Ajusta la opacidad de todas las imágenes a 0
+        //Ajusta la opacidad de todas las imágenes a 0, para q solo este visible la q yo quiero
         [img1, img2, img3, img4].forEach(img => (img.style.opacity = 0));
         //ajusta titulos
         [text1, text2, text3, text4].forEach(title => (title.style.opacity = 0));
 
         [title1, title2, title3, title4].forEach(title => (title.style.opacity = 0));
-        // Ajusta la opacidad de la imagen correspondiente al título actual a 1
         
+        //segun la pos en el arreglo sera la imagen y texto q quiero ver
         switch (index) {
           case 0:
             img1.style.opacity = 1;
@@ -68,20 +72,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Observa cada título individual
-  texts.forEach(title => {
-    observador.observe(title);
+  //Observa cada texto individual, que este en el arrgelo
+  texts.forEach(text => {
+    observador.observe(text);
   });
 
-  // console.log("scroll", window.scrollY)
-  // let bottomSection = section6.getBoundingClientRect().bottom;
-  // let topImg2 = title2.getBoundingClientRect().top;
-  // console.log("botom", bottomSection, "top", topImg2)
-  // if(topImg2 < bottomSection){
-  //   console.log("holaaaa")
-  //   img2.style.opacity = 1;
-  //   img1.style.opacity = 0;
-  // }
 
   
 });

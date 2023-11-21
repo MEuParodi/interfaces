@@ -109,7 +109,7 @@ h3{
 header {
     width: 100%;
     height: 227px;
-    z-index: 2;
+    z-index: 1;
     position: sticky;
     top: 0px;
     transition: ease-out .8s;
@@ -207,6 +207,91 @@ header .width-1080 button.comprar{
     width: 200px;
     height: 50px;
 }
+/*===============sidebar===================*/
+.sidebar{
+    margin-top: 14px;
+    margin-left: 90px;
+    width: 20%;
+    height: auto;
+    z-index: 20000;
+    position: relative;
+    transition: all ease .6s ;
+}
+.sidebar ul{
+    list-style-type: none;
+    width: 200px;
+    height: auto;
+    padding: 0 10px;
+    margin-left: -10px;
+    background-color: var(--black-btn);
+    color: var(--white);
+    border-radius: 10px;
+    z-index: 20005;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.sidebar li{
+    
+    font: var(--font);
+    width: 200px;
+    height: 70px;
+    margin-left: -10px;
+    padding: 10px;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    -webkit-text-stroke:2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.sidebar li:hover{
+    z-index: 10005;
+    background-color: var(--black);
+    color: var(--yellow);
+    text-shadow: 5px 10px 20px rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    /* box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5); */
+}
+
+#gwen.close{
+    opacity: 0;
+    transition: left .6s ease;
+}
+#peter.close{
+    opacity: 0;
+    transition: left .8s ease;
+}
+#miles.close{
+    opacity: 0;
+    transition: left 1s ease;
+}
+.close-sidebar{
+    opacity: 0;
+}
+/* #gwen{
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    list-style-image: url(../img/header/gwen.svg) ;
+}
+
+#peter{
+    position: absolute;
+    top: 16px;
+    left: 2px;
+    list-style-image: url(../img/header/peter.svg) ;
+}
+#miles{position: absolute;
+    top: 10px;
+    left: 2px;
+    list-style-image: url(../img/header/miles.svg) ;
+} */
+
 
 /*===================================*/
 .width-1080{
@@ -240,6 +325,7 @@ header .width-1080 button.comprar{
 .section1 .sky{
     position: absolute;
     bottom: 60px;
+    z-index: 0;
 
 }
 .section1 .bildingLeft {
@@ -575,26 +661,32 @@ header .width-1080 button.comprar{
     padding-left: 90px;
 }
 .section6 img {
-    width: 480px;
-    height: 305px;
+    width: 552px;
+    height: 302px;
 }
 .section6 .width-1080{
     padding-top: 130px;
     margin: 0 auto;
 }
-.grid-container {
+/* .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px; 
+     
+} */
+.grid-container {
+    display: flex;
+    justify-content: space-between;
+     
 }
 
 .section6 .section6-colImg{
-    flex: 1;
+    /* flex: 1; */
+    width: 552px;
     position: relative;
 }
 .section6 .section6-colText{
-    width: 600px;
-    padding: 30px 50px;
+    width: 475px;
+    
     max-height: 300px;
     overflow-y: scroll;
 }
@@ -920,3 +1012,4 @@ footer .width-1080 img{
     width: 212px;
     height: 41px;
 }
+
