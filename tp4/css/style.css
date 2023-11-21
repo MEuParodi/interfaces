@@ -192,7 +192,7 @@ button.btn-hambur:hover div:last-child{
     }
     100% {
         filter: none;
-        transform: rotate(-45deg) translateY(-8px) translateX(4px);
+        transform: rotate(-45deg) translateY(-8px) translateX(5px);
     }
 
 }
@@ -299,7 +299,7 @@ header .width-1080 button.comprar{
 }
 
 .spiderBco.close {
-    left: -50px;
+    left: -150px;
     opacity: 0;
   }
 
@@ -547,7 +547,7 @@ header .width-1080 button.comprar{
 .parallax5 .panther {
     width: 333px;
     left: 511px;
-    top: -168px;
+    top: -118px; /*estaba en -168, lo baje un pco xq se iba de pantalla no se le ve la cabeza, tal vez toque algo q lo desacomodo antes lo veia bien*/
     transform: rotate(4deg);
     /* transform: rotate(14deg); */
 }
@@ -558,7 +558,85 @@ header .width-1080 button.comprar{
 }
 
 /*======== section 6 ===================*/
+.section6 {
+    height: 1600px; 
+    width: 100%;
+    background-image: url(../img/seccion6/fondo.png);
+    background-repeat: no-repeat;
+    background-size: 100% 70%;
+    margin-top: -200px;
+    padding-top: 300px;
+    z-index: -1;
+}
+.section6  h1{
+    
+    padding-top: 100px;
+    padding-left: 90px;
+}
+.section6 img {
+    width: 480px;
+    height: 305px;
+}
+.section6 .width-1080{
+    padding-top: 130px;
+    margin: 0 auto;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px; 
+}
 
+.section6 .section6-colImg{
+    flex: 1;
+    position: relative;
+}
+.section6 .section6-colText{
+    width: 600px;
+    padding: 30px 50px;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+
+
+/*======para ocultar la barra de scroll========*/
+.section6-colText::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.section6-colText::-webkit-scrollbar-thumb {
+    background-color: #FFF;
+}
+/*=============================================*/
+ 
+#title-1{
+    opacity: 1;
+}
+#title-1, #title-2, #title-3, #title-4{
+    transition: ease-in-out .3s;
+}
+
+#text-1{
+    opacity: 1;
+}
+#text-1, #text-2, #text-3, #text-4{
+    transition: ease-in-out .3s;
+}
+#image1{
+      opacity: 1;
+}
+
+#image1, #image2, #image3, #image4{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    opacity: 0;
+    transition: ease-in-out 1.5s;
+    
+}
+
+/* 
 .section6 {
     height: 2195px; 
     background-image: url(../img/seccion6/fondo.png);
@@ -574,25 +652,29 @@ header .width-1080 button.comprar{
     padding-top: 150px;
 }
 
- .s6-sticky-container { /*aca posiciono las cols img y texto*/
+ .s6-sticky-container { aca posiciono las cols img y texto
     height: 400px;
     padding-top: 50px;
     padding-bottom: 25px;
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
    .sticky-image {
   }
 
+ 
+
   .text-container {
     width: 45%;
     padding-left: 2%;
-  }
+  } */ 
 
 /*======== section Comprar ===================*/
 
 .sectionComprar {
+    margin-top: -350px;
     height: 248px;
 }
 
@@ -607,6 +689,7 @@ header .width-1080 button.comprar{
 /*======== section7 ===================*/
 
 .section7 {
+    padding-bottom: 40px;
     height: 880px;
     background-image:  url(../img/seccion7/trapecioBlanco.png);
     position: relative;
@@ -675,6 +758,7 @@ header .width-1080 button.comprar{
 /*======== section8 ===================*/
 
 .section8 {
+   
     height: 1296px;
     background: linear-gradient(180deg,  #8FBEFC 21.2%, #F7E3D8  81.48%);
     position: relative;

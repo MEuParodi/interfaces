@@ -17,7 +17,7 @@ const cargarElem = () => {
 };
 
 // Llama a la función después de 1 segundo
-setTimeout(cargarElem, 1000);
+setTimeout(cargarElem, 500);
 
 
 window.addEventListener("scroll", () =>{
@@ -26,7 +26,7 @@ window.addEventListener("scroll", () =>{
   let scroll = window.scrollY;
   //logo
   if(scroll > 20){
-    logo.style.transform = `translateY(-25%)  translateX(-10%) scale(0.25) `;
+    logo.style.transform = `translateY(-25%)  translateX(-5%) scale(0.25) `;
     logo.style.position = `fixed`;
     headerSticky();
   }

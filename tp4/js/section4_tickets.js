@@ -14,3 +14,5 @@ window.addEventListener('scroll', function(e){
         card3.style.transform = 'translate(0, calc(-50% + ' + scroll / 12 + 'px))';
  }
 });
+
+
