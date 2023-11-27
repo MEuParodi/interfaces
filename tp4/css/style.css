@@ -116,17 +116,6 @@ header {
     background: linear-gradient(180deg, #5499F8 0%, #5499F8 67.91%, rgba(84, 153, 248, 0.00) 100%);
 }
 
-/* header .logo-header{
-    visibility: hidden;
-    width: 130px;
-    height: 80px;
-    z-index: 2;
-   
-    transform: translateX(15px) ;
-    /* position: sticky;
-    top: 0px; 
-    transition: linear .3s;
-} */
 header .width-1080{
     padding-top: 15px;
     display: flex;
@@ -156,15 +145,27 @@ body.sticky-header header {
     
   }
 
-button.btn-hambur:hover div:first-child{
+.change-line-one{
+    animation: changeHamburLineOne .5s linear forwards;
+}
+
+.change-line-two{
+    opacity: 0;
+}
+
+.change-line-three{
+    animation: changeHamburLineTwo .5s linear forwards;
+}
+
+
+/* button.btn-hambur:hover div:first-child{
 
     animation: changeHamburLineOne .5s linear forwards;
 }
 
 button.btn-hambur:hover div:last-child{
-    /* transform: rotate(-45deg) translateY(4px) translateX(-6px); */
     animation: changeHamburLineTwo .5s linear forwards;
-}
+} */
 
 @keyframes changeHamburLineOne {
     0% {
@@ -198,15 +199,110 @@ button.btn-hambur:hover div:last-child{
 
 }
 
-button.btn-hambur:hover div:nth-child(2){
+/* button.btn-hambur:hover div:nth-child(2){
     opacity: 0;
-}
+} */
 
 
 header .width-1080 button.comprar{
     width: 200px;
     height: 50px;
 }
+/*===============sidebar===================*/
+.sidebar{
+    margin-top: 14px;
+    margin-left: 90px;
+    width: 20%;
+    height: auto;
+    z-index: 20000;
+    position: relative;
+    transition: all ease .6s ;
+}
+.sidebar ul{
+    list-style-type: none;
+    width: 200px;
+    height: auto;
+    padding: 0 10px;
+    margin-left: -10px;
+    position: relative;
+}
+
+.sidebar li{
+    background-color: var(--black-btn);
+    color: var(--white);
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    font: var(--font);
+    width: 200px;
+    height: 70px;
+    margin-left: -10px;
+    padding: 10px;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    -webkit-text-stroke:2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    
+}
+
+.sidebar li:hover{
+    z-index: 10005;
+    background-color: var(--black);
+    color: var(--yellow);
+    text-shadow: 5px 10px 20px rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    /* box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5); */
+}
+
+#gwen{
+    left: 20px;
+    top: 0px;
+    opacity: 1;
+    transition: left .3s ease;
+}
+#peter{
+    left: 20px;
+    top: 60px;
+    opacity: 1;
+    transition: left .5s ease;
+}
+#miles{
+    left: 20px;
+    top: 120px;
+    opacity: 1;
+    transition: left .7s ease;
+}
+
+#gwen.closed{
+    left: -250px;
+    opacity: 0;
+    
+}
+#peter.closed{
+    left: -500px;
+    opacity: 0;
+
+    
+}
+#miles.closed{
+    left: -750px;
+    opacity: 0;
+
+   
+}
+
+
+.close-sidebar{
+    opacity: 0;
+}
+
+
+
+/*===================================*/
 
 .width-1080{
     width: 1080px;
